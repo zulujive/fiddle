@@ -1,8 +1,8 @@
 <?php
 
-require_once 'vendor/autoload.php';
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 
-use Cartalyst\Sentinel\Sentinel;
+require_once 'vendor/autoload.php';
 
 // Register a new user
 Sentinel::register([
