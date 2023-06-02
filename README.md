@@ -11,6 +11,13 @@ Though it is in development, the server can be safely deployed to production as 
 
 ![Site screenshot](https://github.com/zulujive/fiddle/blob/main/site-example.png?raw=true)
 
+## Features
+- Laravel-style routing
+- CSRF protection
+- Boostrap admin panel (coming soon)
+- Highly scalable architecture
+- Beautiful design from top to bottom
+
 ## Deployment
 ### Requirements
 - PHP 8.2 or above
