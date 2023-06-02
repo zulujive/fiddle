@@ -2,6 +2,8 @@
 ![Fiddle Logo](https://github.com/zulujive/fiddle/blob/main/logo.png?raw=true)
 A reinvented version of PxlsFiddle for the 21st century with a modern design and a clean frontend and backend. Written in PHP, styled to perfection, and organized with scalability in mind.
 
+**Note: This project is not affiliated with PxlsFiddle in any way**
+
 ## Info
 This project is in early development. Instances can be run, but there will be performance bottlenecks as there is no caching enabled. Further improvements will be implemented such as client side rendering, full-fledged database, and a bootstrap admin panel to manage templates.
 
