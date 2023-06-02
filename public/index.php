@@ -29,6 +29,8 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
+$router->serve('/templates', __DIR__ . '/templates');
+
 // Add more routes and map them to controllers
 
 $router->run();
