@@ -31,7 +31,10 @@ $router->get('/login', function () {
 
 $router->get("/templates/(.*)", function($filename){
     //echo 'You asked for ' . $filename;
-    echo file_get_contents(__DIR__ . "/../src/storage/templates/".$filename."");
+    $templateImage = file_get_contents(__DIR__ . "/../src/storage/templates/".$filename."");
+    header('Content-Type: image/jpeg');
+    echo $templateImage;
+
 });
 
 // Add more routes and map them to controllers
