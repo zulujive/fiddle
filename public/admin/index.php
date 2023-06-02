@@ -18,7 +18,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       	//fwrite($log_login, $username."     ");
       	//fwrite($log_login, $login_timestamp."\n");
       	//fclose($log_login);
-        header("Location: /#/");
+        header("Location: /admin/#/");
         exit();
     } else {
         $error_message = "Invalid username and/or password";
