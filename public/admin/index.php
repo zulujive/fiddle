@@ -1,6 +1,29 @@
 <?php
+session_start();
 
-
+$valid_users = [
+    "test" => "1234",
+    // Add more authorized users here
+];
+include(dirname(__FILE__).'/../../config.php');
+if (isset($_POST["username"]) && isset($_POST["password"])) {
+    $username_unsanitized = $_POST["username"];
+    $password_unsanitized = $_POST["password"];
+  	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
+        $_SESSION["logged_in"] = true;
+        //$log_login = fopen("private/auth.log", "a") or die("Unable to open file!");
+      	//$login_timestamp = date("Y-m-d H:i:s");
+      	//fwrite($log_login, $username."     ");
+      	//fwrite($log_login, $login_timestamp."\n");
+      	//fclose($log_login);
+        header("Location: #/");
+        exit();
+    } else {
+        $error_message = "Invalid username and/or password";
+    }
+}
 
 ?>
 
@@ -19,13 +42,14 @@
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="get" action="index.php" style="width: 40%;"><br>
+        <p><?php echo $error_message ?></p>
         <div class="form-group">
             <label for="username-login">Username</label>
-            <input id="username-login shadow" class="form-control" type="text" name="username" required>
+            <input id="username-login" class="form-control shadow" type="text" name="username" required>
         </div><br>
         <div class="form-group">
             <label for="pwd-login">Password</label>
-            <input id="pwd-login shadow" class="form-control" type="password" name="password" required>
+            <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
         </div><br>
         <button class="btn btn-light shadow" type="submit" value="submit" style="width: 20%;">Login</button><br>
     </form>
