@@ -44,7 +44,7 @@ $router->get('/templates/(.*)', function ($filename) {
     }
 });
 
-$router->get("/templates/(.*).png", function($filename){
+$router->get("/templates/{filename}", function($filename){
     echo 'You asked for ' . $filename;
     //echo file_get_contents(__DIR__ . "/../src/storage/templates/".$filename.".png");
 });
