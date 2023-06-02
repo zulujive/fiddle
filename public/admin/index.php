@@ -21,11 +21,11 @@
     <form class="container card bg-primary text-white shadow" method="get" action="index.php" style="width: 40%;"><br>
         <div class="form-group">
             <label for="username-login">Username</label>
-            <input id="username-login shadow" class="form-control" type="text" name="username">
+            <input id="username-login shadow" class="form-control" type="text" name="username" required>
         </div><br>
         <div class="form-group">
             <label for="pwd-login">Password</label>
-            <input id="pwd-login shadow" class="form-control" type="text" name="password">
+            <input id="pwd-login shadow" class="form-control" type="text" name="password" required>
         </div><br>
         <button class="btn btn-light shadow" type="button" style="width: 20%;">Login</button><br>
     </form>
