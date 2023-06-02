@@ -6,7 +6,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 include(dirname(__FILE__).'/../config.php');
 
 // Include the composer autoload file
-require 'vendor/autoload.php';
+require (dirname(__FILE__).'/../vendor/autoload.php');
 
 // Setup a new Eloquent Capsule instance
 $capsule = new Capsule;
