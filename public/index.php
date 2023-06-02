@@ -12,7 +12,7 @@ switch ($route) {
         $controller = new HomeController();
         $controller->index();
         break;
-    case '/css':
+    case '/style':
         $cssFilePath = __DIR__ . '/css/style.css';
         if (file_exists($cssFilePath)) {
             header('Content-Type: text/css');
@@ -22,17 +22,6 @@ switch ($route) {
             echo '404 Not Found';
         }
         break;
-
-    /*case '/css':
-        $cssFilePath = __DIR__ . '/../src/resources/css/style.css';
-        if (file_exists($cssFilePath)) {
-            header('Content-Type: text/css');
-            readfile($cssFilePath);
-        } else {
-            http_response_code(404);
-            echo '404 Not Found';
-        }
-        break;*/
 
     case '/json':
         $controller = new JsonController();
