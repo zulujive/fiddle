@@ -3,7 +3,19 @@ session_start();
 
 if ($_SESSION["logged_in"] == true) {
     header("Location: /admin/panel/");
+    exit();
 }
+
+// Generate CSRF token
+$csrfToken = bin2hex(random_bytes(32));
+
+// Store CSRF token in session
+$_SESSION['csrf_token'] = $csrfToken;
+
+if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    // CSRF token mismatch, handle the error or abort the request
+    die("CSRF token validation failed.");
+  }
 
 include(dirname(__FILE__).'/../../config.php');
 if (isset($_POST["username"]) && isset($_POST["password"])) {
@@ -19,6 +31,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       	//fwrite($log_login, $login_timestamp."\n");
       	//fclose($log_login);
         header("Location: /admin/panel/");
+        session_regenerate_id(true);
         exit();
     } else {
         $error_message = "Invalid username and/or password";
@@ -42,7 +55,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/admin/index.php" style="width: 40%;"><br>
-        <?php echo '<p>' . $error_message . '</p>' ?>
+        <?php echo '<p>' . $error_message . '</p>'; ?>
+        <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control shadow" type="text" name="username" required>
