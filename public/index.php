@@ -31,7 +31,7 @@ $router->get('/login', function () {
 
 $router->get('/templates/{templateName}', function($templateName) {
     // Set the appropriate content-type header
-    header('Content-Type: image/jpeg');
+    header('Content-Type: image/png');
 
     // Read and output the image file
     readfile('/templates/{templateName}');
