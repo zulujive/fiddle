@@ -27,7 +27,7 @@
             <label for="pwd-login">Password</label>
             <input id="pwd-login shadow" class="form-control" type="password" name="password" required>
         </div><br>
-        <button class="btn btn-light shadow" type="button" action="submit" style="width: 20%;">Login</button><br>
+        <button class="btn btn-light shadow" type="submit" value="submit" style="width: 20%;">Login</button><br>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
