@@ -30,7 +30,7 @@ $router->get('/login', function () {
 });
 
 $router->get('/templates/(.*)', function ($filename) {
-    $filePath = __DIR__ . '/templates/' . $filename;
+    $filePath = __DIR__ . 'templates/' . $filename;
 
     if (is_file($filePath)) {
         $mimeType = mime_content_type($filePath);
