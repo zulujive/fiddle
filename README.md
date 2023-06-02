@@ -22,13 +22,14 @@ Though it is in development, the server can be safely deployed to production as 
 ### Requirements
 - PHP 8.2 or above
 - Web server (NGINX/Apache)
+- PHP Composer
 
 ### Instructions
 In production, use NGINX or Apache to serve PHP using FastCGI or FPM with "public" being the root directory.
 
 For development instances, you can setup a development server with PHP by navigating into the "public" directory and typing the command (assuming you have PHP installed):
 ```
-php -S localhost:7890
+php -S localhost:7890 index.php
 ```
 
 It's worth noting that template paths will not contain file extensions for the sake of simplicity. To fix this, go to NGINX's "sites-available" directory and add this configuration:
