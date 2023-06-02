@@ -29,9 +29,9 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
-$router->get('/templates', function () {
+$router->get('/templates/(.*)', function ($filename) {
     echo 'Hello world';
-    /*$filePath = __DIR__ . '/../src/storage/templates/' . $filename;
+    $filePath = __DIR__ . '/../src/storage/templates/' . $filename;
 
     if (is_file($filePath)) {
         $mimeType = mime_content_type($filePath);
@@ -40,7 +40,7 @@ $router->get('/templates', function () {
     } else {
         http_response_code(404);
         echo 'File not found';
-    }*/
+    }
 });
 
 // Add more routes and map them to controllers
