@@ -29,7 +29,13 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
-$router->serve('/templates', __DIR__ . '/templates');
+$router->get('/template/{templateName}', function($templateName) {
+    // Set the appropriate content-type header
+    header('Content-Type: image/jpeg');
+
+    // Read and output the image file
+    readfile('/templates/{templateName}');
+});
 
 // Add more routes and map them to controllers
 
