@@ -16,9 +16,9 @@
     <title>Admin</title>
 </head>
 <body>
-    <form class="container" method="get" action="index.php">
+    <form class="container card" method="get" action="index.php">
         <div class="form-group">
-            <label for="username-login">Username:</label>
+            <label for="username-login">Username</label>
             <input id="username-login" class="form-control" type="text" name="username">
         </div>
         <div class="form-group">
