@@ -31,6 +31,13 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     }
 }
 
+if (!isset($_SESSION['csrf_token'])) {
+    $csrfToken = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = $csrfToken;
+} else {
+    $csrfToken = $_SESSION['csrf_token'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,14 +55,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/admin/index.php" style="width: 40%;"><br>
-        <?php
-        // Generate CSRF token
-        $csrfToken = bin2hex(random_bytes(32));
-
-        // Store CSRF token in session
-        $_SESSION['csrf_token'] = $csrfToken;
-        ?>
-
         <?php echo '<p>' . $error_message . '</p>'; ?>
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group">
