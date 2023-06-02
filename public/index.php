@@ -29,7 +29,7 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
-$router->get('/templates', function ($filename) {
+$router->get('/templates', function () {
     echo 'Hello world';
     /*$filePath = __DIR__ . '/../src/storage/templates/' . $filename;
 
