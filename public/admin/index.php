@@ -16,6 +16,7 @@
     <title>Admin</title>
 </head>
 <body>
+    <h1>Sign in</h1>
     <br>
     <form class="container card" method="get" action="index.php" style="width: 40%;"><br>
         <div class="form-group">
