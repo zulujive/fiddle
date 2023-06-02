@@ -2,7 +2,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 // Make sure to put classes here:
-require_once 'HomeController.php';
+require_once __DIR__ .'/../src/controllers/HomeController.php';
 
 use Bramus\Router\Router;
 
