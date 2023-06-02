@@ -13,8 +13,14 @@ switch ($route) {
         $controller->index();
         break;
     case '/css':
-        $controller = new HomeController();
-        $controller->style();
+        $cssFilePath = __DIR__ . '/css/style.css';
+        if (file_exists($cssFilePath)) {
+            header('Content-Type: text/css');
+            readfile($cssFilePath);
+        } else {
+            http_response_code(404);
+            echo '404 Not Found';
+        }
         break;
 
     /*case '/css':
