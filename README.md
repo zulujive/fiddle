@@ -4,7 +4,12 @@ A reinvented version of PxlsFiddle for the 21st century with a modern design and
 ## Info
 This project is in early development. Instances can be run, but there will be performance bottlenecks as there is no caching enabled. Further improvements will be implemented such as client side rendering, full-fledged database, and a bootstrap admin panel to manage templates.
 
-## Running
+## Deployment
+### Requirements
+- PHP 8.2 or above
+- Web server (NGINX/Apache)
+
+### Instructions
 In production, use NGINX or Apache to serve PHP using FastCGI or FPM with "public" being the root directory.
 
 For development instances, you can setup a development server with PHP by navigating into the "public" directory and typing the command (assuming you have PHP installed):
