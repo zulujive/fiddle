@@ -26,7 +26,7 @@ $featured_3_id = $data['featured_3_id'];
 <html>
   <head>
     <title>Fiddle</title>
-    <link rel="stylesheet" type="text/css" href="/style/style.css">
+    <link rel="stylesheet" type="text/css" href="/style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
   <meta property="og:title" content="PxlsFiddle">
