@@ -12,11 +12,6 @@ $csrfToken = bin2hex(random_bytes(32));
 // Store CSRF token in session
 $_SESSION['csrf_token'] = $csrfToken;
 
-if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-    // CSRF token mismatch, handle the error or abort the request
-    die("CSRF token validation failed.");
-  }
-
 include(dirname(__FILE__).'/../../config.php');
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username_unsanitized = $_POST["username"];
@@ -24,6 +19,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            // CSRF token mismatch, handle the error or abort the request
+            die("CSRF token validation failed.");
+          }
         $_SESSION["logged_in"] = true;
         //$log_login = fopen("private/auth.log", "a") or die("Unable to open file!");
       	//$login_timestamp = date("Y-m-d H:i:s");
