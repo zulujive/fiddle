@@ -1,44 +1,23 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require __DIR__ . '/../vendor/autoload.php';
 
-spl_autoload_register(function ($className) {
-    require_once __DIR__ . '/../src/controllers/' . $className . '.php';
+// Make sure to put classes here:
+require_once 'HomeController.php';
+
+use Bramus\Router\Router;
+
+$router = new Router();
+
+$router->get('/', function () {
+    $controller = new HomeController();
+    $controller->index();
 });
 
-$route = $_GET['route'] ?? '';
+$router->get('/login', function () {
+    $controller = new HomeController();
+    $controller->panelLogin();
+});
 
-switch ($route) {
-    case '':
-    case '/':
-        $controller = new HomeController();
-        $controller->index();
-        break;
-    case '/login':
-        $controller = new HomeController();
-        $controller->panelLogin();
-        break;
+// Add more routes and map them to controllers
 
-    case '/style':
-        $cssFilePath = __DIR__ . '/css/style.css';
-        if (file_exists($cssFilePath)) {
-            header('Content-Type: text/css');
-            readfile($cssFilePath);
-        } else {
-            http_response_code(404);
-            echo '404 Not Found';
-        }
-        break;
-
-    case '/json':
-        $controller = new JsonController();
-        $controller->index();
-        break;
-    
-// ---------------------------
-    default:
-        // Handle 404 Not Found
-        http_response_code(404);
-        echo '404 Not Found';
-        break;
-}
+$router->run();
