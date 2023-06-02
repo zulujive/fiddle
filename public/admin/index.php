@@ -17,7 +17,7 @@
 </head>
 <body>
     <br>
-    <form class="container card" method="get" action="index.php" style="width: 40%;">
+    <form class="container card" method="get" action="index.php" style="width: 40%;"><br>
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control" type="text" name="username">
