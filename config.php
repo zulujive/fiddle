@@ -2,12 +2,12 @@
 
 // To use Fiddle, you must setup a mySQL or MariaDB database
 // Put the host of the database configured here:
-$hostDb = localhost;
+$hostDb = 'localhost';
 // Put the name of the database configured here:
-$dbName = fiddle;
+$dbName = 'fiddle';
 // Put the username for the database here:
-$dbUname = username;
+$dbUname = 'username';
 // Put the password for the database here:
-$dbPwd = password;
+$dbPwd = 'password';
 
 ?>
