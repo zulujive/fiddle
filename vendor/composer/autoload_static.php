@@ -6,6 +6,16 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita03941a9c3a87d4083a34e08ff6f858d
 {
+    public static $prefixesPsr0 = array (
+        'B' => 
+        array (
+            'Bramus' => 
+            array (
+                0 => __DIR__ . '/..' . '/bramus/router/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,6 +23,7 @@ class ComposerStaticInita03941a9c3a87d4083a34e08ff6f858d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixesPsr0 = ComposerStaticInita03941a9c3a87d4083a34e08ff6f858d::$prefixesPsr0;
             $loader->classMap = ComposerStaticInita03941a9c3a87d4083a34e08ff6f858d::$classMap;
 
         }, null, ClassLoader::class);
