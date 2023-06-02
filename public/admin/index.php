@@ -42,7 +42,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/admin/index.php" style="width: 40%;"><br>
-        <p><?php echo $error_message ?></p>
+        <?php echo '<p>' . $error_message . '</p>' ?>
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control shadow" type="text" name="username" required>
