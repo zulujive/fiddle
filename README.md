@@ -40,3 +40,5 @@ location /templates {
 }
 ```
 Without this configuration, browsers will automatically download a template image if they open the URL. This change allows for a user to open the template URL and view the image within their browser.
+
+**Note: This is only if you're not using routes. If you are using routes, this does not apply**
