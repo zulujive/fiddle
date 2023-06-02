@@ -29,9 +29,9 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
-$router->get("/templates/{filename}", function($filename){
+$router->get("/templates/(.*).png", function($filename){
     echo 'You asked for ' . $filename;
-    //echo file_get_contents(__DIR__ . "/../src/storage/templates/".$filename.".png");
+    echo file_get_contents(__DIR__ . "/../src/storage/templates/".$filename.".png");
 });
 
 // Add more routes and map them to controllers
