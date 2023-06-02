@@ -14,7 +14,14 @@ $router->get('/', function () {
 });
 
 $router->get('/style', function () {
-    require_once __DIR__ .'/../src/resources/css/style.css';
+    $cssFilePath = __DIR__ . '/../src/resources/css/style.css';
+    if (file_exists($cssFilePath)) {
+        header('Content-Type: text/css');
+        readfile($cssFilePath);
+    } else {
+        http_response_code(404);
+        echo '404 Not Found';
+    }
 });
 
 $router->get('/login', function () {
