@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if ($_SESSION["logged_in"] == true) {
+    header("Location: /admin/panel/");
+}
+
 $valid_users = [
     "test" => "1234",
     // Add more authorized users here
