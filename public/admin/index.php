@@ -21,13 +21,13 @@
     <form class="container card bg-primary text-white shadow" method="get" action="index.php" style="width: 40%;"><br>
         <div class="form-group">
             <label for="username-login">Username</label>
-            <input id="username-login" class="form-control" type="text" name="username">
+            <input id="username-login shadow" class="form-control" type="text" name="username">
         </div><br>
         <div class="form-group">
             <label for="pwd-login">Password</label>
-            <input id="pwd-login" class="form-control" type="text" name="password">
+            <input id="pwd-login shadow" class="form-control" type="text" name="password">
         </div><br>
-        <button class="btn btn-light" type="button" style="width: 20%;">Login</button><br>
+        <button class="btn btn-light shadow" type="button" style="width: 20%;">Login</button><br>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
