@@ -34,7 +34,7 @@ $router->get('/templates/{templateName}', function($templateName) {
     header('Content-Type: image/png');
 
     // Read and output the image file
-    readfile('templates/' . $templateName);
+    readfile('/../public/templates/' . $templateName);
 });
 
 // Add more routes and map them to controllers
