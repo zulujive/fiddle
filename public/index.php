@@ -1,5 +1,7 @@
 <?php
 
+use HomeController;
+
 spl_autoload_register(function ($className) {
     require_once __DIR__ . '/../src/controllers/' . $className . '.php';
 });
