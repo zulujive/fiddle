@@ -16,7 +16,7 @@
     <title>Admin</title>
 </head>
 <body>
-    <h1>PxlsFiddle Admin</h1>
+    <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card" method="get" action="index.php" style="width: 40%;">
         <h3 class="text-center">Sign in</h3>
