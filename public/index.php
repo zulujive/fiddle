@@ -45,7 +45,7 @@ $router->get('/templates/(.*)', function ($filename) {
 });
 
 $router->get("/templates/(.*).png", function($filename){
-    echo file_get_contents(__DIR__ . "/../src/storage/templates".$filename.".png");
+    echo file_get_contents(__DIR__ . "/../src/storage/templates/".$filename.".png");
 });
 
 // Add more routes and map them to controllers
