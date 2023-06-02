@@ -13,7 +13,7 @@ switch ($route) {
         $controller->index();
         break;
 
-    case '/css':
+    /*case '/css':
         $cssFilePath = __DIR__ . '/../src/resources/css/style.css';
         if (file_exists($cssFilePath)) {
             header('Content-Type: text/css');
@@ -22,7 +22,7 @@ switch ($route) {
             http_response_code(404);
             echo '404 Not Found';
         }
-        break;
+        break;*/
 
     case '/json':
         $controller = new JsonController();
