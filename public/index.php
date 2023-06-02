@@ -8,9 +8,6 @@ $route = $_GET['route'] ?? '';
 
 switch ($route) {
     case '':
-        $controller = new HomeController();
-        $controller->index();
-        break;
     case '/':
         $controller = new HomeController();
         $controller->index();
