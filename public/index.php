@@ -17,6 +17,11 @@ switch ($route) {
         $controller = new StyleController();
         $controller->index();
         break;
+
+    case '/json':
+        $controller = new JsonController();
+        $controller->index();
+        break;
     
 // ---------------------------
     default:

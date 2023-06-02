@@ -1,8 +1,8 @@
 <?php
-include(dirname(__FILE__).'/../config.php');
+include(dirname(__FILE__).'/../../../config.php');
 
 // Read the JSON data from the file
-$file = (dirname(__FILE__).'/featured.json');
+$file = (dirname(__FILE__).'/data/featured.json');
 $json_data = file_get_contents($file);
 
 // Decode the JSON data into a PHP array
@@ -208,7 +208,7 @@ $featured_3_id = $data['featured_3_id'];
     <div class="templates">
   <?php
 // Read the JSON data from the file
-$file = (dirname(__FILE__).'/articles.json');
+$file = (dirname(__FILE__).'/data/articles.json');
 $json_data = file_get_contents($file);
 
 // Decode the JSON data into a PHP array
