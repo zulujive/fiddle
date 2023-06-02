@@ -13,6 +13,10 @@ $router->get('/', function () {
     $controller->index();
 });
 
+$router->get('/style', function () {
+    require_once __DIR__ .'/../src/resources/css/style.css';
+});
+
 $router->get('/login', function () {
     $controller = new HomeController();
     $controller->panelLogin();
