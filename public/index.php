@@ -31,6 +31,7 @@ $router->get('/login', function () {
 
 $router->get('/templates/(.*)', function ($filename) {
     echo 'Hello world';
+    
     $filePath = __DIR__ . '/../src/storage/templates/' . $filename;
 
     if (is_file($filePath)) {
@@ -41,6 +42,10 @@ $router->get('/templates/(.*)', function ($filename) {
         http_response_code(404);
         echo 'File not found';
     }
+});
+
+$router->get("/templates/(.*).png", function($filename){
+    echo file_get_contents(__DIR__ . "/../src/storage/templates".$filename.".png");
 });
 
 // Add more routes and map them to controllers
