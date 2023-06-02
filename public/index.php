@@ -29,7 +29,7 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
-$router->get('/template/{templateName}', function($templateName) {
+$router->get('/templates/{templateName}', function($templateName) {
     // Set the appropriate content-type header
     header('Content-Type: image/jpeg');
 
