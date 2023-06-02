@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    background-color: #3d204d;
+    color: white;
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+  a {
+    color: white;
+  }
+  .navbar {
+    background-color: #320241;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -webkit-box-align: center;
+    flex-wrap: wrap;
+    padding-top: .5rem;
+    margin-bottom: 1rem;
+    margin-top: -.5rem;
+    padding-bottom: 1rem;
+    margin-left: -1rem;
+    text-align: center;
+    align-items: right;
+    transition: ease .2s;
+    white-space: nowrap;
+  }
+  .navbar>h1 {
+    display: inline-block;
+    text-align: center;
+  }
+  .navbar>.profile {
+    margin-left: max(50vw, 85vmax);
+    position: absolute;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    transition: ease .2s;
+  }
+  .navbar>.profile:hover {
+    color: #9250b6;
+  }
+  .navbar>small {
+    color: lightgrey;
+    display: inline-block;
+  }
+  .article {
+    background-color: #320241;
+    width: min(75%, 1000px);
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    padding-top: .001rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: ease .2s;
+  }
+  .article>p {
+    font-size: medium;
+  }
+  .info {
+    font-size: 1.2rem;
+    background-color: #1e0127;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: .7rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    padding-left: 1rem;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 1.4rem;
+  }
+  .info>p {
+    padding-left: .4rem;
+  }
+  .article:hover {
+    background-color: #3d0e56;
+  }
+  .image {
+    border-radius: 10px;
+    border-width: .25rem;
+    border-color: #0f0013;
+    border-style: solid;
+    display:block;
+    width: min(60vw, 35rem);
+    height: min(60vw, 35rem);
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .footer {
+    color: lightgrey;
+    text-align: center;
+  }
+  @media screen and (max-width: 800px) {
+    .navbar>.profile {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .info {
+      display: none;
+    }
+    .image {
+      margin-bottom: 1.5rem;
+    }
+  }
