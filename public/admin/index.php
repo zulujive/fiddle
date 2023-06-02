@@ -16,16 +16,17 @@
     <title>Admin</title>
 </head>
 <body>
+    <br>
     <form class="container card" method="get" action="index.php" style="width: 40%;">
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control" type="text" name="username">
-        </div>
+        </div><br>
         <div class="form-group">
             <label for="pwd-login">Password</label>
             <input id="pwd-login" class="form-control" type="text" name="password">
         </div><br>
-        <button class="btn btn-primary" type="button" style="width: 20%;">Submit</button>
+        <button class="btn btn-primary" type="button" style="width: 20%;">Submit</button><br>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
