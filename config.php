@@ -10,4 +10,11 @@ $dbUname = 'username';
 // Put the password for the database here:
 $dbPwd = 'password';
 
+// Fiddle uses a simple authentication system for the admin panel.
+// This feature will be overhauled soon, DO NOT use it in production
+$valid_users = [
+    "test" => "1234",
+    // Add more authorized users here
+];
+
 ?>

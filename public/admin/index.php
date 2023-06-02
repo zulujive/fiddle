@@ -5,10 +5,6 @@ if ($_SESSION["logged_in"] == true) {
     header("Location: /admin/panel/");
 }
 
-$valid_users = [
-    "test" => "1234",
-    // Add more authorized users here
-];
 include(dirname(__FILE__).'/../../config.php');
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username_unsanitized = $_POST["username"];
