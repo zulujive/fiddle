@@ -16,7 +16,7 @@
     <title>Admin</title>
 </head>
 <body>
-    <form class="container card" method="get" action="index.php">
+    <form class="container card" method="get" action="index.php" style="width: 40%;">
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control" type="text" name="username">
