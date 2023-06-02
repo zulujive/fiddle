@@ -29,12 +29,17 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
-$router->get('/templates/{templateName}', function($templateName) {
-    // Set the appropriate content-type header
-    header('Content-Type: image/png');
+$router->get('/templates/(.*)', function ($filename) {
+    $filePath = __DIR__ . '/templates/' . $filename;
 
-    // Read and output the image file
-    readfile('/../public/templates/' . $templateName);
+    if (is_file($filePath)) {
+        $mimeType = mime_content_type($filePath);
+        header('Content-Type: ' . $mimeType);
+        readfile($filePath);
+    } else {
+        http_response_code(404);
+        echo 'File not found';
+    }
 });
 
 // Add more routes and map them to controllers
