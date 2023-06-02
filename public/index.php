@@ -12,6 +12,10 @@ switch ($route) {
         $controller = new HomeController();
         $controller->index();
         break;
+    case '/css':
+        $controller = new HomeController();
+        $controller->style();
+        break;
 
     /*case '/css':
         $cssFilePath = __DIR__ . '/../src/resources/css/style.css';
