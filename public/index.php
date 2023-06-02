@@ -176,7 +176,7 @@ $featured_3_id = $data['featured_3_id'];
   <body>
     <div class="navbar">
     	<h1 style="margin-bottom:0;margin-top:.5rem;font-size:2.5rem;"><i style="color:#de2c09;" class="fa-solid fa-meteor"></i> <b>Pxls</b><a class="fire">Fiddle</a></h1>
-    	<small style="margin-top:0;color:var(--text);"><em>stemplace.org/#template=</em></small>
+    	<small style="margin-top:0;color:var(--text);"><em>pxls.space/#template=</em></small>
     </div>
     <h1 class="titleText" style="opacity:0; margin-bottom:0; margin-left:1rem;animation: fadeIn 0.5s ease .4s forwards;text-shadow: 0 0 1px #fff, 0 0 5px #ff8a00;"><i class="fa-solid fa-fire"></i> Trending</h1>
     <div class="featured">
