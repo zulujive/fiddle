@@ -5,6 +5,6 @@ class HomeController
     public function index()
     {
         // Load the view
-        require_once __DIR__ . '/../views/home.php';
+        require_once __DIR__ . '/../resources/views/home.php';
     }
 }

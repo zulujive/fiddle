@@ -18,6 +18,7 @@ switch ($route) {
         $controller->index();
         break;
     
+// ---------------------------
     default:
         // Handle 404 Not Found
         http_response_code(404);
