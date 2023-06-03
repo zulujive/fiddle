@@ -37,6 +37,11 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
+$router->post('/login', function () {
+    $controller = new AdminController();
+    $controller->panelLogin();
+});
+
 $router->get('/admin', function () {
     $controller = new AdminController();
     $controller->panel();
