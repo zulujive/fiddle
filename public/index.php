@@ -50,17 +50,21 @@ $router->get('/style', function () {
         echo '404 Not Found';
     }
 });
-$router->get('/login', function () {
-    $controller = new AdminController();
-    $controller->panelLogin();
-});
 
 // -------------------------------------
 
 // Admin Panel Routes
+$router->get('/login', function () {
+    $controller = new AdminController();
+    $controller->panelLogin();
+});
 $router->post('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
+});
+$router->post('/logout', function () {
+    $controller = new AdminController();
+    $controller->panelLogout();
 });
 $router->get('/admin', function () {
     $controller = new AdminController();
