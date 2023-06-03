@@ -67,3 +67,15 @@ The admin panel is currently under development. It uses Bootstrap for styling an
 
 ### Stack
 Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the planned database as it's easy to use, open source and perfect for an application of this size.
+
+## Roadmap
+- [ ] Docker implementation
+- [x] Routes
+- [x] CSRF Protection
+- [ ] Admin Panel
+- [x] Maintenance Mode
+- [ ] Database connection
+- [ ] Oauth2 w/ Database
+- [ ] First Stable Release
+- [ ] Using database for templates
+- [ ] Adding an upload utility
