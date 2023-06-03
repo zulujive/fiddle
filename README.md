@@ -64,3 +64,6 @@ The src folder contains both backend and frontend scripts. Directories inside of
 
 ### Admin Panel
 The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It'll likely be connected to a SQL database, but no decision has been made regarding what SQL server will be used. As of right now, the login page has yet to be fully implemented with the restructuring that resulted in many paths referenced in the code being unusable.
+
+### Stack
+Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the planned database as it's easy to use, open source and perfect for an application of this size.
