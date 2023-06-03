@@ -1,4 +1,16 @@
 <?php
+/*
+######################################################################
+#                                                                    #
+#                         --PHP Routes--                             #
+# This file defines how traffic is routed based on its path. Best    #
+# practice is to use controllers (as defined in the controllers      #
+# folder). If you're confused, consult the documentation for Bramus  #
+# router on GitHub.                                                  #
+#                                                                    #
+######################################################################
+*/
+
 require __DIR__ . '/../vendor/autoload.php';
 include(dirname(__FILE__).'/../config.php');
 
