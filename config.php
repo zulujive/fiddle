@@ -17,4 +17,10 @@ $valid_users = [
     // Add more authorized users here
 ];
 
+// Enable or disable maintenance mode
+$maintenanceMode = false;
+
+// Maintenance mode message
+$maintenanceMessage = "The website is currently undergoing maintenance. We'll be back soon!";
+
 ?>

@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
+include(dirname(__FILE__).'/../config.php');
 
 // Make sure to put classes here:
 require_once __DIR__ .'/../src/controllers/HomeController.php';
@@ -7,6 +8,12 @@ require_once __DIR__ .'/../src/controllers/HomeController.php';
 use Bramus\Router\Router;
 
 $router = new Router();
+
+if ($maintenanceMode) {
+    // Redirect all traffic to the maintenance page
+    echo $maintenanceMessage;
+    exit();
+}
 
 $router->get('/', function () {
     $controller = new HomeController();
