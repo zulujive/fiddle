@@ -207,7 +207,7 @@ $featured_3_id = $data['featured_3_id'];
     <h2 class="titleText" style="opacity: 0; margin-left:1rem; animation: fadeIn 0.5s ease .9s forwards;"><i class="fa-solid fa-brush"></i> Templates</h2>
     <div class="templates">
   <?php
-  
+    jsonUtils::generateHTML()
   /*
 // Read the JSON data from the file
 $file = (dirname(__FILE__).'/../../storage/data/articles.json');
