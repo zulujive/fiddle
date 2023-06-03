@@ -1,5 +1,6 @@
 <?php
 include(dirname(__FILE__).'/../../../config.php');
+require_once '/../methods/jsonUtils.php';
 
 // Read the JSON data from the file
 $file = (dirname(__FILE__).'/../../storage/data/featured.json');
