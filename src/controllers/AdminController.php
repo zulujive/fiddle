@@ -1,6 +1,6 @@
 <?php
 
-class HomeController
+class AdminController
 {
     public function panel()
     {
