@@ -208,7 +208,12 @@ $featured_3_id = $data['featured_3_id'];
     <h2 class="titleText" style="opacity: 0; margin-left:1rem; animation: fadeIn 0.5s ease .9s forwards;"><i class="fa-solid fa-brush"></i> Templates</h2>
     <div class="templates">
   <?php
-    jsonUtils::generateHTML()
+    $articleHTML = jsonUtils::generateHTML();
+
+    // Iterate over the $articleHTML array and output the HTML
+    foreach ($articleHTML as $html) {
+        echo $html;
+    }
   /*
 // Read the JSON data from the file
 $file = (dirname(__FILE__).'/../../storage/data/articles.json');
