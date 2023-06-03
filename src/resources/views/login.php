@@ -4,6 +4,8 @@ session_start();
 if ($_SESSION["logged_in"] == true) {
     header("Location: /admin/panel/");
     exit();
+} else {
+    $_SESSION["logged_in"] == false;
 }
 
 include(dirname(__FILE__).'/../../config.php');
