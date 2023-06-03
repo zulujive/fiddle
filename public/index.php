@@ -16,11 +16,12 @@ if ($maintenanceMode) {
     exit();
 }
 
+
+// Resource Routes
 $router->get('/', function () {
     $controller = new HomeController();
     $controller->index();
 });
-
 $router->get('/style', function () {
     $cssFilePath = __DIR__ . '/../src/resources/css/style.css';
     if (file_exists($cssFilePath)) {
@@ -31,22 +32,24 @@ $router->get('/style', function () {
         echo '404 Not Found';
     }
 });
-
 $router->get('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
 
+
+// Admin Panel Routes
 $router->post('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
-
 $router->get('/admin', function () {
     $controller = new AdminController();
     $controller->panel();
 });
 
+
+// Storage Routes
 $router->get("/templates/(.*)", function($filename){
     //echo 'You asked for ' . $filename;
     $templateImage = file_get_contents(__DIR__ . "/../src/storage/templates/".$filename."");
