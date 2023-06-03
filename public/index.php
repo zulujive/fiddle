@@ -3,10 +3,10 @@
 ######################################################################
 #                                                                    #
 #                         --PHP Routes--                             #
-# This file defines how traffic is routed based on its path. Best    #
-# practice is to use controllers (as defined in the controllers      #
-# folder). If you're confused, consult the documentation for Bramus  #
-# router on GitHub.                                                  #
+#  This file defines how traffic is routed based on its path. Best   #
+#  practice is to use controllers (as defined in the controllers     #
+#  folder). If you're confused, consult the documentation for Bramus #
+#  router on GitHub.                                                 #
 #                                                                    #
 ######################################################################
 */
@@ -27,7 +27,13 @@ if ($maintenanceMode) {
     echo $maintenanceMessage;
     exit();
 }
-
+/*
+-------------------------------------
+|                                   |
+|         Start Routes Here         |
+|                                   |
+-------------------------------------
+*/
 
 // Resource Routes
 $router->get('/', function () {
@@ -49,6 +55,7 @@ $router->get('/login', function () {
     $controller->panelLogin();
 });
 
+// -------------------------------------
 
 // Admin Panel Routes
 $router->post('/login', function () {
@@ -60,6 +67,7 @@ $router->get('/admin', function () {
     $controller->panel();
 });
 
+// -------------------------------------
 
 // Storage Routes
 $router->get("/templates/(.*)", function($filename){
