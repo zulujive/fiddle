@@ -5,10 +5,12 @@ if ($_SESSION["logged_in"] == true) {
     header("Location: /admin/panel/");
     exit();
 } else {
-    $_SESSION["logged_in"] == false;
+    $_SESSION["logged_in"] = false;
 }
 
-include(dirname(__FILE__).'/../../config.php');
+$error_message = null;
+
+include(dirname(__FILE__).'/../../../config.php');
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username_unsanitized = $_POST["username"];
     $password_unsanitized = $_POST["password"];
