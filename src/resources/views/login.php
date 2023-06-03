@@ -6,7 +6,7 @@ if (!isset($_SESSION['logged_in'])) {
 }
 
 if ($_SESSION["logged_in"] == true) {
-    header("Location: /admin/panel/");
+    header("Location: /admin");
     exit();
 }
 
@@ -29,7 +29,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       	//fwrite($log_login, $username."     ");
       	//fwrite($log_login, $login_timestamp."\n");
       	//fclose($log_login);
-        header("Location: /admin/panel/");
+        header("Location: /admin");
         session_regenerate_id(true);
         exit();
     } else {
@@ -60,7 +60,7 @@ if (!isset($_SESSION['csrf_token'])) {
 <body>
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
-    <form class="container card bg-primary text-white shadow" method="post" action="/admin/index.php" style="width: 40%;"><br>
+    <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;"><br>
         <?php echo '<p>' . $error_message . '</p>'; ?>
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group">

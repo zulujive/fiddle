@@ -4,6 +4,7 @@ include(dirname(__FILE__).'/../config.php');
 
 // Make sure to put classes here:
 require_once __DIR__ .'/../src/controllers/HomeController.php';
+require_once __DIR__ .'/../src/controllers/AdminController.php';
 
 use Bramus\Router\Router;
 
@@ -32,8 +33,13 @@ $router->get('/style', function () {
 });
 
 $router->get('/login', function () {
-    $controller = new HomeController();
+    $controller = new AdminController();
     $controller->panelLogin();
+});
+
+$router->get('/admin', function () {
+    $controller = new AdminController();
+    $controller->panel();
 });
 
 $router->get("/templates/(.*)", function($filename){
