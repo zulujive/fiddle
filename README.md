@@ -72,10 +72,11 @@ Of course, what application would be complete without a tech stack? Ultimately, 
 - [ ] Docker implementation
 - [x] Routes
 - [x] CSRF Protection
-- [ ] Admin Panel
+- [ ] Admin Panel (in progress)
 - [x] Maintenance Mode
-- [ ] Database connection
+- [ ] Database connection (in progress)
 - [ ] Oauth2 w/ Database
 - [ ] First Stable Release
 - [ ] Using database for templates
 - [ ] Adding an upload utility
+- [ ] Detangling code (in progress)
