@@ -60,7 +60,7 @@ if (!isset($_SESSION['csrf_token'])) {
 </head>
 <body>
     <br>
-    <h1 class="text-center">PxlsFiddle Admin</h1>
+    <h1 class="text-center">PxlsFiddle Admin <span class="badge bg-secondary">beta</span></h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;">
         <?php echo '<p style="margin-top:1rem;">' . $error_message . '</p>'; ?>
