@@ -11,4 +11,11 @@ class Csrf
         }
         return $csrfToken;
     }
+    public static function verifyToken()
+    {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            header("Location: /login");
+            exit();
+        }
+    }
 }
