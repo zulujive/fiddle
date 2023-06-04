@@ -40,7 +40,7 @@ if ($_SESSION["logged_in"] !== true) {
     </p>
     <div class="card text-center">
         <div class="card-header">
-            Featured
+            Featured News and Updates
         </div>
         <div class="card-body">
             <h5 class="card-title">Admin Panel Coming Soon!</h5>
