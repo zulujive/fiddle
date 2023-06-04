@@ -65,17 +65,17 @@ if (!isset($_SESSION['csrf_token'])) {
     </h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;">
-        <?php echo '<p style="margin-top:1rem;">' . $error_message . '</p>'; ?>
+        <?php echo '<p>' . $error_message . '</p>'; ?>
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control shadow" type="text" name="username" required>
         </div><br>
-        <div class="form-group">
+        <div class="form-group mt-1">
             <label for="pwd-login">Password</label>
             <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
         </div><br>
-        <button class="btn btn-light shadow" type="submit" value="submit" style="width: 20%;">Login</button><br>
+        <button class="btn btn-light shadow mt-1" type="submit" value="submit" style="width: 20%;">Login</button><br>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
