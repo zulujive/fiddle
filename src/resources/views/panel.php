@@ -32,7 +32,7 @@ if ($_SESSION["logged_in"] !== true) {
 </head>
 <body>
     <div class="d-flex justify-content-between align-items-center">
-        <h1>FiddleAdmin <span class="badge bg-secondary">beta</span></h1>
+        <h1>FiddleAdmin <span class="badge bg-primary">beta</span></h1>
         <form action="/logout" method="POST">
             <button class="btn btn-primary">Logout</button>
         </form>
