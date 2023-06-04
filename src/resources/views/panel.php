@@ -31,10 +31,12 @@ if ($_SESSION["logged_in"] !== true) {
     </style>
 </head>
 <body>
-    <h1>FiddleAdmin <span class="badge bg-secondary">beta</span></h1>
-    <form action="/logout" method="POST" style="display:inline;">
-        <button class="btn btn-primary" type="submit" style="display:inline;">Logout</button>
-    </form>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>FiddleAdmin <span class="badge bg-secondary">beta</span></h1>
+        <form action="/logout" method="POST">
+            <button class="btn btn-primary">Logout</button>
+        </form>
+    </div>
     <hr>
     <p>
         Welcome to FiddleAdmin! This page is still currently under development.<br>
