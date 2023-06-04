@@ -63,10 +63,37 @@ The src folder contains both backend and frontend scripts. Directories inside of
 - Web is currently an unused directory and its contents does not impact application funcitonality (unless there is a fatal syntax error). In other words, don't mess with it, it's not important but will be in the future.
 
 ### Admin Panel
-The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It'll likely be connected to a SQL database, but no decision has been made regarding what SQL server will be used. As of right now, the login page has yet to be fully implemented with the restructuring that resulted in many paths referenced in the code being unusable.
+The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It'll likely be connected to a SQL database, but no decision has been made regarding what SQL server will be used. The login page is now fully implemented with the new routing system and you can login using the test credentials:
+```
+test
+```
+```
+1234
+```
 
 ### Stack
 Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the planned database as it's easy to use, open source and perfect for an application of this size.
+
+### Security
+A lot of work has been put into refining the security of the application. As mentioned before, CSRF protection is built-in and can be easily implemented into any form by using the Csrf class and methods. Additionally, session cookies are set to be good for one hour and have a strict cross site policy.
+
+If you'd like to implement CSRF into a form as a developer, simply begin a session in a PHP page within the "views" folder, then add the class with:
+```
+require_once __DIR__ . '/../methods/Csrf.php';
+```
+Then, generate/fetch a new token:
+```
+$csrfToken = Csrf::generateToken();
+```
+Implement it into your form with this:
+```
+<input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
+```
+Finally, in whatever script you have that received the POST request, make sure you've required the class and with the correct directory, start a session, and use this class on the first line of code that received the POST request:
+```
+Csrf::verifyToken();
+```
+Doing those simple steps will prevent abuse of forms and significantly reduce the likelihood of unauthorized access to your application's private features. Soon, CSRF validation will be required for all incoming POST requests to ensure that every form is protected.
 
 ## Roadmap
 - [ ] Docker implementation
