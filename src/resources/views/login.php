@@ -18,6 +18,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password_unsanitized = $_POST["password"];
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+
     if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
         if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
             // CSRF token mismatch, handle the error or abort the request
@@ -58,6 +59,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <title>Admin</title>
 </head>
 <body>
+    <br>
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;"><br>
