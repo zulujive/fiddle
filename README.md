@@ -25,7 +25,7 @@ Though it is in development, the server can be safely deployed to production as 
 - PHP Composer
 
 ### Instructions
-In production, use NGINX or Apache to serve PHP using FastCGI or FPM with "public" being the root directory.
+In production, use NGINX or Apache to serve PHP using FastCGI or FPM and only serving index.php. Do not serve the entire public directory as it will result in unintended 404 errors.
 
 For development instances, you can setup a development server with PHP by navigating into the "public" directory and typing the command (assuming you have PHP installed):
 ```
@@ -52,7 +52,7 @@ Fiddle uses the Bramus router library to handle routing various requests. In ter
 The decision to use a router instead of a more conventional approach because of the advantages in scalability and organization of source code. Keeping backend scripts from being directly accessible makes for more robust access control and rate limiting. In addition, using routes allows for middleware support in the near future.
 
 ### Application Structure
-The application is structured into two main directories. The public directory is intended to be used for content that is directly accessible without the use of routes, though it is recommended that it's used sparingly as access control can become problematic in non-route pages.
+The application is structured into two main directories. The public directory was originally intended to be accessible without routes, but is there to be a much more simple way of routing pages since it's in the same directory as index.php. Only use it for testing, it's not a place for clutter.
 
 The src folder contains both backend and frontend scripts. Directories inside of it function as follows:
 - Controllers handle incoming requests that are assigned to them in index.php
