@@ -32,8 +32,8 @@ if ($_SESSION["logged_in"] !== true) {
 </head>
 <body>
     <h1>FiddleAdmin <span class="badge bg-secondary">beta</span></h1>
-    <form action="/logout" method="POST" style="display:inline-block;">
-        <button class="btn btn-primary" type="submit">Logout</button>
+    <form action="/logout" method="POST" style="display:inline;">
+        <button class="btn btn-primary" type="submit" style="display:inline;">Logout</button>
     </form>
     <hr>
     <p>
