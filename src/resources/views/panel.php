@@ -62,6 +62,20 @@ if ($_SESSION["logged_in"] !== true) {
             6/4/2023
         </div>
     </div><br>
+    <div class="card text-center shadow">
+        <div class="card-body">
+            <h5 class="card-title">Routes are implemented!</h5>
+            <p class="card-text">
+                Fiddle now uses routes to handle traffic instead 
+                of relying on a traditional web server approach. 
+                This means better scalability, modularity and 
+                organization in the long run!
+            </p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            6/2/2023
+        </div>
+    </div><br>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
