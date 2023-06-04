@@ -1,27 +1,6 @@
 <?php
 include(dirname(__FILE__).'/../../../config.php');
 require_once __DIR__ . '/../methods/jsonUtils.php';
-
-// Read the JSON data from the file
-$file = (dirname(__FILE__).'/../../storage/data/featured.json');
-$json_data = file_get_contents($file);
-
-// Decode the JSON data into a PHP array
-$data = json_decode($json_data, true);
-
-// Set the variables in the script
-$featured_1 = $data['featured_1'];
-$featured_1_img = $data['featured_1_img'];
-$featured_1_url = $data['featured_1_url'];
-$featured_1_id = $data['featured_1_id'];
-$featured_2 = $data['featured_2'];
-$featured_2_img = $data['featured_2_img'];
-$featured_2_url = $data['featured_2_url'];
-$featured_2_id = $data['featured_2_id'];
-$featured_3 = $data['featured_3'];
-$featured_3_img = $data['featured_3_img'];
-$featured_3_url = $data['featured_3_url'];
-$featured_3_id = $data['featured_3_id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -189,24 +168,6 @@ $featured_3_id = $data['featured_3_id'];
         $featuredHTML = jsonUtils::generateFeatured();
         echo $featuredHTML;        
       ?>
-      <!-- <article class="featured_box">
-        <h1 class="fire2"><\?php echo $featured_1 ?></h1>
-        <img style="image-rendering: pixelated;" src="<\?php echo $featured_1_img ?>" height="150rem">
-        <h3><i class="fa-solid fa-palette"></i> <a href="<\?php echo $featured_1_url ?>" target="_blank">Template URL</a> (ID: <\?php echo $featured_1_id ?>)</h3>
-        <h3><i class="fa-solid fa-image"></i> <a href="<\?php echo $featured_1_img ?>" target="_blank">Image URL</a></h3>
-      </article>
-      <article class="featured_box">
-        <h1 class="fire2"><\?php echo $featured_2 ?></h1>
-        <img style="image-rendering: pixelated;" src="<\?php echo $featured_2_img ?>" height="150rem">
-        <h3><i class="fa-solid fa-palette"></i> <a href="<\?php echo $featured_2_url ?>" target="_blank">Template URL</a> (ID: <\?php echo $featured_2_id ?>)</h3>
-        <h3><i class="fa-solid fa-image"></i> <a href="<\?php echo $featured_2_img ?>" target="_blank">Image URL</a></h3>
-      </article>
-      <article class="featured_box">
-        <h1 class="fire2"><\?php echo $featured_3 ?></h1>
-        <img style="image-rendering: pixelated;" src="<\?php echo $featured_3_img ?>" height="150rem">
-        <h3><i class="fa-solid fa-palette"></i> <a href="<\?php echo $featured_3_url ?>" target="_blank">Template URL</a> (ID: <\?php echo $featured_3_id ?>)</h3>
-        <h3><i class="fa-solid fa-image"></i> <a href="<\?php echo $featured_3_img ?>" target="_blank">Image URL</a></h3>
-      </article> -->
     </div>
     <hr style="opacity: 0; animation: fadeIn 0.5s ease .9s forwards; border-color: white;">
     <h2 class="titleText" style="opacity: 0; margin-left:1rem; animation: fadeIn 0.5s ease .9s forwards;"><i class="fa-solid fa-brush"></i> Templates</h2>
