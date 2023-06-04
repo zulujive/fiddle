@@ -89,7 +89,7 @@ Implement it into your form with this:
 ```
 <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
 ```
-Finally, in whatever script you have that received the POST request, make sure you've required the class and with the correct directory, start a session, and use this class on the first line of code that received the POST request:
+Finally, in whatever script you have that received the POST request, make sure you've required the class and with the correct directory, start a session, and use this class on the first line of code that receives the POST request:
 ```
 Csrf::verifyToken();
 ```
