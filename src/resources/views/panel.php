@@ -32,6 +32,9 @@ if ($_SESSION["logged_in"] !== true) {
 </head>
 <body>
     <h1>FiddleAdmin <span class="badge bg-secondary">beta</span></h1>
+    <form action="/logout" method="POST" style="display:inline-block;">
+        <button class="btn btn-primary" type="submit">Logout</button>
+    </form>
     <hr>
     <p>
         Welcome to FiddleAdmin! This page is still currently under development.<br>
@@ -55,9 +58,6 @@ if ($_SESSION["logged_in"] !== true) {
             6/4/2023
         </div>
     </div><br>
-    <form action="/logout" method="POST">
-        <button class="btn btn-primary" type="submit">Logout</button>
-    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
