@@ -63,7 +63,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <h1 class="text-center">PxlsFiddle Admin</h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;">
-        <?php echo '<br><p>' . $error_message . '</p>'; ?>
+        <?php echo '<p style="margin-top:1rem;">' . $error_message . '</p>'; ?>
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group">
             <label for="username-login">Username</label>
