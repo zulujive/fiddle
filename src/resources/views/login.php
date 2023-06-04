@@ -70,12 +70,12 @@ if (!isset($_SESSION['csrf_token'])) {
         <div class="form-group">
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control shadow" type="text" name="username" required>
-        </div><br>
+        </div>
         <div class="form-group mt-1">
             <label for="pwd-login">Password</label>
             <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
-        </div><br>
-        <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Login</button><br>
+        </div>
+        <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Login</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
