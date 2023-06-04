@@ -46,7 +46,7 @@ if ($_SESSION["logged_in"] !== true) {
         managed by a PocketBase backend in a PB&J stack.
     </p>
     <div class="card text-center">
-        <div class="card-header">
+        <div class="card-header bg-primary text-white shadow">
             Featured News and Updates
         </div>
         <div class="card-body">
