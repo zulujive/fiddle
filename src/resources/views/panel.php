@@ -38,6 +38,23 @@ if ($_SESSION["logged_in"] !== true) {
         FiddleAdmin is an admin panel for Fiddle built with Bootstrap and is 
         managed by a PocketBase backend in a PB&J stack.
     </p>
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Admin Panel Coming Soon!</h5>
+            <p class="card-text">
+                It may not look exciting now, but we promise that we'll have 
+                a brand new beautiful admin panel to go along with fiddle. 
+                You'll be able to publish templates, manage users and 
+                update configuration.
+            </p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            6/4/2023
+        </div>
+    </div>
     <form action="/logout" method="POST">
         <button class="btn btn-primary" type="submit">Logout</button>
     </form>
