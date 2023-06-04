@@ -79,4 +79,4 @@ Of course, what application would be complete without a tech stack? Ultimately, 
 - [ ] First Stable Release
 - [ ] Using database for templates
 - [ ] Adding an upload utility
-- [ ] Detangling code (in progress)
+- [ ] Detangling code (near completion)
