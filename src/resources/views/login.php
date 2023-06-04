@@ -71,7 +71,7 @@ if (!isset($_SESSION['csrf_token'])) {
             <label for="username-login">Username</label>
             <input id="username-login" class="form-control shadow" type="text" name="username" required>
         </div>
-        <div class="form-group mt-1">
+        <div class="form-group mt-3">
             <label for="pwd-login">Password</label>
             <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
         </div>
