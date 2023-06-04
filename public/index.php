@@ -91,14 +91,6 @@ $router->set404(function () {
     $controller = new ErrorController();
     $controller->notFound();
 });
-$router->set500(function () {
-    http_response_code(500);
-    echo '500 - Internal Server Error';
-});
-$router->set503(function () {
-    http_response_code(503);
-    echo '503 - Service Unavailable';
-});
 
 // Add more routes and map them to controllers
 
