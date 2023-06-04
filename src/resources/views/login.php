@@ -65,7 +65,14 @@ if (!isset($_SESSION['csrf_token'])) {
     </h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;">
-        <?php echo '<p>' . $error_message . '</p>'; ?>
+        <?php 
+            if ($error_message !== null) {
+                $printed_error = '<div class="alert alert-warning" role="alert">';
+                $printed_error .= $error_message;
+                $printed_error .= '</div>';
+                echo $printed_error;
+            }
+        ?>
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group">
             <label for="username-login">Username</label>
