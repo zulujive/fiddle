@@ -60,7 +60,7 @@ if (!isset($_SESSION['csrf_token'])) {
 </head>
 <body>
     <br>
-    <h1 class="d-flex align-items-center text-center">
+    <h1 class="d-flex align-items-center justify-content-center">
             FiddleAdmin <span class="badge bg-secondary fs-7 ms-2">beta</span>
     </h1>
     <br>
