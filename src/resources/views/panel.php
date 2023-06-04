@@ -31,7 +31,6 @@ if ($_SESSION["logged_in"] !== true) {
     </style>
 </head>
 <body>
-    <br>
     <h1>FiddleAdmin</h1>
     <hr>
     <p>
