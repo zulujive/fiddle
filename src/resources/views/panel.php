@@ -54,7 +54,7 @@ if ($_SESSION["logged_in"] !== true) {
         <div class="card-footer text-body-secondary">
             6/4/2023
         </div>
-    </div>
+    </div><br>
     <form action="/logout" method="POST">
         <button class="btn btn-primary" type="submit">Logout</button>
     </form>
