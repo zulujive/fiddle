@@ -82,6 +82,14 @@ $router->get("/templates/(.*)", function($filename){
 
 });
 
+// -------------------------------------
+
+// 404 Route
+$router->set404(function () {
+    http_response_code(404);
+    echo '404 - Page Not Found';
+});
+
 // Add more routes and map them to controllers
 
 $router->run();
