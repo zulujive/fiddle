@@ -67,7 +67,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;">
         <?php 
             if ($error_message !== null) {
-                $printed_error = '<div class="alert alert-warning mt-3" role="alert">';
+                $printed_error = '<div class="alert alert-warning mt-3 mb-0" role="alert">';
                 $printed_error .= $error_message;
                 $printed_error .= '</div>';
                 echo $printed_error;
