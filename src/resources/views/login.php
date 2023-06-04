@@ -1,4 +1,8 @@
 <?php
+session_set_cookie_params([
+    'SameSite' => 'Strict',
+]);
+
 session_start();
 
 require_once __DIR__ . '/../methods/Csrf.php';
@@ -23,11 +27,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
     if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
         Csrf::verifyToken();
-        /*
-        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-            // CSRF token mismatch, handle the error or abort the request
-            die("CSRF token validation failed.");
-        }*/
         $_SESSION["logged_in"] = true;
         header("Location: /admin");
         session_regenerate_id(true);
@@ -36,6 +35,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $error_message = "Invalid username and/or password";
     }
 }
+
 $csrfToken = Csrf::generateToken();
 
 ?>
