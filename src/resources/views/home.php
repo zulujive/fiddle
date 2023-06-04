@@ -2,6 +2,7 @@
 include(dirname(__FILE__).'/../../../config.php');
 require_once __DIR__ . '/../methods/jsonUtils.php';
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -172,14 +173,14 @@ require_once __DIR__ . '/../methods/jsonUtils.php';
     <hr style="opacity: 0; animation: fadeIn 0.5s ease .9s forwards; border-color: white;">
     <h2 class="titleText" style="opacity: 0; margin-left:1rem; animation: fadeIn 0.5s ease .9s forwards;"><i class="fa-solid fa-brush"></i> Templates</h2>
     <div class="templates">
-  <?php
-    $articleHTML = jsonUtils::generateHTML();
+    <?php
+      $articleHTML = jsonUtils::generateHTML();
 
-    // Iterate over the $articleHTML array and output the HTML
-    foreach ($articleHTML as $html) {
-        echo $html;
-    }
-?>
+      // Iterate over the $articleHTML array and output the HTML
+      foreach ($articleHTML as $html) {
+          echo $html;
+      }
+    ?>
 
     </div>
     <div class="footer">
