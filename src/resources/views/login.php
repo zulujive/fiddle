@@ -61,7 +61,7 @@ if (!isset($_SESSION['csrf_token'])) {
 <body>
     <br>
     <h1 class="d-flex align-items-center justify-content-center">
-            FiddleAdmin <span class="badge bg-secondary fs-7 ms-2 shadow">beta</span>
+            FiddleAdmin <span class="badge bg-secondary fs-7 ms-2 shadow-sm">beta</span>
     </h1>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/login" style="width: 40%;">
