@@ -17,6 +17,7 @@ include(dirname(__FILE__).'/../config.php');
 // Make sure to put classes here:
 require_once __DIR__ .'/../src/controllers/HomeController.php';
 require_once __DIR__ .'/../src/controllers/AdminController.php';
+require_once __DIR__ .'/../src/controllers/ErrorController.php';
 
 use Bramus\Router\Router;
 
@@ -87,7 +88,8 @@ $router->get("/templates/(.*)", function($filename){
 // 404 Route
 $router->set404(function () {
     http_response_code(404);
-    echo '404 - Page Not Found';
+    $controller = new ErrorController();
+    $controller->notFound();
 });
 
 // Add more routes and map them to controllers
