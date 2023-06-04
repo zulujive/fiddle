@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/../methods/Csrf.php';
+
 if (!isset($_SESSION['logged_in'])) {
     $_SESSION['logged_in'] = false;
 }
@@ -23,7 +25,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
             // CSRF token mismatch, handle the error or abort the request
             die("CSRF token validation failed.");
-          }
+        }
         $_SESSION["logged_in"] = true;
         //$log_login = fopen("private/auth.log", "a") or die("Unable to open file!");
       	//$login_timestamp = date("Y-m-d H:i:s");
@@ -37,13 +39,15 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $error_message = "Invalid username and/or password";
     }
 }
-
+$csrfToken = Csrf::generateToken();
+/*
 if (!isset($_SESSION['csrf_token'])) {
     $csrfToken = bin2hex(random_bytes(32));
     $_SESSION['csrf_token'] = $csrfToken;
 } else {
     $csrfToken = $_SESSION['csrf_token'];
 }
+*/
 
 ?>
 
