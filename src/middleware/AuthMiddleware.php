@@ -11,11 +11,11 @@
 ######################################################################
 */
 
-$bootstrapStyleHash = 'sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM';
+$bootstrapStyleHash = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
 $bootstrapScriptHash = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com';
 
-$cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src '$bootstrapStyleHash'; img-src 'self';";
+$cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src '$bootstrapStyleHash' 'self' 'unsafe-inline' '$cloudflareCdn'; img-src 'self';";
 
 header("Content-Security-Policy: " . $cspHeader);
 
