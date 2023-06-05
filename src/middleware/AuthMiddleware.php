@@ -11,7 +11,7 @@
 ######################################################################
 */
 
-$bootstrapStyleHash = 'sha256-Ouvbu/f7aL3Jh8SEcFqeja+uD9vth575jdoeGeJiQl8=';
+$bootstrapStyleHash = 'sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo=';
 $bootstrapScriptHash = 'sha256-qlPVgvl+tZTCpcxYJFdHB/m6mDe84wRr+l81VoYPTgQ=';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com';
 
