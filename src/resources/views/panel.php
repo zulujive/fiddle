@@ -37,7 +37,7 @@
             <a class="nav-link" href="/admin/users">Users</a>
             </li>
         </ul>
-        <form class="d-flex" action="POST">
+        <form class="d-flex" action="/logout" method="POST">
             <button class="btn btn-primary" type="submit">Logout</button>
         </form>
         </div>
