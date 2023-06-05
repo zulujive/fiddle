@@ -2,9 +2,7 @@
 
 class AdminController
 {
-    public function panel()
-    {
-        // Load the view
+    public function panel() {
         require_once __DIR__ . '/../resources/views/panel.php';
     }
     public function panelLogin() {
