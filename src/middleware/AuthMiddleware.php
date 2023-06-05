@@ -17,7 +17,7 @@ $cloudflareCdn = 'https://cdnjs.cloudflare.com';
 
 $cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src 'cdn.jsdelivr.net' 'self' 'unsafe-inline' '$cloudflareCdn'; img-src 'self';";
 
-header("Content-Security-Policy: " . $cspHeader);
+//header("Content-Security-Policy: " . $cspHeader);
 
 $router->before('GET|POST', '/admin', function() {
     if ($_SESSION['logged_in'] !== true) {
