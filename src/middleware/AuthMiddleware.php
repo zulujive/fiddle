@@ -11,7 +11,7 @@
 ######################################################################
 */
 
-$cspHeader = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self';";
+$cspHeader = "default-src 'self'; script-src 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz' 'unsafe-inline'; style-src 'sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM' 'unsafe-inline'; img-src 'self';";
 
 header("Content-Security-Policy: " . $cspHeader);
 
