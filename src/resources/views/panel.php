@@ -24,15 +24,35 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Admin</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Templates</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Users</a>
+            </li>
+        </ul>
+        <form class="d-flex">
+            <button class="btn btn-primary">Logout</button>
+        </form>
+        </div>
+    </div>
+    </nav>
     <div class="d-flex justify-content-between align-items-center">
         <h1 class="d-flex align-items-center">
             FiddleAdmin <span class="badge bg-primary fs-7 ms-2">beta</span>
         </h1>
-        <form action="/logout" method="POST">
-            <button class="btn btn-primary">Logout</button>
-        </form>
     </div>
-    <hr>
     <p>
         Welcome to FiddleAdmin! This page is still currently under development.<br>
         FiddleAdmin is an admin panel for Fiddle built with Bootstrap and is 
