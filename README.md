@@ -108,3 +108,12 @@ Doing those simple steps will prevent abuse of forms and significantly reduce th
 - [ ] Adding an upload utility
 - [ ] Detangling code (near completion)
 - [ ] Implementing Middleware (in progress)
+
+## Possible Features
+- [ ] YubiKey OTP for Admin Panel
+- [ ] OAuth2 Support (very likely)
+- [ ] Discord Webhooks Support
+- [ ] Integration with Pxls Charity
+- [ ] Client-side rendering
+- [ ] User Profile Pages
+- [ ] 2FA Support
