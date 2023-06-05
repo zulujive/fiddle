@@ -14,7 +14,7 @@
 $bootstrapCdn = 'https://cdn.jsdelivr.net';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com';
 
-$cspHeader = "default-src 'self'; script-src 'self' $bootstrapCdn; style-src 'self' $bootstrapCdn; img-src 'self';";
+$cspHeader = "default-src 'self'; script-src 'self' $bootstrapCdn; style-src 'self' $bootstrapCdn 'unsafe-inline'; img-src 'self';";
 
 header("Content-Security-Policy: " . $cspHeader);
 
