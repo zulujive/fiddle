@@ -95,6 +95,11 @@ Csrf::verifyToken();
 ```
 Doing those simple steps will prevent abuse of forms and significantly reduce the likelihood of unauthorized access to your application's private features. Soon, CSRF validation will be required for all incoming POST requests to ensure that every form is protected.
 
+#### Content Security Policy
+A Content Security Policy (CSP) is also implemented and prevents any stylesheets/scripts from being run on the browser that aren't explicity mentioned within it. If you decide to use external stylesheets/scripts, you'll have to edit the CSP before they'll work. Never use inline scripts as these are disabled. Instead, use an external JS file within the site or hash a script coming from an external domain (this site can help with hashing for you: https://www.srihash.org/). The inconvenience this causes is far outweighed by the security benefits. Having a CSP significantly reduces the risk of XSS attacks and malicious changes to client-side functionality.
+
+Do keep in mind that the CSP is very touchy and difficult to work with. Always thoroughly test before deploying to production.
+
 ## Roadmap
 - [ ] Docker implementation
 - [x] Routes
