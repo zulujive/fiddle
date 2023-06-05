@@ -13,7 +13,6 @@
 // ---------------------------------
 // |   Content Security Policy     |
 // ---------------------------------
-include(dirname(__FILE__).'/../../config.php');
 
 $bootstrapStyleHash = 'cdn.jsdelivr.net';
 $bootstrapScriptHash = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
