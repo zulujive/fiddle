@@ -85,6 +85,9 @@ $router->get('/admin', function () {
     $controller = new AdminController();
     $controller->panel();
 });
+$router->get('/admin/e', function () {
+    echo "Hello World!";
+});
 
 // -------------------------------------
 
