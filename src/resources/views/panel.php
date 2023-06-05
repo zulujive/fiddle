@@ -19,7 +19,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg mb-3 bg-dark border-bottom border-bottom-dark">
+    <nav class="navbar navbar-expand-lg mb-3 bg-body-tertiary border-bottom border-bottom-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Admin</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
