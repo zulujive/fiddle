@@ -42,7 +42,7 @@ $csrfToken = Csrf::generateToken();
 
     <title>Admin</title>
 </head>
-<body>
+<body class="dark">
     <br>
     <h1 class="d-flex align-items-center justify-content-center">
             FiddleAdmin <span class="badge bg-secondary fs-7 ms-2 shadow-sm">beta</span>
