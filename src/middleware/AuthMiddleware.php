@@ -13,9 +13,9 @@
 
 $bootstrapStyleHash = 'cdn.jsdelivr.net';
 $bootstrapScriptHash = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
-$cloudflareCdn = 'https://cdnjs.cloudflare.com';
+$cloudflareCdn = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
 
-$cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css 'self' 'unsafe-inline' '$cloudflareCdn'; img-src 'self';";
+$cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css 'self' 'unsafe-inline' $cloudflareCdn; img-src 'self';";
 
 header("Content-Security-Policy: " . $cspHeader);
 
