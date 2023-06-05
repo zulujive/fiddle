@@ -32,7 +32,7 @@ $csrfToken = Csrf::generateToken();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +42,7 @@ $csrfToken = Csrf::generateToken();
 
     <title>Admin</title>
 </head>
-<body class="dark">
+<body>
     <br>
     <h1 class="d-flex align-items-center justify-content-center">
             FiddleAdmin <span class="badge bg-secondary fs-7 ms-2 shadow-sm">beta</span>
