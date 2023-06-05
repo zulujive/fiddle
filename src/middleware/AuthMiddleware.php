@@ -11,8 +11,8 @@
 ######################################################################
 */
 
-$bootstrapStyleHash = 'sha256-3aebdbbbf7fb68bdc987c484705a9e8dafae0fdbed879ef98dda1e19e262425f';
-$bootstrapScriptHash = 'sha256-aa53d582f97eb594c2a5cc5824574707f9ba9837bce3046bfa5f3556860f4e04';
+$bootstrapStyleHash = 'sha256-d0b418ae4b7d91889127767575c9ce57aa715c6215ef293fa030cb55b3b408c1';
+$bootstrapScriptHash = 'sha256-432dcb740086c0389579a29ebdd4a6d5ec55238ed53df70710119b8ad03887fe';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com';
 
 $cspHeader = "default-src 'self'; script-src 'self' $bootstrapScriptHash; style-src 'self' $bootstrapStyleHash 'unsafe-inline'; img-src 'self';";
