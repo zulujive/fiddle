@@ -107,3 +107,4 @@ Doing those simple steps will prevent abuse of forms and significantly reduce th
 - [ ] Using database for templates
 - [ ] Adding an upload utility
 - [ ] Detangling code (near completion)
+- [ ] Implementing Middleware (in progress)
