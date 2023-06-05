@@ -102,11 +102,10 @@ Doing those simple steps will prevent abuse of forms and significantly reduce th
 - [ ] Admin Panel (in progress)
 - [x] Maintenance Mode
 - [ ] Database connection (in progress)
-- [ ] Oauth2 w/ Database
 - [ ] First Stable Release
 - [ ] Using database for templates
 - [ ] Adding an upload utility
-- [ ] Detangling code (near completion)
+- [x] Detangling code
 - [x] Implementing Middleware
 
 ## Possible Features
