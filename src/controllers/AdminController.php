@@ -16,4 +16,7 @@ class AdminController
     public function templatePanel() {
         require_once __DIR__ . '/../resources/views/templates.php';
     }
+    public function userPanel() {
+        require_once __DIR__ . '/../resources/views/users.php';
+    }
 }

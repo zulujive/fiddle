@@ -89,6 +89,10 @@ $router->get('/admin/templates', function () {
     $controller = new AdminController();
     $controller->templatePanel();
 });
+$router->get('/admin/users', function () {
+    $controller = new AdminController();
+    $controller->userPanel();
+});
 
 // -------------------------------------
 
