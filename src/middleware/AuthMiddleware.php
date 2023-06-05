@@ -11,7 +11,10 @@
 ######################################################################
 */
 
-$cspHeader = "default-src 'self'; script-src 'self' 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz' 'unsafe-inline'; style-src 'self' 'sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM' 'unsafe-inline'; img-src 'self';";
+$bootstrapCdn = 'https://cdn.jsdelivr.net';
+$cloudflareCdn = 'https://cdnjs.cloudflare.com';
+
+$cspHeader = "default-src 'self'; script-src 'self' $bootstrapCdn; style-src 'self' $bootstrapCdn; img-src 'self';";
 
 header("Content-Security-Policy: " . $cspHeader);
 
