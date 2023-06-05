@@ -21,6 +21,4 @@ $valid_users = [
 $maintenanceMode = false;
 $maintenanceMessage = "The website is currently undergoing maintenance. We'll be back soon!";
 
-$cspEnable = true;
-
 ?>

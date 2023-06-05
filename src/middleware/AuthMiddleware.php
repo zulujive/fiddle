@@ -21,7 +21,6 @@ $cloudflareCdn = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/*';
 $cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ; img-src 'self'; font-src 'self' 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/*;'";
 
-header_remove();
 header("Content-Security-Policy: " . $cspHeader);
 
 // ---------------------------------
