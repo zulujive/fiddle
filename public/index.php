@@ -1,4 +1,10 @@
 <?php
+session_set_cookie_params([
+    'SameSite' => 'Strict',
+    'lifetime' => 3600,
+]);
+
+session_start();
 /*
 ######################################################################
 #                                                                    #
@@ -76,7 +82,6 @@ $router->get('/admin', function () {
 
 // Storage Routes
 $router->get("/templates/(.*)", function($filename){
-    //echo 'You asked for ' . $filename;
     $templateImage = file_get_contents(__DIR__ . "/../src/storage/templates/".$filename."");
     header('Content-Type: image/jpeg');
     echo $templateImage;

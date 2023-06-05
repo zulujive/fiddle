@@ -1,8 +1,8 @@
 <?php
-session_set_cookie_params([
+/*session_set_cookie_params([
     'SameSite' => 'Strict',
     'lifetime' => 3600,
-]);
+]);*/
 
 session_start();
 
