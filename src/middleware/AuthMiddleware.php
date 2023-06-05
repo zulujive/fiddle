@@ -10,17 +10,12 @@ class AuthMiddleware
             exit();
         }
 
-        // If the user is authenticated, proceed to the next middleware or route handler
         $next();
     }
 }
 
 function isLoggedIn()
 {
-    // Check if the user is logged in based on your authentication mechanism
-    // For example, check if a specific session variable is set
-    if (!isset($_SESSION['logged_in'])) {
-        $_SESSION['logged_in'] = false;
-    }
+    // Check if user is logged in
     return $_SESSION['logged_in'];
 }

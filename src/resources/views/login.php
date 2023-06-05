@@ -2,10 +2,6 @@
 
 require_once __DIR__ . '/../methods/Csrf.php';
 
-if (!isset($_SESSION['logged_in'])) {
-    $_SESSION['logged_in'] = false;
-}
-
 if ($_SESSION["logged_in"] == true) {
     header("Location: /admin");
     exit();

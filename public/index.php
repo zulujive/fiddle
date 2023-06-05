@@ -5,6 +5,7 @@ session_set_cookie_params([
 ]);
 
 session_start();
+
 /*
 ######################################################################
 #                                                                    #
@@ -17,6 +18,10 @@ session_start();
 ######################################################################
 */
 
+if (!isset($_SESSION['logged_in'])) {
+    $_SESSION['logged_in'] = false;
+}
+
 require __DIR__ . '/../vendor/autoload.php';
 include(dirname(__FILE__).'/../config.php');
 
@@ -24,10 +29,14 @@ include(dirname(__FILE__).'/../config.php');
 require_once __DIR__ .'/../src/controllers/HomeController.php';
 require_once __DIR__ .'/../src/controllers/AdminController.php';
 require_once __DIR__ .'/../src/controllers/ErrorController.php';
+require_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 use Bramus\Router\Router;
 
 $router = new Router();
+
+// Instantiate the middleware class
+$authMiddleware = new AuthMiddleware();
 
 if ($maintenanceMode) {
     // Redirect all traffic to the maintenance page
@@ -60,20 +69,20 @@ $router->get('/style', function () {
 
 // -------------------------------------
 
-// Admin Panel Routes
+// Admin Panel Routes (middleware applied)
 $router->get('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
-$router->post('/login', function () {
+$router->post('/login', [$authMiddleware, 'handle'], function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
-$router->post('/logout', function () {
+$router->post('/logout', [$authMiddleware, 'handle'], function () {
     $controller = new AdminController();
     $controller->panelLogout();
 });
-$router->get('/admin', function () {
+$router->get('/admin', [$authMiddleware, 'handle'], function () {
     $controller = new AdminController();
     $controller->panel();
 });
