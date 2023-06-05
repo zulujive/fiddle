@@ -29,14 +29,12 @@ include(dirname(__FILE__).'/../config.php');
 require_once __DIR__ .'/../src/controllers/HomeController.php';
 require_once __DIR__ .'/../src/controllers/AdminController.php';
 require_once __DIR__ .'/../src/controllers/ErrorController.php';
-require_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 use Bramus\Router\Router;
 
 $router = new Router();
 
-// Instantiate the middleware class
-$authMiddleware = new AuthMiddleware();
+include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 if ($maintenanceMode) {
     // Redirect all traffic to the maintenance page
@@ -70,19 +68,20 @@ $router->get('/style', function () {
 // -------------------------------------
 
 // Admin Panel Routes (middleware applied)
+
 $router->get('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
-$router->post('/login', [$authMiddleware, 'handle'], function () {
+$router->post('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
-$router->post('/logout', [$authMiddleware, 'handle'], function () {
+$router->post('/logout', function () {
     $controller = new AdminController();
     $controller->panelLogout();
 });
-$router->get('/admin', [$authMiddleware, 'handle'], function () {
+$router->get('/admin', function () {
     $controller = new AdminController();
     $controller->panel();
 });

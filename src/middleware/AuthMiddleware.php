@@ -1,21 +1,8 @@
 <?php
-class AuthMiddleware
-{
-    public function handle($req, $res, $next)
-    {
-        // Perform middleware logic here
-        if (!isLoggedIn()) {
-            // Redirect to the login page or return an unauthorized response
-            header("Location: /login");
-            exit();
-        }
 
-        $next();
+$router->before('GET|POST', '/admin', function() {
+    if ($_SESSION['logged_in'] !== true) {
+        header('Location: /login');
+        exit();
     }
-}
-
-function isLoggedIn()
-{
-    // Check if user is logged in
-    return $_SESSION['logged_in'];
-}
+});
