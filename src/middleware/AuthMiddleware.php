@@ -11,7 +11,7 @@
 ######################################################################
 */
 
-$bootstrapStyleHash = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/';
+$bootstrapStyleHash = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css';
 $bootstrapScriptHash = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com';
 
