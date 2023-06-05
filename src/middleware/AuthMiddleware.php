@@ -11,6 +11,10 @@
 ######################################################################
 */
 
+$cspHeader = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self';";
+
+header("Content-Security-Policy: " . $cspHeader);
+
 $router->before('GET|POST', '/admin', function() {
     if ($_SESSION['logged_in'] !== true) {
         header('Location: /login');
