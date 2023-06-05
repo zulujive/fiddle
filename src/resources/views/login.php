@@ -69,7 +69,7 @@ $csrfToken = Csrf::generateToken();
         <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Login</button>
     </form>
     <small class="d-flex mb-3 ms-3 justify-content-start align-items-end position-fixed bottom-0 start-0 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">Fiddle v0.0.0</small>
-    <small class="d-flex mb-3 me-3 justify-content-end align-items-end position-fixed bottom-0 end-0 px-2 py-1 fw-semibold text-success-emphasis bg-warning-subtle border border-warning-subtle rounded-2">Created by zulujive</small>
+    <small class="d-flex mb-3 me-3 justify-content-end align-items-end position-fixed bottom-0 end-0 px-2 py-1 fw-semibold text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-2">Created by zulujive</small>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
