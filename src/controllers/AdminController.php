@@ -13,4 +13,7 @@ class AdminController
     public function panelLogout() {
         require_once __DIR__ . '/../resources/views/logout.php';
     }
+    public function templatePanel() {
+        require_once __DIR__ . '/../resources/views/templates.php';
+    }
 }
