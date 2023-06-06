@@ -68,6 +68,10 @@ $csrfToken = Csrf::generateToken();
             <label for="pwd-login">Password</label>
             <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
         </div>
+        <div class="form-group mt-3">
+            <label for="pwd-confirm">Confirm Password</label>
+            <input id="pwd-confirm" class="form-control shadow" type="password" name="passwordConfirm" required>
+        </div>
         <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Register</button>
     </form>
     
