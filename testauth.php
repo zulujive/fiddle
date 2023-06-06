@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 
 // Make a POST request to the authentication endpoint
 $client = new Client();
-$response = $client->post('http://127.0.0.1:8090/auth', [
+$response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
     'json' => [
         'username' => 'test',
         'password' => '12345678',
