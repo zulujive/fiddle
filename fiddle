@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set the desired port number
+port=7890
+
+# Check the command
+if [ "$1" = "serve" ]; then
+    # Change to the public directory
+    cd public
+
+    # Run the server on the specified port, serving only index.php
+    php -S localhost:$port index.php
+else
+    echo "Unknown command. Usage: php fiddle serve"
+fi
