@@ -61,10 +61,10 @@ $csrfToken = Csrf::generateToken();
         ?>
         <?php 
             if ($_SESSION["registration_success"] === true) {
-                $printed_error = '<div class="alert alert-success mt-3 mb-0" role="alert">';
-                $printed_error .= 'User created successfully!';
-                $printed_error .= '</div>';
-                echo $printed_error;
+                $success_message = '<div class="alert alert-success mt-3 mb-0" role="alert">';
+                $success_message .= 'User created successfully!';
+                $success_message .= '</div>';
+                echo $success_message;
                 $_SESSION["registration_success"] = null;
             }
         ?>
