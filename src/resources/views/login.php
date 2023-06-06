@@ -24,7 +24,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             'password' => $password,
         ]
     ], ['http_errors' => false]);
-    if ($response->getStatusCode() === 200) {
+
+    $statuscode = $response->getStatusCode();
+
+    if ($statuscode === 200) {
         echo "Authentication successful";
         $_SESSION["logged_in"] = true;
         session_regenerate_id(true);
