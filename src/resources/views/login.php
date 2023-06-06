@@ -31,7 +31,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             header("Location: /admin");
             exit();
         }
-    } catch (Guzzle\Http\Exception\RequestException $e) {
+    } catch (GuzzleHttp\Exception\ClientException $e) {
         $error_message = "Invalid username and/or password";
     }
 }
