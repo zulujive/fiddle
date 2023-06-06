@@ -16,7 +16,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password_unsanitized = $_POST["password"];
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
-    $hashedPassword = password_hash($password_unsanitized, PASSWORD_DEFAULT);
+    $hashedPassword = $password_unsanitized;
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 

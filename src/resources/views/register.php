@@ -12,7 +12,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $passwordConfirm = filter_var($password_confirm_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $hashedPassword = $password;
     $hashedPasswordConfirm = password_hash($passwordConfirm, PASSWORD_DEFAULT);
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
