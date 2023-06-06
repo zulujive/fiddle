@@ -4,7 +4,7 @@
 // For example, Guzzle is a popular HTTP client for PHP
 
 // Make a POST request to the authentication endpoint
-$client = new GuzzleHttp\Client();
+$client = new \GuzzleHttp\Client();
 $response = $client->post('http://127.0.0.1:8090/auth', [
     'json' => [
         'username' => 'test',
