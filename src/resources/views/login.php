@@ -18,8 +18,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
-    $statuscode = $response->getStatusCode();
-
     try {
         $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
             'json' => [
@@ -27,10 +25,12 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 'password' => $password,
             ]
         ], ['http_errors' => false]);
-        $_SESSION["logged_in"] = true;
-        session_regenerate_id(true);
-        header("Location: /admin");
-        exit();
+        if ($response->getStatusCode() === 200) {
+            $_SESSION["logged_in"] = true;
+            session_regenerate_id(true);
+            header("Location: /admin");
+            exit();
+        }
     } catch (Guzzle\Http\Exception\RequestException $e) {
         $error_message = "Invalid username and/or password";
     }
