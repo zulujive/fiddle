@@ -1,5 +1,5 @@
 <?php
-
+use GuzzleHttp\Client;
 require_once __DIR__ . '/../methods/Csrf.php';
 
 if ($_SESSION["logged_in"] == true) {
@@ -16,6 +16,23 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
+    $client = new Client();
+    $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
+        'json' => [
+            'identity' => $username,
+            'password' => $password,
+        ]
+    ]);
+
+    if ($response->getStatusCode() === 200) {
+        $_SESSION["logged_in"] = true;
+        session_regenerate_id(true);
+        header("Location: /admin");
+        exit();
+    } else {
+        $error_message = "Invalid username and/or password";
+    }
+    /*
     if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
         Csrf::verifyToken();
         $_SESSION["logged_in"] = true;
@@ -24,7 +41,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         exit();
     } else {
         $error_message = "Invalid username and/or password";
-    }
+    }*/
 }
 
 $csrfToken = Csrf::generateToken();
