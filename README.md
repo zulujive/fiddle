@@ -27,21 +27,10 @@ Though it is in development, the server can be safely deployed to production as 
 ### Instructions
 In production, use NGINX or Apache to serve PHP using FastCGI or FPM and only serving index.php. Do not serve the entire public directory as it will result in unintended 404 errors.
 
-For development instances, you can setup a development server with PHP by navigating into the "public" directory and typing the command (assuming you have PHP installed):
+You can easily start the server at port 7890 with this command:
 ```
-php -S localhost:7890 index.php
+php fiddle serve
 ```
-
-It's worth noting that template paths will not contain file extensions for the sake of simplicity. To fix this, go to NGINX's "sites-available" directory and add this configuration:
-```
-location /templates {
-    default_type "image/png";
-    add_header Content-Disposition "inline";
-}
-```
-Without this configuration, browsers will automatically download a template image if they open the URL. This change allows for a user to open the template URL and view the image within their browser.
-
-**Note: This is only if you're not using routes. If you are using routes, this does not apply**
 
 ## In-depth Overview
 Fiddle runs on a design philosophy similar to that of many other PHP frameworks. Modularity and security take front and center, with every piece of code being isolated and easily swappable whilst the server is running. Abstraction between frontend and backend modules allows for improved security and componentization.
