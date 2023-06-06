@@ -17,13 +17,15 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
         $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
             'json' => [
                 'identity' => $username,
-                'password' => $password,
+                'password' => $hashedPassword,
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
