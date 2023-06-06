@@ -27,7 +27,7 @@ Though it is in development, the server can be safely deployed to production as 
 ### Instructions
 In production, use NGINX or Apache to serve PHP using FastCGI or FPM and only serving index.php. Do not serve the entire public directory as it will result in unintended 404 errors.
 
-You can easily start the server at port 7890 with this command:
+You can easily start the server at port 7890 with this command within the root directory:
 ```
 php fiddle serve
 ```
