@@ -11,7 +11,7 @@ $client = new Client();
 $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
     'json' => [
         'identity' => 'test',
-        'password' => '12345678',
+        'password' => '12345978',
     ]
 ]);
 
