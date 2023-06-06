@@ -17,21 +17,29 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
     $client = new Client();
-    $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
-        'json' => [
-            'identity' => $username,
-            'password' => $password,
-        ]
-    ]);
 
-    if ($response->getStatusCode() === 200) {
+    try {
+        $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
+            'json' => [
+                'identity' => $username,
+                'password' => $password,
+            ]
+        ]);
         $_SESSION["logged_in"] = true;
         session_regenerate_id(true);
         header("Location: /admin");
         exit();
-    } else {
+    } catch (ClientException $e) {
+        if ($e->getResponse()->getStatusCode() === 400) {
+            // Handle 400 Bad Request error
+            // Redirect the user back to the login page
+            header("Location: /login");
+            exit();
+        } else {
         $error_message = "Invalid username and/or password";
+        }
     }
+}
     /*
     if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
         Csrf::verifyToken();
@@ -42,7 +50,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     } else {
         $error_message = "Invalid username and/or password";
     }*/
-}
 
 $csrfToken = Csrf::generateToken();
 
