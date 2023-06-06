@@ -59,6 +59,15 @@ $csrfToken = Csrf::generateToken();
                 echo $printed_error;
             }
         ?>
+        <?php 
+            if ($_SESSION["registration_success"] === true) {
+                $printed_error = '<div class="alert alert-success mt-3 mb-0" role="alert">';
+                $printed_error .= 'User created successfully!';
+                $printed_error .= '</div>';
+                echo $printed_error;
+                $_SESSION["registration_success"] = null;
+            }
+        ?>
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group mt-3">
             <label for="username-login">Username</label>

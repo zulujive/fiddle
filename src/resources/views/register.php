@@ -26,6 +26,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
+            $_SESSION["registration_success"] = true;
             header("Location: /admin/users");
             exit();
         }
