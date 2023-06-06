@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../methods/Csrf.php';
+
 $error_message = null;
 
 $csrfToken = Csrf::generateToken();
