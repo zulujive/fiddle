@@ -11,6 +11,7 @@ $error_message = null;
 
 include(dirname(__FILE__).'/../../../config.php');
 if (isset($_POST["username"]) && isset($_POST["password"])) {
+    Csrf::verifyToken();
     $username_unsanitized = $_POST["username"];
     $password_unsanitized = $_POST["password"];
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);

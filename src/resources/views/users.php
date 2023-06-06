@@ -1,3 +1,11 @@
+<?php
+
+$error_message = null;
+
+$csrfToken = Csrf::generateToken();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -34,6 +42,32 @@
             </div>
         </div>
     </nav>
+
+    <br>
+    <h2 class="d-flex align-items-center justify-content-center">
+            Create User
+    </h2>
+    <br>
+    <form class="container card bg-primary text-white shadow" method="post" action="/admin/register" style="width: 40%;">
+        <?php 
+            if ($error_message !== null) {
+                $printed_error = '<div class="alert alert-warning mt-3 mb-0" role="alert">';
+                $printed_error .= $error_message;
+                $printed_error .= '</div>';
+                echo $printed_error;
+            }
+        ?>
+        <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
+        <div class="form-group mt-3">
+            <label for="username-login">Username</label>
+            <input id="username-login" class="form-control shadow" type="text" name="username" required>
+        </div>
+        <div class="form-group mt-3">
+            <label for="pwd-login">Password</label>
+            <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
+        </div>
+        <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Register</button>
+    </form>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

@@ -93,6 +93,10 @@ $router->get('/admin/users', function () {
     $controller = new AdminController();
     $controller->userPanel();
 });
+$router->get('/admin/register', function () {
+    $controller = new AdminController();
+    $controller->newUser();
+});
 
 // -------------------------------------
 
