@@ -18,7 +18,7 @@ $bootstrapStyleHash = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/boo
 $bootstrapScriptHash = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/*';
 
-$cspHeader = "default-src 'self'; script-src 'self' '$bootstrapScriptHash'; style-src https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css $bootstrapStyleHash 'self' 'unsafe-inline'; img-src 'self' http://w3.org/ data:; font-src https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/ 'self' 'unsafe-inline';";
+$cspHeader = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/; style-src https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css $bootstrapStyleHash 'self' 'unsafe-inline'; img-src 'self' http://w3.org/ data:; font-src https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/ 'self' 'unsafe-inline';";
 
 header("Content-Security-Policy: " . $cspHeader);
 
