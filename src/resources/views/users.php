@@ -33,8 +33,8 @@ if (!isset($_SESSION["registration_success"])) {
 <body>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-2">
-      <nav class="navbar navbar-dark bg-primary flex-column">
+    <div class="col-lg-2 ms-0">
+      <nav class="navbar navbar-dark bg-primary flex-column ms-0">
         <ul class="navbar-nav me-auto mb-0 mb-lg-0 pb-3 ms-0 ps-3">
             <li class="nav-item">
                 <a class="nav-link" href="/admin"><b>FiddleAdmin</b></a>
@@ -46,7 +46,7 @@ if (!isset($_SESSION["registration_success"])) {
                 <a class="nav-link" href="/admin/templates">Templates</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link activve" href="/admin/users">Users</a>
+                <a class="nav-link active" href="/admin/users">Users</a>
             </li>
         </ul>
       </nav>
