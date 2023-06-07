@@ -5,6 +5,7 @@ require_once __DIR__ . '/../methods/Csrf.php';
 require_once __DIR__ . '/../methods/fetchStats.php';
 
 $adminCount = fetchStats::countAdmins();
+$userCount = fetchStats::countUsers();
 
 $error_message = null;
 
@@ -57,14 +58,14 @@ if (!isset($_SESSION["registration_success"])) {
         <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $adminCount ?> Staff</h5>
+                    <h5 class="card-title text-center"><?php echo $adminCount ?> Staff</h5>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Users</h5>
+                    <h5 class="card-title text-center"><?php echo $userCount ?> Users</h5>
                 </div>
             </div>
         </div>
