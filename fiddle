@@ -7,8 +7,6 @@ if ($argv[1] === 'serve') {
 
     // Run the server on the specified port, serving only index.php
     exec('php -S localhost:7890 index.php');
-    echo "The server is started at localhost:7890";
-    echo "The admin panel is available at localhost:7890/login";
 } else {
     echo "Unknown command. Usage: php fiddle serve" . PHP_EOL;
 }
