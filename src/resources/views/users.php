@@ -115,8 +115,6 @@ if (!isset($_SESSION["registration_success"])) {
                 <div class="card-body" style="max-height: 300px; overflow-y: auto;">
                     <ul class="list-group list-group-flush">
                         <?php echo $adminList ?>
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </ul>
                 </div>
             </div>
