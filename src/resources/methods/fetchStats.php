@@ -1,4 +1,6 @@
 <?php
+use GuzzleHttp\Client;
+
 class fetchStats
 {
     public static function countAdmins()
