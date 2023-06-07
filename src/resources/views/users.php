@@ -6,6 +6,10 @@ $error_message = null;
 
 $csrfToken = Csrf::generateToken();
 
+if (!isset($_SESSION["registration_success"])) {
+    $_SESSION["registration_success"] = null;
+}
+
 ?>
 
 <!DOCTYPE html>
