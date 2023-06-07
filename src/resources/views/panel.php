@@ -37,10 +37,10 @@
                         <a class="nav-link " href="/admin/users">Users</a>
                     </li>
                 </ul>
+                <div class="mt-auto">
+                    <a class="btn btn-secondary btn-lg" href="/logout">Logout</a>
+                </div>
             </nav>
-            <div class="mt-auto">
-                <a class="btn btn-secondary btn-lg" href="/logout">Logout</a>
-            </div>
         </div>
         <div class="col-lg-10">
             <div class="m-4">
