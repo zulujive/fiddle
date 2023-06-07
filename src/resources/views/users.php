@@ -111,20 +111,18 @@ if (!isset($_SESSION["registration_success"])) {
                         <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
                     </form>
                 </div>
-            <div class="col">
-                <div class="container card">
-                    <h3>Admins</h3>
-                    <ul class="list-group list-group-flush">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
                         <?php echo $adminList ?>
-                    </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="container card">
-                    <h3>Users</h3>
-                    <ul class="list-group list-group-flush">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
                         <?php echo $userList ?>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
