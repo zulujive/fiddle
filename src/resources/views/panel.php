@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <form class="mt-auto d-flex align-items-start" action="/logout" method="POST">
-                    <a class="btn btn-secondary btn-md" type="submit">Logout</a>
+                    <button class="btn btn-secondary btn-md" type="submit" value="submit">Logout</button>
                 </form>
             </nav>
         </div>
