@@ -73,7 +73,7 @@ if (!isset($_SESSION["registration_success"])) {
         </div>
     </div>
     <div class="row mb-3">
-        <div class="col-sm-5">
+        <div class="col">
             <form class="card bg-dark text-white shadow p-3" method="post" action="/admin/register">
                 <br>
                 <h3 class="text-center">
@@ -112,13 +112,13 @@ if (!isset($_SESSION["registration_success"])) {
                 <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
             </form>
         </div>
-        <div class="card col-sm-5 bg-dark text-white shadow p-3">
+        <div class="card col bg-dark text-white shadow p-3">
             <h3>Admins</h3>
             <ul class="list-group list-group-flush">
                 <?php echo $adminList ?>
             </ul>
         </div>
-        <div class="card col-sm-5 bg-dark text-white shadow p-3">
+        <div class="card col bg-dark text-white shadow p-3">
             <h3>Users</h3>
             <ul class="list-group list-group-flush">
                 <?php echo $userList ?>
