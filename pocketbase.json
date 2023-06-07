@@ -93,18 +93,10 @@
         "system": false,
         "required": false,
         "options": {}
-      },
-      {
-        "id": "rvr0q61v",
-        "name": "isModerator",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "options": {}
       }
     ],
     "indexes": [],
-    "listRule": "id = @request.auth.id",
+    "listRule": "",
     "viewRule": "id = @request.auth.id",
     "createRule": "",
     "updateRule": "id = @request.auth.id",
@@ -118,6 +110,29 @@
       "minPasswordLength": 8,
       "onlyEmailDomains": null,
       "requireEmail": false
+    }
+  },
+  {
+    "id": "04i3m087e7peu20",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "id = @request.auth.id",
+    "createRule": null,
+    "updateRule": "id = @request.auth.id",
+    "deleteRule": "id = @request.auth.id",
+    "options": {
+      "allowEmailAuth": true,
+      "allowOAuth2Auth": true,
+      "allowUsernameAuth": true,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 8,
+      "onlyEmailDomains": null,
+      "requireEmail": true
     }
   }
 ]
