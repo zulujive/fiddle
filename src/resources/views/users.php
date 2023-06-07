@@ -37,13 +37,16 @@ if (!isset($_SESSION["registration_success"])) {
       <nav class="navbar navbar-dark bg-dark flex-column">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link" href="/admin">Home</a>
+                <a class="nav-link" href="/admin"><b>FiddleAdmin</b></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" href="/admin/templates">Templates</a>
+                <a class="nav-link" href="/admin">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="/admin/users">Users</a>
+                <a class="nav-link" href="/admin/templates">Templates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link activve" href="/admin/users">Users</a>
             </li>
         </ul>
       </nav>
