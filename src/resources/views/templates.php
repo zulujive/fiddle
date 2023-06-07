@@ -10,30 +10,31 @@
     <title>Templates</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg mb-3 bg-body-tertiary border-bottom border-bottom-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/admin">Admin</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="/admin">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" href="/admin/templates">Templates</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/admin/users">Users</a>
-                </li>
-            </ul>
-            <form class="d-flex" action="/logout" method="POST">
-                <button class="btn btn-warning" type="submit">Logout</button>
-            </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 m-0 d-flex" style="min-height:100vh;">
+                <nav class="navbar navbar-dark bg-primary flex-column m-0 flex-grow-1" style="margin-left:-1rem !important">
+                    <ul class="navbar-nav me-auto mb-lg-0 pb-3 m-0 ps-3">
+                        <li class="nav-item">
+                            <h3><a class="nav-link" href="/admin"><b>FiddleAdmin</b></a></h3>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/templates">Templates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/admin/users">Users</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-10">
+                <!-- Put content here -->
             </div>
         </div>
-    </nav>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
