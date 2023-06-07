@@ -7,6 +7,7 @@ require_once __DIR__ . '/../methods/fetchStats.php';
 $adminCount = fetchStats::countAdmins();
 $userCount = fetchStats::countUsers();
 $adminList = fetchStats::listAdmins();
+$userList = fetchStats::listUsers();
 
 $error_message = null;
 
@@ -115,6 +116,12 @@ if (!isset($_SESSION["registration_success"])) {
             <h3>Admins</h3>
             <ul class="list-group list-group-flush">
                 <?php echo $adminList ?>
+            </ul>
+        </div>
+        <div class="card col-sm-6 bg-dark text-white shadow p-3">
+            <h3>Users</h3>
+            <ul class="list-group list-group-flush">
+                <?php echo $userList ?>
             </ul>
         </div>
     </div>

@@ -63,5 +63,23 @@ class fetchStats
             return $html;
         }
     }
+    public static function listUsers()
+    {
+        $client = new Client(['defaults' => ['exceptions' => false]]);
+
+        $response = $client->get('http://127.0.0.1:8090/api/collections/users/records');
+
+        if ($response->getStatusCode() === 200) {
+            $responseData = json_decode($response->getBody(), true);
+            $html = '';
+            foreach($responseData['items'] as $item) {
+                $username = $item['username'];
+
+                $html .= '<li class="list-group-item">' . $username . '</li>';
+
+            }
+            return $html;
+        }
+    }
 }
 
