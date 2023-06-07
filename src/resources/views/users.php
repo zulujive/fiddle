@@ -112,7 +112,7 @@ if (!isset($_SESSION["registration_success"])) {
         <div class="col-md-4 d-flex">
             <div class="card flex-fill p-3">
                 <h3 class="card-title">Staff</h3>
-                <div class="card-body">
+                <div class="card-body" style="max-height: 300px; overflow-y: auto;">
                     <ul class="list-group list-group-flush">
                         <?php echo $adminList ?>
                     </ul>
@@ -122,7 +122,7 @@ if (!isset($_SESSION["registration_success"])) {
         <div class="col-md-4 d-flex">
             <div class="card flex-fill p-3">
                 <h3 class="card-title">Recent Signups</h3>
-                <div class="card-body">
+                <div class="card-body" style="max-height: 300px; overflow-y: auto;">
                     <ul class="list-group list-group-flush">
                         <?php echo $userList ?>
                     </ul>
