@@ -111,7 +111,7 @@ if (!isset($_SESSION["registration_success"])) {
         </div>
         <div class="col-md-3 d-flex">
             <div class="card flex-fill">
-                <h3 class="card-title">Users<h3>
+                <h3 class="card-title">Staff</h3>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <?php echo $adminList ?>
@@ -121,7 +121,7 @@ if (!isset($_SESSION["registration_success"])) {
         </div>
         <div class="col-md-3 d-flex">
             <div class="card flex-fill">
-                <h3 class="card-title">Users<h3>
+                <h3 class="card-title">Users</h3>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <?php echo $userList ?>
