@@ -74,7 +74,7 @@ if (!isset($_SESSION["registration_success"])) {
     </div>
     <div class="row">
         <div class="col-md-6">
-            <form class="card bg-dark text-white shadow p-3" method="post" action="/admin/register">
+            <form class="card bg-dark shadow p-3" method="post" action="/admin/register">
                 <h3 class="text-center">Create Staff Account</h3>
                 <?php 
                     if ($error_message !== null) {
@@ -96,15 +96,15 @@ if (!isset($_SESSION["registration_success"])) {
                 <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
                 <div class="form-group mt-3">
                     <label for="username-login">Username</label>
-                    <input id="username-login" class="form-control bg-white text-black shadow" type="text" name="username" required>
+                    <input id="username-login" class="form-control bg-tertiary text-black shadow" type="text" name="username" required>
                 </div>
                 <div class="form-group mt-3">
                     <label for="pwd-login">Password</label>
-                    <input id="pwd-login" class="form-control bg-white text-black shadow" type="password" name="password" required>
+                    <input id="pwd-login" class="form-control bg-tertiary text-black shadow" type="password" name="password" required>
                 </div>
                 <div class="form-group mt-3">
                     <label for="pwd-confirm">Confirm Password</label>
-                    <input id="pwd-confirm" class="form-control bg-white text-black shadow" type="password" name="passwordConfirm" required>
+                    <input id="pwd-confirm" class="form-control bg-tertiary text-black shadow" type="password" name="passwordConfirm" required>
                 </div>
                 <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
             </form>
