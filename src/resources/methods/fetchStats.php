@@ -53,6 +53,7 @@ class fetchStats
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
+            $html = '';
             foreach($responseData['items'] as $item) {
                 $username = $item['username'];
 
