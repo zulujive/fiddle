@@ -22,7 +22,7 @@
                             <a class="nav-link" href="/admin">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" active href="/admin/templates">Templates</a>
+                            <a class="nav-link active" href="/admin/templates">Templates</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/users">Users</a>

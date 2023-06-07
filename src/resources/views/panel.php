@@ -28,7 +28,7 @@
                         <h3><a class="nav-link text-white" href="/admin"><b>FiddleAdmin</b></a></h3>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" active href="/admin">Home</a>
+                        <a class="nav-link active" href="/admin">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/templates">Templates</a>
