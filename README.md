@@ -56,13 +56,7 @@ The src folder contains both backend and frontend scripts. Directories inside of
 - Web is currently an unused directory and its contents does not impact application funcitonality (unless there is a fatal syntax error). In other words, don't mess with it, it's not important but will be in the future.
 
 ### Admin Panel
-The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It's connected to the PocketBase database which handles various security measures. The login page is now fully implemented with the new routing system and you can login using the test credentials:
-```
-test
-```
-```
-1234
-```
+The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It's connected to the PocketBase database which handles various security measures. Create a user in PocketBase in the "Admin" collection and login to the admin panel at /login
 
 ### Stack
 Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the database as it's easy to use, open source and perfect for an application of this size. Currently, PocketBase implementation is a little limited, but basic authentication support has been added to the admin panel as well as a moderator creation utility within it.
