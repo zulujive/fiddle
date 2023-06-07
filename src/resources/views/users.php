@@ -1,6 +1,10 @@
 <?php
 
+use GuzzleHttp\Client;
 require_once __DIR__ . '/../methods/Csrf.php';
+require_once __DIR__ . '/../methods/fetchStats.php';
+
+$adminCount = fetchStats::countAdmins();
 
 $error_message = null;
 
@@ -53,7 +57,7 @@ if (!isset($_SESSION["registration_success"])) {
         <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Staff</h5>
+                    <h5 class="card-title"><?php $adminCount ?> Staff</h5>
                 </div>
             </div>
         </div>
