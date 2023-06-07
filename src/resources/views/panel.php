@@ -21,7 +21,7 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 m-0 d-flex align-items-start" style="min-height:100vh;">
+        <div class="col-lg-2 m-0 d-flex" style="min-height:100vh;">
             <nav class="navbar navbar-dark bg-primary flex-column m-0 flex-grow-1" style="margin-left:-1rem !important">
                 <ul class="navbar-nav me-auto mb-lg-0 pb-3 m-0 ps-3">
                     <li class="nav-item">
