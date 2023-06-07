@@ -57,7 +57,7 @@ if (!isset($_SESSION["registration_success"])) {
         <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?php $adminCount ?> Staff</h5>
+                    <h5 class="card-title"><?php echo $adminCount ?> Staff</h5>
                 </div>
             </div>
         </div>
