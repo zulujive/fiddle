@@ -57,6 +57,7 @@ if (!isset($_SESSION["registration_success"])) {
     <div class="col-lg-10">
         <div class="m-4">
             <h1>User Control Panel</h1>
+            <hr>
             <div class="row mb-3">
                 <div class="col-md-6 mb-3 mb-md-0">
                     <div class="card bg-primary text-white">
