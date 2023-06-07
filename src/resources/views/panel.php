@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="mt-auto">
-                    <a class="btn btn-secondary btn-lg justify-content-left" href="/logout">Logout</a>
+                    <a class="btn btn-secondary btn-lg align-items-start" href="/logout">Logout</a>
                 </div>
             </nav>
         </div>
