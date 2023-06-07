@@ -109,8 +109,8 @@ if (!isset($_SESSION["registration_success"])) {
                 <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
             </form>
         </div>
-        <div class="col-md-3">
-            <div class="card">
+        <div class="col-md-3 d-flex">
+            <div class="card flex-fill">
                 <div class="card-body">
                     <h3>Admins</h3>
                     <ul class="list-group list-group-flush">
@@ -119,8 +119,8 @@ if (!isset($_SESSION["registration_success"])) {
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card">
+        <div class="col-md-3 d-flex">
+            <div class="card flex-fill">
                 <div class="card-body">
                     <h3>Users</h3>
                     <ul class="list-group list-group-flush">
