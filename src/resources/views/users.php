@@ -106,7 +106,7 @@ if (!isset($_SESSION["registration_success"])) {
                     <label for="pwd-confirm">Confirm Password</label>
                     <input id="pwd-confirm" class="form-control bg-tertiary shadow" type="password" name="passwordConfirm" required>
                 </div>
-                <button class="btn btn-tertiary shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
+                <button class="btn btn-outline-secondary shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
             </form>
         </div>
         <div class="col-md-3 d-flex">
