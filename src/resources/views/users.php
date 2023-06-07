@@ -48,7 +48,24 @@ if (!isset($_SESSION["registration_success"])) {
             </div>
         </div>
     </nav>
-    <div class="m-3">
+    <div class="m-4">
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Admins</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Users</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <form class="card bg-dark text-white shadow w-25 p-3" method="post" action="/admin/register">
             <br>
             <h3 class="text-center">
