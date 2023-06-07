@@ -73,44 +73,42 @@ if (!isset($_SESSION["registration_success"])) {
             </div>
         </div>
         <div class="row">
-                <div class="container col-sm-6">
-                    <form class="card bg-dark text-white shadow p-3" method="post" action="/admin/register">
-                        <h3 class="text-center">
-                                Create Staff Account
-                        </h3>
-                        <?php 
-                            if ($error_message !== null) {
-                                $printed_error = '<div class="alert alert-warning mt-3 mb-0" role="alert">';
-                                $printed_error .= $error_message;
-                                $printed_error .= '</div>';
-                                echo $printed_error;
-                            }
-                        ?>
-                        <?php 
-                            if ($_SESSION["registration_success"] === true) {
-                                $success_message = '<div class="alert alert-success mt-3 mb-0" role="alert">';
-                                $success_message .= 'User created successfully!';
-                                $success_message .= '</div>';
-                                echo $success_message;
-                                $_SESSION["registration_success"] = null;
-                            }
-                        ?>
-                        <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
-                        <div class="form-group mt-3">
-                            <label for="username-login">Username</label>
-                            <input id="username-login" class="form-control bg-white text-black shadow" type="text" name="username" required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="pwd-login">Password</label>
-                            <input id="pwd-login" class="form-control bg-white text-black shadow" type="password" name="password" required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="pwd-confirm">Confirm Password</label>
-                            <input id="pwd-confirm" class="form-control bg-white text-black shadow" type="password" name="passwordConfirm" required>
-                        </div>
-                        <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
-                    </form>
+            <form class="col-sm-6 card bg-dark text-white shadow p-3" method="post" action="/admin/register">
+                <h3 class="text-center">
+                        Create Staff Account
+                </h3>
+                <?php 
+                    if ($error_message !== null) {
+                        $printed_error = '<div class="alert alert-warning mt-3 mb-0" role="alert">';
+                        $printed_error .= $error_message;
+                        $printed_error .= '</div>';
+                        echo $printed_error;
+                    }
+                ?>
+                <?php 
+                    if ($_SESSION["registration_success"] === true) {
+                        $success_message = '<div class="alert alert-success mt-3 mb-0" role="alert">';
+                        $success_message .= 'User created successfully!';
+                        $success_message .= '</div>';
+                        echo $success_message;
+                        $_SESSION["registration_success"] = null;
+                    }
+                ?>
+                <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
+                <div class="form-group mt-3">
+                    <label for="username-login">Username</label>
+                    <input id="username-login" class="form-control bg-white text-black shadow" type="text" name="username" required>
                 </div>
+                <div class="form-group mt-3">
+                    <label for="pwd-login">Password</label>
+                    <input id="pwd-login" class="form-control bg-white text-black shadow" type="password" name="password" required>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="pwd-confirm">Confirm Password</label>
+                    <input id="pwd-confirm" class="form-control bg-white text-black shadow" type="password" name="passwordConfirm" required>
+                </div>
+                <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
+            </form>
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
