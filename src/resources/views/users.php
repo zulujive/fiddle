@@ -49,7 +49,7 @@ if (!isset($_SESSION["registration_success"])) {
         </div>
     </nav>
     <div class="m-4">
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
