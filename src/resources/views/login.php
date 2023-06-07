@@ -21,7 +21,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('http://127.0.0.1:8090/api/collections/users/auth-with-password', [
+        $response = $client->post('http://127.0.0.1:8090/api/collections/admins/auth-with-password', [
             'json' => [
                 'identity' => $username,
                 'password' => $hashedPassword,

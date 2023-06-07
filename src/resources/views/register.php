@@ -18,7 +18,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('http://127.0.0.1:8090/api/collections/users/records', [
+        $response = $client->post('http://127.0.0.1:8090/api/collections/admins/records', [
             'json' => [
                 'username' => $username,
                 'password' => $hashedPassword,
