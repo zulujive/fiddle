@@ -34,7 +34,7 @@
                         <a class="nav-link" href="/admin/templates">Templates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/users">Users</a>
+                        <a class="nav-link " href="/admin/users">Users</a>
                     </li>
                 </ul>
             </nav>
