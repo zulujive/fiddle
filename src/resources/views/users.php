@@ -84,7 +84,7 @@ if (!isset($_SESSION["registration_success"])) {
             <label for="pwd-confirm">Confirm Password</label>
             <input id="pwd-confirm" class="form-control bg-white text-black shadow" type="password" name="passwordConfirm" required>
         </div>
-        <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Register</button>
+        <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
     </form>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
