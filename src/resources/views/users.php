@@ -69,7 +69,18 @@ if (!isset($_SESSION["registration_success"])) {
                 <div class="col-md-6">
                     <div class="card bg-primary text-white">
                         <div class="card-body">
-                            <h5 class="card-title text-center"><?php echo $userCount ?> Users</h5>
+                            <h5 class="card-title text-center">
+                                <?php 
+                                echo $userCount . ' ';
+                                if ($usercount < 2)
+                                {
+                                    $plural = "User";
+                                } else {
+                                    $plural = "Users";
+                                }
+                                echo $plural;
+                                ?>
+                            </h5>
                         </div>
                     </div>
                 </div>
