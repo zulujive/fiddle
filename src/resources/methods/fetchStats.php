@@ -56,7 +56,7 @@ class fetchStats
             foreach($responseData['items'] as $item) {
                 $username = $item['username'];
 
-                $html[] = '<li class="list-group-item">' . $username . '</li>';
+                $html = '<li class="list-group-item">' . $username . '</li>';
 
             }
             return $html;
