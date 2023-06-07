@@ -36,8 +36,8 @@ if (!isset($_SESSION["registration_success"])) {
     <div class="col-lg-2 m-0">
       <nav class="navbar navbar-dark bg-primary flex-column m-0" style="margin-left:-1rem !important">
         <ul class="navbar-nav me-auto mb-lg-0 pb-3 m-0 ps-3">
-            <li class="nav-title">
-                <a class="nav-link" href="/admin"><b>FiddleAdmin</b></a>
+            <li class="nav-item">
+                <h3><a class="nav-link" href="/admin"><b>FiddleAdmin</b></a><h3>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin">Home</a>
