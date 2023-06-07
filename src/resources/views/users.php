@@ -50,7 +50,7 @@ if (!isset($_SESSION["registration_success"])) {
                 </li>
             </ul>
             <form class="d-flex" action="/logout" method="POST">
-                <button class="btn btn-primary" type="submit">Logout</button>
+                <button class="btn btn-warning" type="submit">Logout</button>
             </form>
             </div>
         </div>
