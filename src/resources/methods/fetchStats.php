@@ -49,7 +49,7 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records?sort=-created');
+        $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records?sort=+created');
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
