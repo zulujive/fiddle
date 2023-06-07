@@ -72,7 +72,7 @@ if (!isset($_SESSION["registration_success"])) {
             </div>
         </div>
     </div>
-    <div class="row mb-3">
+    <div class="row g-3">
         <div class="col">
             <form class="card bg-dark text-white shadow p-3" method="post" action="/admin/register">
                 <h3 class="text-center">
