@@ -15,7 +15,5 @@ class fetchStats
                 return $responseData['totalItems'];
             }
         }
-
-        return 0; // Default value if the totalItems key is not found or the response is not successful
     }
 }
