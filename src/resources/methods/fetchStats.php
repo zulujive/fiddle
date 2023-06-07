@@ -5,7 +5,7 @@ class fetchStats
 {
     public static function countAdmins()
     {
-        $client = new Client(['defaults' => ['exceptions' => false]]);
+        $client = new Client();
 
         $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records');
 
