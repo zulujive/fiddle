@@ -37,9 +37,9 @@
                         <a class="nav-link " href="/admin/users">Users</a>
                     </li>
                 </ul>
-                <div class="mt-auto d-flex align-items-start">
-                    <a class="btn btn-secondary btn-md" href="/logout">Logout</a>
-                </div>
+                <form class="mt-auto d-flex align-items-start" action="/logout" method="POST">
+                    <a class="btn btn-secondary btn-md" type="submit">Logout</a>
+                </form>
             </nav>
         </div>
         <div class="col-lg-10">
