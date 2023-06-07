@@ -51,7 +51,7 @@ if (!isset($_SESSION["registration_success"])) {
     <br>
     <form class="container card bg-dark text-white shadow" method="post" action="/admin/register" style="width: 40%;">
         <br>
-        <h2 class="d-flex align-items-center justify-content-center">
+        <h2 class="text-center">
                 Create Moderator Account
         </h2>
         <?php 
@@ -74,15 +74,15 @@ if (!isset($_SESSION["registration_success"])) {
         <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group mt-3">
             <label for="username-login">Username</label>
-            <input id="username-login" class="form-control shadow" type="text" name="username" required>
+            <input id="username-login" class="form-control bg-white shadow" type="text" name="username" required>
         </div>
         <div class="form-group mt-3">
             <label for="pwd-login">Password</label>
-            <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
+            <input id="pwd-login" class="form-control bg-white shadow" type="password" name="password" required>
         </div>
         <div class="form-group mt-3">
             <label for="pwd-confirm">Confirm Password</label>
-            <input id="pwd-confirm" class="form-control shadow" type="password" name="passwordConfirm" required>
+            <input id="pwd-confirm" class="form-control bg-white shadow" type="password" name="passwordConfirm" required>
         </div>
         <button class="btn btn-light shadow mt-3 mb-3" type="submit" value="submit" style="width: 20%;">Register</button>
     </form>
