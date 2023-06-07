@@ -110,7 +110,7 @@ if (!isset($_SESSION["registration_success"])) {
             </form>
         </div>
         <div class="col-md-4 d-flex">
-            <div class="card flex-fill p-3">
+            <div class="card flex-fill p-3 shadow">
                 <h3 class="card-title">Staff</h3>
                 <div class="card-body" style="max-height: 300px; overflow-y: auto;">
                     <ul class="list-group list-group-flush">
@@ -120,7 +120,7 @@ if (!isset($_SESSION["registration_success"])) {
             </div>
         </div>
         <div class="col-md-4 d-flex">
-            <div class="card flex-fill p-3">
+            <div class="card flex-fill p-3 shadow">
                 <h3 class="card-title">Recent Signups</h3>
                 <div class="card-body" style="max-height: 300px; overflow-y: auto;">
                     <ul class="list-group list-group-flush">
