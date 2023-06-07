@@ -53,7 +53,7 @@ if (!isset($_SESSION["registration_success"])) {
         <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Admins</h5>
+                    <h5 class="card-title">Staff</h5>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@ if (!isset($_SESSION["registration_success"])) {
         <form class="card bg-dark text-white shadow w-25 p-3" method="post" action="/admin/register">
             <br>
             <h3 class="text-center">
-                    Create Moderator Account
+                    Create Staff Account
             </h3>
             <?php 
                 if ($error_message !== null) {
