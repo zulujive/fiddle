@@ -54,7 +54,7 @@ class fetchStats
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
             foreach($responseData['items'] as $item) {
-                $username = $item[username];
+                $username = $item['username'];
 
                 $html = '<li class="list-group-item">' . $username . '</li>';
 
