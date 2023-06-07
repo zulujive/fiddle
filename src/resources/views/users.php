@@ -30,7 +30,7 @@ if (!isset($_SESSION["registration_success"])) {
 
     <title>Users</title>
 </head>
-<body>
+<body class="d-flex">
 <div class="container-fluid" style="min-height:100vh">
   <div class="row">
     <div class="col-lg-2 m-0 d-flex">
