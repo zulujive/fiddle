@@ -75,7 +75,6 @@ if (!isset($_SESSION["registration_success"])) {
     <div class="row mb-3">
         <div class="col">
             <form class="card bg-dark text-white shadow p-3" method="post" action="/admin/register">
-                <br>
                 <h3 class="text-center">
                         Create Staff Account
                 </h3>
