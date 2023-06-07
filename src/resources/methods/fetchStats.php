@@ -13,9 +13,16 @@ class fetchStats
             $responseData = json_decode($response->getBody(), true);
             if (isset($responseData['totalItems'])) {
                 return $responseData['totalItems'];
+            } else {
+                // Log an error if the "totalItems" key is not found
+                error_log('Error: "totalItems" key not found in the response.');
             }
+        } else {
+            // Log an error if the API request is not successful
+            error_log('Error: API request failed. Status Code: ' . $response->getStatusCode());
         }
 
-        return 0; // Default value if the totalItems key is not found or the response is not successful
+        return 0; // Default value if there is an error
     }
 }
+
