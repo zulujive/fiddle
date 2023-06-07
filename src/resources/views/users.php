@@ -49,7 +49,7 @@ if (!isset($_SESSION["registration_success"])) {
         </div>
     </nav>
     <br>
-    <form class="container card bg-dark text-white shadow" method="post" action="/admin/register" style="width: 40%;">
+    <form class="container card bg-dark text-white shadow w-50" method="post" action="/admin/register">
         <br>
         <h2 class="text-center">
                 Create Moderator Account
