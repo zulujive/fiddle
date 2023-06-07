@@ -58,14 +58,14 @@ if (!isset($_SESSION["registration_success"])) {
     <div class="m-4">
     <div class="row mb-3">
         <div class="col-md-6 mb-3 mb-md-0">
-            <div class="card">
+            <div class="card bg-primary">
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $adminCount ?> Staff</h5>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card">
+            <div class="card bg-primary">
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $userCount ?> Users</h5>
                 </div>
