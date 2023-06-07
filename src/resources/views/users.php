@@ -47,7 +47,7 @@ $csrfToken = Csrf::generateToken();
 
     <br>
     <h2 class="d-flex align-items-center justify-content-center">
-            Create User
+            Create Moderator Account
     </h2>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/admin/register" style="width: 40%;">

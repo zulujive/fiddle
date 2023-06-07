@@ -22,7 +22,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             'json' => [
                 'username' => $username,
                 'password' => $hashedPassword,
-                'passwordConfirm' => $hashedPassword
+                'passwordConfirm' => $hashedPassword,
+                'isAdmin' => true
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {

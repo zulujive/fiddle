@@ -17,15 +17,19 @@ Though it is in development, the server can be safely deployed to production as 
 - Boostrap admin panel (coming soon)
 - Highly scalable architecture
 - Beautiful design from top to bottom
+- Simple and easy deployment
 
 ## Deployment
 ### Requirements
 - PHP 8.2 or above
 - Web server (NGINX/Apache)
 - PHP Composer
+- PocketBase
 
 ### Instructions
 In production, use NGINX or Apache to serve PHP using FastCGI or FPM and only serving index.php. Do not serve the entire public directory as it will result in unintended 404 errors.
+
+To get the database setup, start a pocketbase instance running on port 8090 (required that it's 8090 for now) and import the "pocketbase.json" file to PocketBase as a collection.
 
 You can easily start the server at port 7890 with this command within the root directory:
 ```
@@ -52,7 +56,7 @@ The src folder contains both backend and frontend scripts. Directories inside of
 - Web is currently an unused directory and its contents does not impact application funcitonality (unless there is a fatal syntax error). In other words, don't mess with it, it's not important but will be in the future.
 
 ### Admin Panel
-The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It'll likely be connected to a SQL database, but no decision has been made regarding what SQL server will be used. The login page is now fully implemented with the new routing system and you can login using the test credentials:
+The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It's connected to the PocketBase database which handles various security measures. The login page is now fully implemented with the new routing system and you can login using the test credentials:
 ```
 test
 ```
@@ -61,7 +65,7 @@ test
 ```
 
 ### Stack
-Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the planned database as it's easy to use, open source and perfect for an application of this size.
+Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the database as it's easy to use, open source and perfect for an application of this size. Currently, PocketBase implementation is a little limited, but basic authentication support has been added to the admin panel as well as a moderator creation utility within it.
 
 ### Security
 A lot of work has been put into refining the security of the application. As mentioned before, CSRF protection is built-in and can be easily implemented into any form by using the Csrf class and methods. Additionally, session cookies are set to be good for one hour and have a strict cross site policy.
@@ -84,6 +88,8 @@ Csrf::verifyToken();
 ```
 Doing those simple steps will prevent abuse of forms and significantly reduce the likelihood of unauthorized access to your application's private features. Soon, CSRF validation will be required for all incoming POST requests to ensure that every form is protected.
 
+Fiddle uses Pocketbase, which implements hashing and salting by default. PocketBase also uses APIs instead of being just a SQL database, which means it's not vulnerable to SQL injection attacks.
+
 #### Content Security Policy
 A Content Security Policy (CSP) is also implemented and prevents any stylesheets/scripts from being run on the browser that aren't explicity mentioned within it. If you decide to use external stylesheets/scripts, you'll have to edit the CSP before they'll work. Never use inline scripts as these are disabled. Instead, use an external JS file within the site or hash a script coming from an external domain (this site can help with hashing for you: https://www.srihash.org/). The inconvenience this causes is far outweighed by the security benefits. Having a CSP significantly reduces the risk of XSS attacks and malicious changes to client-side functionality.
 
@@ -95,7 +101,7 @@ Do keep in mind that the CSP is very touchy and difficult to work with. Always t
 - [x] CSRF Protection
 - [ ] Admin Panel (in progress)
 - [x] Maintenance Mode
-- [ ] Database connection (in progress)
+- [x] Database connection
 - [ ] First Stable Release
 - [ ] Using database for templates
 - [ ] Adding an upload utility
