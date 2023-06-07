@@ -111,7 +111,7 @@ if (!isset($_SESSION["registration_success"])) {
                 <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
             </form>
         </div>
-        <div class="col-sm-6">
+        <div class="card col-sm-6 bg-dark text-white shadow p-3">
             <h3>Admins</h3>
             <ul class="list-group list-group-flush">
                 <?php echo $adminList ?>
