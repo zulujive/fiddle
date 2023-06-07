@@ -50,11 +50,11 @@ if (!isset($_SESSION["registration_success"])) {
     </nav>
 
     <br>
-    <h2 class="d-flex align-items-center justify-content-center">
-            Create Moderator Account
-    </h2>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/admin/register" style="width: 40%;">
+        <h2 class="d-flex align-items-center justify-content-center">
+                Create Moderator Account
+        </h2>
         <?php 
             if ($error_message !== null) {
                 $printed_error = '<div class="alert alert-warning mt-3 mb-0" role="alert">';
