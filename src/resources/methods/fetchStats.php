@@ -9,11 +9,8 @@ class fetchStats
 
         $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records');
 
-        if ($response->getStatusCode() === 200) {
-            $responseData = json_decode($response->getBody(), true);
-            if (isset($responseData['totalItems'])) {
-                return $responseData['totalItems'];
-            }
-        }
+        $responseData = json_decode($response->getBody(), true);
+        return $responseData['totalItems'];
+
     }
 }
