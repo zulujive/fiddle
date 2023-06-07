@@ -96,17 +96,17 @@ if (!isset($_SESSION["registration_success"])) {
                 <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
                 <div class="form-group mt-3">
                     <label for="username-login">Username</label>
-                    <input id="username-login" class="form-control bg-tertiary text-black shadow" type="text" name="username" required>
+                    <input id="username-login" class="form-control bg-tertiary shadow" type="text" name="username" required>
                 </div>
                 <div class="form-group mt-3">
                     <label for="pwd-login">Password</label>
-                    <input id="pwd-login" class="form-control bg-tertiary text-black shadow" type="password" name="password" required>
+                    <input id="pwd-login" class="form-control bg-tertiary shadow" type="password" name="password" required>
                 </div>
                 <div class="form-group mt-3">
                     <label for="pwd-confirm">Confirm Password</label>
-                    <input id="pwd-confirm" class="form-control bg-tertiary text-black shadow" type="password" name="passwordConfirm" required>
+                    <input id="pwd-confirm" class="form-control bg-tertiary shadow" type="password" name="passwordConfirm" required>
                 </div>
-                <button class="btn btn-light shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
+                <button class="btn btn-tertiary shadow mt-3 mb-3 w-50" type="submit" value="submit">Register</button>
             </form>
         </div>
         <div class="col-md-3 d-flex">
