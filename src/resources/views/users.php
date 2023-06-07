@@ -72,7 +72,8 @@ if (!isset($_SESSION["registration_success"])) {
                             <h5 class="card-title text-center">
                                 <?php 
                                 echo $userCount . ' ';
-                                if ($usercount < 2)
+                                $userCountInt = intval($userCount);
+                                if ($userCountInt < 2)
                                 {
                                     $plural = "User";
                                 } else {
