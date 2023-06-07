@@ -49,6 +49,9 @@ if (!isset($_SESSION["registration_success"])) {
                 <a class="nav-link active" href="/admin/users">Users</a>
             </li>
         </ul>
+        <form class="mt-auto d-flex align-items-start" action="/logout" method="POST">
+            <button class="btn btn-secondary btn-md" type="submit" value="submit">Logout</button>
+        </form>
       </nav>
     </div>
     <div class="col-lg-10">
