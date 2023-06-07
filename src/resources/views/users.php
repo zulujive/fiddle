@@ -48,10 +48,9 @@ if (!isset($_SESSION["registration_success"])) {
             </div>
         </div>
     </nav>
-
-    <br>
     <br>
     <form class="container card bg-primary text-white shadow" method="post" action="/admin/register" style="width: 40%;">
+        <br>
         <h2 class="d-flex align-items-center justify-content-center">
                 Create Moderator Account
         </h2>
