@@ -45,5 +45,22 @@ class fetchStats
 
         return 0; // Default value if there is an error
     }
+    public static function listAdmins()
+    {
+        $client = new Client(['defaults' => ['exceptions' => false]]);
+
+        $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records');
+
+        if ($response->getStatusCode() === 200) {
+            $responseData = json_decode($response->getBody(), true);
+            foreach($responseData['items'] as $item) {
+                $username = $item[username];
+
+                $html = '<li class="list-group-item">' . $username . '</li>';
+
+                return $html;
+            }
+        }
+    }
 }
 
