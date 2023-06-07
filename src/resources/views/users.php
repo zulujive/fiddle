@@ -35,7 +35,7 @@ if (!isset($_SESSION["registration_success"])) {
   <div class="row">
     <div class="col-lg-2">
       <nav class="navbar navbar-dark bg-primary flex-column">
-        <ul class="navbar-nav me-auto mb-0 mb-lg-0 pb-3">
+        <ul class="navbar-nav me-auto mb-0 mb-lg-0 pb-3 ms-0 ps-3">
             <li class="nav-item">
                 <a class="nav-link" href="/admin"><b>FiddleAdmin</b></a>
             </li>
