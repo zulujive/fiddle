@@ -34,9 +34,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             if ($record['2FA'] == true) {
                 // Load OTP secret to session variable
                 $_SESSION['secret'] = $record['2FASecret'];
+                $_SESSION['2FA'] = true;
                 header("Location: /login/2FA");
                 exit();
             }
+            $_SESSION["2FA"] = false;
             $_SESSION["logged_in"] = true;
             session_regenerate_id(true);
             header("Location: /admin");
