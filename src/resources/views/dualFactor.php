@@ -1,5 +1,5 @@
 <?php
-/*
+
 if (!isset($_SESSION['secret']))
 {
     header("Location: /login");
@@ -9,7 +9,7 @@ if ($_SESSION['logged_in'] == true)
 {
     header("Location: /admin");
     exit();
-}*/
+}
 
 ?>
 
