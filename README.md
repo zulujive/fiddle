@@ -66,7 +66,7 @@ The admin panel is currently under development. It uses Bootstrap for styling an
 ### Stack
 Of course, what application would be complete without a tech stack? Ultimately, the plan is to run the application on a PB²&J (PHP, Bootstrap, PocketBase, and Javascript) stack. PocketBase is the database as it's easy to use, open source and perfect for an application of this size. Currently, PocketBase implementation is a little limited, but basic authentication support has been added to the admin panel as well as a moderator creation utility within it.
 
-PocketBase was the backend of choice here due to its easy implementation and powerful features. Namely, it automatically hashes, stores, authenticates and salts passwords, making handling logins as simple as sending a single POST request. Additionally, it's incredibly simmple to setup, allowing for quick deployment as compared to alternatives such as FireBase. Currently, a more easy system to communicate with PB is being setup and will be implemented soon.
+PocketBase was the backend of choice here due to its easy implementation and powerful features. Namely, it automatically hashes, stores, authenticates and salts passwords, making handling logins as simple as sending a single POST request. Additionally, it's incredibly simple to setup, allowing for quick deployment as compared to alternatives such as FireBase. Currently, a more easy system to communicate with PB is being setup and will be implemented soon.
 
 ### Security
 A lot of work has been put into refining the security of the application. As mentioned before, CSRF protection is built-in and can be easily implemented into any form by using the Csrf class and methods. Additionally, session cookies are set to be good for one hour and have a strict cross site policy.
@@ -124,3 +124,10 @@ Support for 2FA has been added to the admin panel. Users who do not have it enab
 - [ ] Client-side rendering
 - [ ] User Profile Pages
 - [x] 2FA Support
+
+## Roadmap Execution
+As it stands, much of the basic functionality of the application has been completed. No function is implemented unless it's completely finished and polished, making development a tad slow. However, some features have yet to be implemented, such as the user upload utility and having an index of templates in the database. The first priority is implementing the admin panel so that the website can be properly administrated from the get-go. User-related features will be added soon, likely along with the final admin panel features to center admin panel features around the site's data.
+
+One of the primary goals of this project was to make server deployment as simple and straightfoward as possible. Much of the effort in the beginning went to making sure that server deployment is simple and replicable. Once development of server backend slows down, the focus will shift once more to providing an easy setup experience. As a result, the plan is to containerize the application and provide a setup utility similar to that of other server software such as WordPress and MediaWiki. Upgrading the server will be as simple as clicking a button, changing the configuration will be done through a GUI, and server errors will be displayed with helpful hints. 
+
+In the end, this project is designed to be what the original PxlsFiddle never was: functional **and** beautiful. Through modular code, a clean UI, simple deployment and, most of all, expansive functionality, the new Fiddle project can overcome what PxlsFiddle couldn't and bring the Pxls community together once more.
