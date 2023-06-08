@@ -5,15 +5,14 @@ use OTPHP\TOTP;
 $otp = TOTP::create();
 $OTPURI = 'otpauth://totp/PxlsFiddle?secret=' . $otp->getSecret() . '';
 
-// Create a new QRCode instance
-$qrCode = new QrCode($OTPURI);
-
-// Set the size of the QR code
-$qrCode->setSize(300);
-
-// Set the foreground and background colors
-$qrCode->setForegroundColor(['r' => 0, 'g' => 0, 'b' => 0]);
-$qrCode->setBackgroundColor(['r' => 255, 'g' => 255, 'b' => 255]);
+$qrCode = QrCode::create($OTPURI)
+    ->setEncoding(new Encoding('UTF-8'))
+    ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
+    ->setSize(300)
+    ->setMargin(10)
+    ->setRoundBlockSizeMode(new RoundBlockSizeModeMargin())
+    ->setForegroundColor(new Color(0, 0, 0))
+    ->setBackgroundColor(new Color(255, 255, 255));
 
 // Output the QR code image
 header('Content-Type: '.$qrCode->getContentType());
