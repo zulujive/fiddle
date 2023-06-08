@@ -10,6 +10,11 @@ if ($_SESSION['logged_in'] == true)
     header("Location: /admin");
     exit();
 }
+if ($_SESSION['secret'] == null)
+{
+    header("Location: /login");
+    exit();
+}
 
 ?>
 
