@@ -1,6 +1,4 @@
 <?php
-require_once 'vendor/autoload.php';
-
 use Endroid\QrCode\QrCode;
 use OTPHP\TOTP;
 
