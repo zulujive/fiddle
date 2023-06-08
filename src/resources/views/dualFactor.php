@@ -26,7 +26,7 @@ if ($_SESSION['logged_in'] == true)
 </head>
 <body class="m-4">
     
-    <form class="container card bg-success text-white shadow" style="width:40%" action="/login/2FA" method="POST">
+    <form class="container card bg-success text-dark shadow" style="width:40%" action="/login/2FA" method="POST">
         <div class="form-group mt-3">
             <label for="OTP">Please enter your one-time key:</label>
             <input id="OTP" class="form-control shadow mb-3" type="text" name="OTP" required>
