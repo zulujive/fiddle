@@ -1,5 +1,6 @@
 <?php
 use GuzzleHttp\Client;
+use OTPHP\TOTP;
 require_once __DIR__ . '/../methods/Csrf.php';
 
 if ($_SESSION["logged_in"] == true) {
@@ -28,6 +29,11 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
+            $responseData = json_decode($response->getBody(), true);
+            if ($responseData['2FA'] === true) {
+                $otp = TOTP::generate();
+                echo "The OTP secret is: {$otp->getSecret()}\n";
+            }
             $_SESSION["logged_in"] = true;
             session_regenerate_id(true);
             header("Location: /admin");
