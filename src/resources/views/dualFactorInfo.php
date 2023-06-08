@@ -68,7 +68,7 @@ if (isset($_POST['password']))
             Please go to your authenticator app and scan the QR Code below. 
             This will be where your one-time passcodes generate.
         </p>
-        <img src="http://localhost:8080/qrcode?secret=<?php echo $secret ?>">
+        <img src="/qrcode?secret=<?php echo $secret ?>">
     </div>
 </body>
 </html>
