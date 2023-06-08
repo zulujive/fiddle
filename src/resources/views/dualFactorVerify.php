@@ -11,7 +11,7 @@ if (isset($_POST["OTP"]))
     if($otp->now() == $userOTP)
     {
         $_SESSION['logged_in'] = true;
-        header("Location: /admin");
+        header("Location: /");
         exit();
     }
 }
