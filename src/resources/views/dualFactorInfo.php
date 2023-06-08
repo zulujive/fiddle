@@ -72,7 +72,9 @@ if (isset($_POST['password']))
             This will be where your one-time passcodes generate.
         </p>
         <img src="/qrcode?secret=<?php echo $secret ?>">
-        <br>
+        <p>If the image doesn't load, your secret is:</p>
+        <p><b><?php echo $secret ?></b></p>
+        <a class="btn btn-outline-light" href="/admin">Done</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
