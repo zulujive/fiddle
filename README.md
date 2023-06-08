@@ -14,7 +14,8 @@ Though it is in development, the server can be safely deployed to production as 
 ## Features
 - Laravel-style routing
 - CSRF protection
-- Boostrap admin panel (coming soon)
+- Multi-factor Authentication Support
+- Boostrap admin panel (in progress)
 - Highly scalable architecture
 - Beautiful design from top to bottom
 - Simple and easy deployment
@@ -89,11 +90,17 @@ A Content Security Policy (CSP) is also implemented and prevents any stylesheets
 
 Do keep in mind that the CSP is very touchy and difficult to work with. Always thoroughly test before deploying to production.
 
+#### Multi-factor Authentication
+Support for 2FA has been added to the admin panel. Users who do not have it enabled will have a button on their home screen to enable it. Fiddle uses time-based one-time passwords for 2FA which can be easily implemented in Google Authenticator. If a user decides to enable 2FA, they'll be prompted to confirm with their password for security and to prevent unintentional enabling. After which, a QR-code will be displayed that a user can use to add the OTP to their preferred OTP-client.
+
 ## Roadmap
 - [ ] Docker implementation
 - [x] Routes
 - [x] CSRF Protection
 - [ ] Admin Panel (in progress)
+    - [ ] Main Dashboard
+    - [ ] Template Dashboard
+    - [x] User Dashboard
 - [x] Maintenance Mode
 - [x] Database connection
 - [ ] First Stable Release
@@ -109,4 +116,4 @@ Do keep in mind that the CSP is very touchy and difficult to work with. Always t
 - [ ] Integration with Pxls Charity
 - [ ] Client-side rendering
 - [ ] User Profile Pages
-- [ ] 2FA Support
+- [x] 2FA Support
