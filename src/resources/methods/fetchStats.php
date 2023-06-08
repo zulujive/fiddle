@@ -1,5 +1,6 @@
 <?php
 use GuzzleHttp\Client;
+require_once __DIR__ . '/../../../config.php';
 
 class fetchStats
 {
@@ -7,7 +8,7 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records');
+        $response = $client->get('' . DB_HOST . '/api/collections/admins/records');
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
@@ -28,7 +29,7 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('http://127.0.0.1:8090/api/collections/users/records');
+        $response = $client->get('' . DB_HOST . '/api/collections/users/records');
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
@@ -49,7 +50,7 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('http://127.0.0.1:8090/api/collections/admins/records?sort=+created');
+        $response = $client->get('' . DB_HOST . '/api/collections/admins/records?sort=+created');
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
@@ -67,7 +68,7 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('http://127.0.0.1:8090/api/collections/users/records?sort=-created');
+        $response = $client->get('' . DB_HOST . '/api/collections/users/records?sort=-created');
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);

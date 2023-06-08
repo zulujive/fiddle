@@ -1,6 +1,7 @@
 <?php
 use GuzzleHttp\Client;
 require_once __DIR__ . '/../methods/Csrf.php';
+require_once __DIR__ . '/../../../config.php';
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     Csrf::verifyToken();
@@ -18,7 +19,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('http://127.0.0.1:8090/api/collections/admins/records', [
+        $response = $client->post('' . DB_HOST . '/api/collections/admins/records', [
             'json' => [
                 'username' => $username,
                 'password' => $hashedPassword,

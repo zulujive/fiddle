@@ -2,6 +2,7 @@
 use GuzzleHttp\Client;
 use OTPHP\TOTP;
 require_once __DIR__ . '/../methods/Csrf.php';
+require_once __DIR__ . '/../../../config.php';
 
 if ($_SESSION["logged_in"] == true) {
     header("Location: /admin");
@@ -10,7 +11,6 @@ if ($_SESSION["logged_in"] == true) {
 
 $error_message = null;
 
-include(dirname(__FILE__).'/../../../config.php');
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     Csrf::verifyToken();
     $username_unsanitized = $_POST["username"];
@@ -22,7 +22,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('http://127.0.0.1:8090/api/collections/admins/auth-with-password', [
+        $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
             'json' => [
                 'identity' => $username,
                 'password' => $hashedPassword,

@@ -1,9 +1,12 @@
 <?php
 use GuzzleHttp\Client;
 use OTPHP\TOTP;
+require_once __DIR__ . '/../../../config.php';
+require_once __DIR__ . '/../methods/Csrf.php';
 
 if (isset($_POST['password']))
 {
+    Csrf::verifyToken();
     $username = $_SESSION["username"];
     $password = $_POST['password'];
     $userID = $_SESSION["userID"];
@@ -11,7 +14,7 @@ if (isset($_POST['password']))
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('http://127.0.0.1:8090/api/collections/admins/auth-with-password', [
+        $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
             'json' => [
                 'identity' => $username,
                 'password' => $password,
@@ -29,7 +32,7 @@ if (isset($_POST['password']))
             $otp = TOTP::create();
             $secret = $otp->getSecret();
             try {
-            $patchResponse = $client->patch('http://127.0.0.1:8090/api/collections/admins/records/' . $userID . '', [
+            $patchResponse = $client->patch('' . DB_HOST . '/api/collections/admins/records/' . $userID . '', [
                 'json' => [
                     '2FA' => true,
                     '2FASecret' => $secret,

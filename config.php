@@ -1,21 +1,10 @@
 <?php
 
-// To use Fiddle, you must setup a mySQL or MariaDB database
-// Put the host of the database configured here:
-$hostDb = 'localhost';
-// Put the name of the database configured here:
-$dbName = 'fiddle';
-// Put the username for the database here:
-$dbUname = 'username';
-// Put the password for the database here:
-$dbPwd = 'password';
+// To use Fiddle, you must setup a PocketBase database
+// Import the collection from 'pocketbase.json'
 
-// Fiddle uses a simple authentication system for the admin panel.
-// This feature will be overhauled soon, NEVER EVER use it in production
-$valid_users = [
-    "test" => "1234",
-    // Add more authorized users here
-];
+// Put the host of the database configured here (no trailing slashes):
+define('DB_HOST', 'http://127.0.0.1:8090');
 
 // Enable or disable maintenance mode
 $maintenanceMode = false;

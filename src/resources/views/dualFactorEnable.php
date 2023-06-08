@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__ . '/../methods/Csrf.php';
+
+$csrfToken = Csrf::generateToken();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -19,6 +26,7 @@
     </p>
     
     <form class="container card bg-success text-white shadow p-3" action="/admin/enable2FA" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group mb-2">
             <label for="pwd-login">Confirm with Password</label>
             <input id="pwd-login" class="form-control shadow" type="password" name="password" required>
