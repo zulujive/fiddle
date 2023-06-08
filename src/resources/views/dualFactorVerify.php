@@ -1,6 +1,5 @@
 <?php
-
-use GuzzleHttp\Client;
+use OTPHP\TOTP;
 
 if (isset($_POST["OTP"]))
 {
