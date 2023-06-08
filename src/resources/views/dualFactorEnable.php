@@ -23,7 +23,7 @@
             <label for="pwd-login">Confirm with Password</label>
             <input id="pwd-login" class="form-control shadow mb-3" type="password" name="password" required>
         </div>
-        <button class="btn btn-outline-light" type="submit">Confirm</button>
+        <button class="btn btn-outline-light" type="submit" style="width:7rem">Confirm</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
