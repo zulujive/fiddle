@@ -8,6 +8,8 @@ if (isset($_POST['password']))
     $password = $_POST['password'];
     $userID = $_SESSION["userID"];
 
+    $client = new Client(['defaults' => [ 'exceptions' => false ]] );
+
     try {
         $response = $client->post('http://127.0.0.1:8090/api/collections/admins/auth-with-password', [
             'json' => [
