@@ -77,6 +77,14 @@ $router->post('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
+$router->get('/login/2FA', function () {
+    $controller = new AdminController();
+    $controller->OTP();
+});
+$router->post('/login/2FA', function () {
+    $controller = new AdminController();
+    $controller->verifyOTP();
+});
 $router->post('/logout', function () {
     $controller = new AdminController();
     $controller->panelLogout();
