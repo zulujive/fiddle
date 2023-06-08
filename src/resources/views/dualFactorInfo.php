@@ -65,13 +65,15 @@ if (isset($_POST['password']))
 </head>
 <body class="m-4">
     <div class="container card bg-primary text-white shadow p-3" style="width:40%">
-        <h3>Your 2FA Info</h3>
+        <h3 class="text-center">Your 2FA Info</h3>
         <p>
             DO NOT reload the page, as this data will not be repeated.<br>
             Please go to your authenticator app and scan the QR Code below. 
             This will be where your one-time passcodes generate.
         </p>
-        <img src="/qrcode?secret=<?php echo $secret ?>" width="50%"><br>
+        <div style="text-align:center">
+            <img src="/qrcode?secret=<?php echo $secret ?>" width="50%"><br>
+        </div>
         <p>If the image doesn't load, your secret is:<br>
         <b><?php echo $secret ?></b></p>
         <a class="btn btn-outline-light" href="/admin">Done</a>
