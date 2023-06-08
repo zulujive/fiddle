@@ -10,6 +10,8 @@ use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\ValidationException;
 use OTPHP\TOTP;
 
+$writer = new PngWriter();
+
 $otp = TOTP::create();
 $OTPURI = 'otpauth://totp/PxlsFiddle?secret=' . $otp->getSecret() . '';
 
@@ -22,6 +24,8 @@ $qrCode = QrCode::create($OTPURI)
     ->setForegroundColor(new Color(0, 0, 0))
     ->setBackgroundColor(new Color(255, 255, 255));
 
+$result = $writer->write($qrCode);
+
 // Output the QR code image
-header('Content-Type: '.$qrCode->getContentType());
-echo $qrCode->writeString();
+header('Content-Type: '.$result->getMimeType());
+echo $result->getString();
