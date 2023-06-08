@@ -11,6 +11,8 @@ Though it is in development, the server can be safely deployed to production as 
 
 ![Site screenshot](https://github.com/zulujive/fiddle/blob/main/site-example.png?raw=true)
 
+![Admin panel screenshot](https://github.com/zulujive/fiddle/blob/main/admin-example.png?raw=true)
+
 ## Features
 - Laravel-style routing
 - CSRF protection
