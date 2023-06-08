@@ -3,7 +3,7 @@ use Endroid\QrCode\QrCode;
 use OTPHP\TOTP;
 
 $otp = TOTP::create();
-$otpURI = 'otpauth://totp/PxlsFiddle?secret=' . $otp->getSecret() . '';
+$OTPURI = 'otpauth://totp/PxlsFiddle?secret=' . $otp->getSecret() . '';
 
 // Create a new QRCode instance
 $qrCode = new QrCode($OTPURI);
