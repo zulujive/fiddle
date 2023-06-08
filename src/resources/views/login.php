@@ -34,7 +34,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             if ($record['2FA'] == true) {
                 $otp = TOTP::create();
                 $secret = $record['2FASecret'];
-                $otp = TOTP::createFromSecret($secret);
+                $otp = TOTP::generateOTP($secret);
                 echo "The current OTP is: {$otp->now()}\n";
                 exit();
             }
