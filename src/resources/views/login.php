@@ -33,7 +33,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $record = $responseData['record'];
             if ($record['2FA'] == true) {
                 $otp = TOTP::create();
-                echo "The OTP secret is: {$otp->getSecret()}\n";
+                $secret = $record['2FASecret'];
+                $otp = TOTP::createFromSecret($secret);
+                echo "The current OTP is: {$otp->now()}\n";
                 exit();
             }
             $_SESSION["logged_in"] = true;
