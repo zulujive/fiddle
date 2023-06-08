@@ -77,6 +77,14 @@ $router->post('/login', function () {
     $controller = new AdminController();
     $controller->panelLogin();
 });
+$router->get('/login/2FA', function () {
+    $controller = new AdminController();
+    $controller->OTP();
+});
+$router->post('/login/2FA', function () {
+    $controller = new AdminController();
+    $controller->verifyOTP();
+});
 $router->post('/logout', function () {
     $controller = new AdminController();
     $controller->panelLogout();
@@ -96,6 +104,18 @@ $router->get('/admin/users', function () {
 $router->post('/admin/register', function () {
     $controller = new AdminController();
     $controller->newUser();
+});
+$router->get('/admin/enable2FA', function () {
+    $controller = new AdminController();
+    $controller->enableOTP();
+});
+$router->post('/admin/enable2FA', function () {
+    $controller = new AdminController();
+    $controller->deployOTP();
+});
+$router->get('/qrcode', function () {
+    $controller = new AdminController();
+    $controller->generateQR();
 });
 
 // -------------------------------------

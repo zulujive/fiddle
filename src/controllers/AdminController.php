@@ -20,4 +20,19 @@ class AdminController
     public function newUser() {
         require_once __DIR__ . '/../resources/views/register.php';
     }
+    public function OTP() {
+        require_once __DIR__ . '/../resources/views/dualFactor.php';
+    }
+    public function verifyOTP() {
+        require_once __DIR__ . '/../resources/views/dualFactorVerify.php';
+    }
+    public function enableOTP() {
+        require_once __DIR__ . '/../resources/views/dualFactorEnable.php';
+    }
+    public function deployOTP() {
+        require_once __DIR__ . '/../resources/views/dualFactorInfo.php';
+    }
+    public function generateQR() {
+        require_once __DIR__ . '/../resources/views/generateQR.php';
+    }
 }

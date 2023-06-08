@@ -1,6 +1,8 @@
 {
     "require": {
         "bramus/router": "^1.6",
-        "guzzlehttp/guzzle": "^7.7"
+        "guzzlehttp/guzzle": "^7.7",
+        "spomky-labs/otphp": "^10.0",
+        "endroid/qr-code": "^4.8"
     }
 }

@@ -37,8 +37,15 @@
                         <a class="nav-link " href="/admin/users">Users</a>
                     </li>
                 </ul>
+                <?php 
+                    // If someone doesn't have 2FA enabled, give them this button
+                    if ($_SESSION["2FA"] == false)
+                    {
+                        echo '<a class="btn btn-warning btn-md shadow" href="/admin/enable2FA">Enable 2FA</a>';
+                    }
+                ?>
                 <form class="mt-auto d-flex align-items-start" action="/logout" method="POST">
-                    <button class="btn btn-secondary btn-md" type="submit" value="submit">Logout</button>
+                    <button class="btn btn-secondary btn-md shadow" type="submit" value="submit">Logout</button>
                 </form>
             </nav>
         </div>

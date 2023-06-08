@@ -23,7 +23,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 'username' => $username,
                 'password' => $hashedPassword,
                 'passwordConfirm' => $hashedPassword,
-                'isAdmin' => true
+                'isAdmin' => false
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
