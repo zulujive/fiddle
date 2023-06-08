@@ -26,12 +26,12 @@ if ($_SESSION['logged_in'] == true)
 </head>
 <body class="m-4">
     
-    <form class="container card bg-success text-dark shadow" style="width:40%" action="/login/2FA" method="POST">
+    <form class="container card bg-success text-white shadow" style="width:40%" action="/login/2FA" method="POST">
         <div class="form-group mt-3">
             <label for="OTP">Please enter your one-time key:</label>
-            <input id="OTP" class="form-control shadow mb-3" type="text" name="OTP" required>
+            <input id="OTP" class="form-control bg-white shadow mb-3" type="text" name="OTP" required>
         </div>
-        <button class="btn btn-outline-dark mb-3 shadow" type="submit" style="width:7rem">Verify</button>
+        <button class="btn btn-outline-white mb-3 shadow" type="submit" style="width:7rem">Verify</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
