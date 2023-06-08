@@ -32,7 +32,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $responseData = json_decode($response->getBody(), true);
             $record = $responseData['record'];
             if ($record['2FA'] == true) {
-                $otp = TOTP::generate();
+                $otp = TOTP::create();
                 echo "The OTP secret is: {$otp->getSecret()}\n";
             }
             $_SESSION["logged_in"] = true;
