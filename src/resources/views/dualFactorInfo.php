@@ -59,8 +59,11 @@ if (isset($_POST['password']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2FA Info</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
-<body>
+<body class="m-4">
     <div class="container card bg-primary text-white shadow" style="width:40%">
         <h3>Your 2FA Info</h3>
         <p>
@@ -69,6 +72,9 @@ if (isset($_POST['password']))
             This will be where your one-time passcodes generate.
         </p>
         <img src="/qrcode?secret=<?php echo $secret ?>">
+        <br>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
