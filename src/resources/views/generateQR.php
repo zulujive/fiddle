@@ -10,10 +10,17 @@ use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\ValidationException;
 use OTPHP\TOTP;
 
+if (isset($_GET['secret'])) {
+    // Access the value of the 'id' parameter
+    $secret = $_GET['secret'];
+} else {
+    echo "You must define URL parameters";
+    exit();
+}
+
 $writer = new PngWriter();
 
-$otp = TOTP::create();
-$OTPURI = 'otpauth://totp/PxlsFiddle?secret=' . $otp->getSecret() . '';
+$OTPURI = 'otpauth://totp/PxlsFiddle?secret=' . $secret . '';
 
 $qrCode = QrCode::create($OTPURI)
     ->setEncoding(new Encoding('UTF-8'))
