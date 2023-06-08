@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../methods/Csrf.php';
 
 if (!isset($_SESSION['secret']))
 {
@@ -15,6 +16,8 @@ if ($_SESSION['secret'] == null)
     header("Location: /login");
     exit();
 }
+
+$csrfToken = Csrf::generateToken();
 
 ?>
 
@@ -33,6 +36,7 @@ if ($_SESSION['secret'] == null)
     
     <h1 class="text-center">2-Factor Authentication</h1>
     <form class="container card bg-success text-white shadow" style="width:40%" action="/login/2FA" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
         <div class="form-group mt-3">
             <label for="OTP">Please enter your one-time key:</label>
             <input id="OTP" class="form-control bg-white text-black shadow mb-3" type="text" name="OTP" required autofocus>

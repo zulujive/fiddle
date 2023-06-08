@@ -21,6 +21,8 @@ if ($_SESSION['secret'] == null)
 
 if (isset($_POST["OTP"]))
 {
+    Csrf::verifyToken();
+    
     $secret = $_SESSION['secret'];
     $userOTP = $_POST["OTP"];
 
