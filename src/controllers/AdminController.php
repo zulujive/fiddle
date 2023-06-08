@@ -26,4 +26,13 @@ class AdminController
     public function verifyOTP() {
         require_once __DIR__ . '/../resources/views/dualFactorVerify.php';
     }
+    public function enableOTP() {
+        require_once __DIR__ . '/../resources/views/dualFactorEnable.php';
+    }
+    public function deployOTP() {
+        require_once __DIR__ . '/../resources/views/dualFactorInfo.php';
+    }
+    public function generateQR() {
+        require_once __DIR__ . '/../resources/views/generateQR.php';
+    }
 }

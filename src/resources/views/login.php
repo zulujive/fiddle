@@ -31,6 +31,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
             $record = $responseData['record'];
+            $_SESSION["username"] = $record['username'];
+            $_SESSION["userID"] = $record['id'];
             if ($record['2FA'] == true) {
                 // Load OTP secret to session variable
                 $_SESSION['secret'] = $record['2FASecret'];

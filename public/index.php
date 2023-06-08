@@ -105,6 +105,18 @@ $router->post('/admin/register', function () {
     $controller = new AdminController();
     $controller->newUser();
 });
+$router->get('/admin/enable2FA', function () {
+    $controller = new AdminController();
+    $controller->enableOTP();
+});
+$router->post('/admin/enable2FA', function () {
+    $controller = new AdminController();
+    $controller->deployOTP();
+});
+$router->get('/qrcode', function () {
+    $controller = new AdminController();
+    $controller->generateQR();
+});
 
 // -------------------------------------
 
