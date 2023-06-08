@@ -1,11 +1,3 @@
-<?php
-
-/*if ($_SESSION["logged_in"] !== true) {
-    header("Location: /login");
-    exit();
-}*/
-
-?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
