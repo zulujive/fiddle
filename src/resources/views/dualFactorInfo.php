@@ -64,7 +64,7 @@ if (isset($_POST['password']))
 
 </head>
 <body class="m-4">
-    <div class="container card bg-primary text-white shadow" style="width:40%">
+    <div class="container card bg-primary text-white shadow p-3" style="width:40%">
         <h3>Your 2FA Info</h3>
         <p>
             DO NOT reload the page, as this data will not be repeated.<br>
