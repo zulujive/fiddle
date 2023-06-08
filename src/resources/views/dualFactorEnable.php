@@ -19,7 +19,7 @@
     </p>
     
     <form class="container card bg-success text-white shadow" action="/admin/enable2FA" method="POST">
-    <div class="form-group mt-3">
+        <div class="form-group mt-3 mb-3">
             <label for="pwd-login">Confirm with Password</label>
             <input id="pwd-login" class="form-control shadow mb-3" type="password" name="password" required>
         </div>
