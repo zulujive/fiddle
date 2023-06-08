@@ -30,7 +30,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
-            if ($responseData['2FA'] === true) {
+            $record = $responseData['record'];
+            if ($record['2FA'] == true) {
                 $otp = TOTP::generate();
                 echo "The OTP secret is: {$otp->getSecret()}\n";
             }
