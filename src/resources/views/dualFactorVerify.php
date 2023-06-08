@@ -1,5 +1,6 @@
 <?php
 use OTPHP\TOTP;
+require_once __DIR__ . '/../methods/Csrf.php';
 
 if (!isset($_SESSION['secret']))
 {
@@ -22,7 +23,7 @@ if ($_SESSION['secret'] == null)
 if (isset($_POST["OTP"]))
 {
     Csrf::verifyToken();
-    
+
     $secret = $_SESSION['secret'];
     $userOTP = $_POST["OTP"];
 
