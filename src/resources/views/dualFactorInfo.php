@@ -12,7 +12,7 @@ if (isset($_POST['password']))
         $response = $client->post('http://127.0.0.1:8090/api/collections/admins/auth-with-password', [
             'json' => [
                 'identity' => $username,
-                'password' => $hashedPassword,
+                'password' => $password,
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
