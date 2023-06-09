@@ -9,7 +9,6 @@ use GuzzleHttp\Client;
 require_once __DIR__ . '/../../../config.php';
 
 if (isset($_GET['id'])) {
-    // Access the value of the 'id' parameter
     $id = $_GET['id'];
 } else {
     echo "You must define URL parameters";
@@ -20,7 +19,7 @@ $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
 $response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '');
 $responseData = json_decode($response->getBody(), true);
-$secret = $responseData['secret'];
+$secret = $responseData['2FASecret'];
 if (!isset($secret))
 {
     echo "Account does not have 2FA";
