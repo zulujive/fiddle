@@ -110,7 +110,7 @@ Support for 2FA has been added to the admin panel. Users who do not have it enab
 - [x] Maintenance Mode
 - [x] Database connection
 - [ ] First Stable Release
-- [ ] Using database for templates
+- [x] Using database for templates
 - [ ] Adding an upload utility
 - [x] Detangling code
 - [x] Implementing Middleware
