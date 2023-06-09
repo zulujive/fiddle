@@ -25,6 +25,7 @@ if (isset($responseData['secret']))
     $secret = $responseData['secret'];
 } else {
     echo "Account does not have 2FA";
+    exit();
 }
 
 $writer = new PngWriter();
