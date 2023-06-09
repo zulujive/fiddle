@@ -15,6 +15,12 @@ if (isset($_GET['id'])) {
     exit();
 }
 
+if ($id !== $_SESSION["userID"])
+{
+    echo "Error: Unauthorized";
+    exit();
+}
+
 $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
 $response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '');
