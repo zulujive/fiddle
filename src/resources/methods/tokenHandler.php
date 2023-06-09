@@ -41,7 +41,7 @@ class tokenHandler
         return $state;
 
     }
-    protected static function findToken($token) {
+    protected function findToken($token) {
         $client = new Client();
 
         $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
