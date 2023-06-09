@@ -9,7 +9,9 @@ use GuzzleHttp\Client;
 require_once __DIR__ . '/../../../config.php';
 require_once __DIR__ . '/../methods/tokenHandler.php';
 
-$tokenValid = tokenHandler::verifyToken($_GET['token'], $_SESSION["userID"]);
+$handler = new tokenHandler();
+
+$tokenValid = $handler->verifyToken($_GET['token'], $_SESSION["userID"]);
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -58,4 +60,4 @@ $result = $writer->write($qrCode);
 header('Content-Type: '.$result->getMimeType());
 echo $result->getString();
 
-tokenHandler::disableToken($_GET['token']);
+$handler->disableToken($_GET['token']);
