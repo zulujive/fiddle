@@ -24,10 +24,10 @@ class tokenHandler
             return $token;
         }
     }
-    public static function disableToken($token) {
+    public function disableToken($token) {
         $client = new Client();
 
-        $id = this::findToken($token);
+        $id = $this->findToken($token);
 
         $response = $client->patch(DB_HOST . '/api/collections/tokens/records/' . $id, [
             'json' => [
