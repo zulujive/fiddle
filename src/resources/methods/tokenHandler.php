@@ -9,7 +9,7 @@ class tokenHandler
     public static function createToken($type, $enabled, $user)
     {
         global $client;
-        $uuid = uuid_create();
+        $uuid = bin2hex(random_bytes(32));
         $response = $client->post('' . DB_HOST . '/api/collections/tokens/records', [
             'json' => [
                 'token' => $uuid,
