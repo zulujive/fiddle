@@ -1,14 +1,13 @@
 <?php
 use GuzzleHttp\Client;
 
-$client = new Client();
 require_once __DIR__ . '/../../../config.php';
 
 class tokenHandler
 {
     public static function createToken($type, $enabled, $user)
     {
-        global $client;
+        $client = new Client();
         $uuid = bin2hex(random_bytes(32));
         $response = $client->post(DB_HOST . '/api/collections/tokens/records', [
             'json' => [
@@ -26,7 +25,7 @@ class tokenHandler
         }
     }
     public static function disableToken($token) {
-        global $client;
+        $client = new Client();
 
         $id = this::findToken($token);
 
@@ -43,7 +42,7 @@ class tokenHandler
 
     }
     protected static function findToken($token) {
-        global $client;
+        $client = new Client();
 
         $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
         if ($response->getStatusCode() === 200) {
@@ -55,7 +54,7 @@ class tokenHandler
         }
     }
     public static function verifyToken($token, $user) {
-        global $client;
+        $client = new Client();
 
         $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
         if ($response->getStatusCode() === 200) {
