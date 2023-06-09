@@ -75,7 +75,7 @@ if (isset($_POST['password']))
             This will be where your one-time passcodes generate.
         </p>
         <div class="mb-2" style="text-align:center">
-            <img src="/qrcode?secret=<?php echo $secret ?>" width="50%"><br>
+            <img src="/qrcode?id=<?php echo $userID ?>" width="50%"><br>
         </div>
         <p>If the image doesn't load, your secret is:<br>
         <b><?php echo $secret ?></b></p>

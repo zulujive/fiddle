@@ -3,20 +3,24 @@ use Endroid\QrCode\Color\Color;
 use Endroid\QrCode\Encoding\Encoding;
 use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
 use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Label\Label;
-use Endroid\QrCode\Logo\Logo;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
-use Endroid\QrCode\Writer\ValidationException;
-use OTPHP\TOTP;
+use GuzzleHttp\Client;
+require_once __DIR__ . '/../../../config.php';
 
-if (isset($_GET['secret'])) {
+if (isset($_GET['id'])) {
     // Access the value of the 'id' parameter
-    $secret = $_GET['secret'];
+    $id = $_GET['id'];
 } else {
     echo "You must define URL parameters";
     exit();
 }
+
+$client = new Client(['defaults' => [ 'exceptions' => false ]] );
+
+$response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '');
+$responseData = json_decode($response->getBody(), true);
+$secret = $responseData['secret'];
 
 $writer = new PngWriter();
 
