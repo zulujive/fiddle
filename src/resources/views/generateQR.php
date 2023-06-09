@@ -45,5 +45,3 @@ $result = $writer->write($qrCode);
 // Output the QR code image
 header('Content-Type: '.$result->getMimeType());
 echo $result->getString();
-
-exit();
