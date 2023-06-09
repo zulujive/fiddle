@@ -66,7 +66,9 @@ class tokenHandler
             if ($enabled == true && $validUser == $user) {
                 $valid = true;
             } else {
+                echo "Invalid or expired API key";
                 $valid = false;
+                exit();
             }
             return $valid;
         }

@@ -24,11 +24,6 @@ if ($id !== $_SESSION["userID"])
     echo "Error: Unauthorized";
     exit();
 }
-if ($tokenValid !== true)
-{
-    echo "Invalid API Token";
-    exit();
-}
 
 $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
