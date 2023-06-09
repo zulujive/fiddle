@@ -117,6 +117,7 @@ Support for 2FA has been added to the admin panel. Users who do not have it enab
 
 ## Possible Features
 - [ ] YubiKey OTP for Admin Panel
+- [ ] Adding template upvote/downvote system
 - [ ] Setup Utility
 - [ ] OAuth2 Support (very likely)
 - [ ] Discord Webhooks Support
