@@ -56,7 +56,7 @@ class tokenHandler
     public static function verifyToken($token, $user) {
         $client = new Client();
 
-        $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
+        $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=\'' . $token . '\')');
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
             $array = $responseData['items'];
