@@ -1,7 +1,7 @@
 <?php
 use GuzzleHttp\Client;
 
-$client = new Client(['defaults' => [ 'exceptions' => false ]] );
+$client = new Client();
 require_once __DIR__ . '/../../../config.php';
 
 class tokenHandler
