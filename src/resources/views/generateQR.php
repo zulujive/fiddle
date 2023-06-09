@@ -7,6 +7,9 @@ use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
 use GuzzleHttp\Client;
 require_once __DIR__ . '/../../../config.php';
+require_once __DIR__ . '/../methods/tokenHandler.php';
+
+$tokenValid = tokenHandler::verifyToken($_GET['token'], $_SESSION["userID"]);
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -14,10 +17,14 @@ if (isset($_GET['id'])) {
     echo "You must define URL parameters";
     exit();
 }
-
 if ($id !== $_SESSION["userID"])
 {
     echo "Error: Unauthorized";
+    exit();
+}
+if ($tokenValid !== true)
+{
+    echo "Invalid API Token";
     exit();
 }
 

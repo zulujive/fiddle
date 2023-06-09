@@ -54,4 +54,22 @@ class tokenHandler
             return $id;
         }
     }
+    public static function verifyToken($token, $user) {
+        global $client;
+
+        $response = $client->get('' . DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
+        if ($response->getStatusCode() === 200) {
+            $responseData = json_decode($response->getBody(), true);
+            $array = $responseData['items'];
+            $firstItem = $array[0];
+            $validUser = $firstItem['userID'];
+            $enabled = $firstItem['valid'];
+            if ($enabled == true && $validUser == $user) {
+                $valid = true;
+            } else {
+                $valid = false;
+            }
+            return $valid;
+        }
+    }
 }

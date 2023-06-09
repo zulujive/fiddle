@@ -3,6 +3,7 @@ use GuzzleHttp\Client;
 use OTPHP\TOTP;
 require_once __DIR__ . '/../../../config.php';
 require_once __DIR__ . '/../methods/Csrf.php';
+require_once __DIR__ . '/../methods/tokenHandler.php';
 
 if (isset($_POST['password']))
 {
@@ -12,6 +13,7 @@ if (isset($_POST['password']))
     $userID = $_SESSION["userID"];
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
+    $token = tokenHandler::createToken(qrCode, true, $userID);
 
     try {
         $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
@@ -75,7 +77,7 @@ if (isset($_POST['password']))
             This will be where your one-time passcodes generate.
         </p>
         <div class="mb-2" style="text-align:center">
-            <img src="/qrcode?id=<?php echo $userID ?>" width="50%"><br>
+            <img src="/qrcode?id=<?php echo $userID ?>&token=<?php echo $token ?>" width="50%"><br>
         </div>
         <p>If the image doesn't load, your secret is:<br>
         <b><?php echo $secret ?></b></p>
