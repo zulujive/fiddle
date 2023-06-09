@@ -20,10 +20,9 @@ $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
 $response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '');
 $responseData = json_decode($response->getBody(), true);
-if (isset($responseData['secret']))
+$secret = $responseData['secret'];
+if (!isset($secret))
 {
-    $secret = $responseData['secret'];
-} else {
     echo "Account does not have 2FA";
     exit();
 }
