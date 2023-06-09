@@ -1,4 +1,7 @@
 <?php
+use GuzzleHttp\Client;
+require_once __DIR__ . '/../../../config.php';
+
 class jsonUtils
 {
     public static function retrieveFeatured()
@@ -51,12 +54,13 @@ class jsonUtils
     }
     public static function retrieveData()
     {
-        // Read the JSON data from the file
-        $file = (dirname(__FILE__).'/../../storage/data/articles.json');
-        $json_data = file_get_contents($file);
+        $client = new Client();
+        // Read the JSON data from the database
+        $response = $client->get('' . DB_HOST . '/api/collections/templates/records');
+        $responseData = json_decode($response->getBody(), true);
+        $json_data = $responseData['items'];
 
-        // Decode the JSON data into a PHP array
-        return json_decode($json_data, true);
+        return $json_data;
     }
 
     public static function generateHTML()
