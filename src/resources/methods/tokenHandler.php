@@ -10,7 +10,7 @@ class tokenHandler
     {
         global $client;
         $uuid = bin2hex(random_bytes(32));
-        $response = $client->post('' . DB_HOST . '/api/collections/tokens/records', [
+        $response = $client->post(DB_HOST . '/api/collections/tokens/records', [
             'json' => [
                 'token' => $uuid,
                 'valid' => $enabled,
@@ -30,7 +30,7 @@ class tokenHandler
 
         $id = this::findToken($token);
 
-        $response = $client->patch('' . DB_HOST . '/api/collections/tokens/records/' . $id, [
+        $response = $client->patch(DB_HOST . '/api/collections/tokens/records/' . $id, [
             'json' => [
                 'valid' => false,
             ]
@@ -45,7 +45,7 @@ class tokenHandler
     protected static function findToken($token) {
         global $client;
 
-        $response = $client->get('' . DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
+        $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
             $array = $responseData['items'];
@@ -57,7 +57,7 @@ class tokenHandler
     public static function verifyToken($token, $user) {
         global $client;
 
-        $response = $client->get('' . DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
+        $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=' . $token . ')');
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
             $array = $responseData['items'];
