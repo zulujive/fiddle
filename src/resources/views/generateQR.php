@@ -3,18 +3,36 @@ use Endroid\QrCode\Color\Color;
 use Endroid\QrCode\Encoding\Encoding;
 use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
 use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Label\Label;
-use Endroid\QrCode\Logo\Logo;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
-use Endroid\QrCode\Writer\ValidationException;
-use OTPHP\TOTP;
+use GuzzleHttp\Client;
+require_once __DIR__ . '/../../../config.php';
+require_once __DIR__ . '/../methods/tokenHandler.php';
 
-if (isset($_GET['secret'])) {
-    // Access the value of the 'id' parameter
-    $secret = $_GET['secret'];
+$handler = new tokenHandler();
+
+$tokenValid = $handler->verifyToken($_GET['token'], $_SESSION["userID"]);
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 } else {
     echo "You must define URL parameters";
+    exit();
+}
+if ($id !== $_SESSION["userID"])
+{
+    echo "Error: Unauthorized";
+    exit();
+}
+
+$client = new Client(['defaults' => [ 'exceptions' => false ]] );
+
+$response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '');
+$responseData = json_decode($response->getBody(), true);
+$secret = $responseData['2FASecret'];
+if (!isset($secret))
+{
+    echo "Account does not have 2FA";
     exit();
 }
 
@@ -36,3 +54,5 @@ $result = $writer->write($qrCode);
 // Output the QR code image
 header('Content-Type: '.$result->getMimeType());
 echo $result->getString();
+
+$handler->disableToken($_GET['token']);

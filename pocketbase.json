@@ -154,5 +154,79 @@
             "onlyEmailDomains": null,
             "requireEmail": false
         }
+    },
+    {
+        "id": "litgfpiuku3unxh",
+        "name": "tokens",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "id": "taucmfio",
+                "name": "token",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "z1oi6v8o",
+                "name": "valid",
+                "type": "bool",
+                "system": false,
+                "required": false,
+                "options": {}
+            },
+            {
+                "id": "kgkk9pyi",
+                "name": "for",
+                "type": "select",
+                "system": false,
+                "required": false,
+                "options": {
+                    "maxSelect": 1,
+                    "values": [
+                        "qrCode",
+                        "adminBypass"
+                    ]
+                }
+            },
+            {
+                "id": "biamed42",
+                "name": "userID",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "options": {
+                    "collectionId": "_pb_users_auth_",
+                    "cascadeDelete": false,
+                    "minSelect": null,
+                    "maxSelect": 1,
+                    "displayFields": []
+                }
+            },
+            {
+                "id": "tucjb3cw",
+                "name": "expire",
+                "type": "date",
+                "system": false,
+                "required": false,
+                "options": {
+                    "min": "",
+                    "max": ""
+                }
+            }
+        ],
+        "indexes": [],
+        "listRule": "",
+        "viewRule": "",
+        "createRule": "",
+        "updateRule": "",
+        "deleteRule": null,
+        "options": {}
     }
 ]
