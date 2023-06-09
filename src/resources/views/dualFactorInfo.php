@@ -13,7 +13,7 @@ if (isset($_POST['password']))
     $userID = $_SESSION["userID"];
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
-    $token = tokenHandler::createToken(qrCode, true, $userID);
+    $token = tokenHandler::createToken('qrCode', true, $userID);
 
     try {
         $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
