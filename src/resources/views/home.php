@@ -160,7 +160,7 @@ require_once __DIR__ . '/../methods/jsonUtils.php';
   </head>
   <body>
     <div class="navbar">
-    	<h1 style="margin-bottom:0;margin-top:.5rem;font-size:2.5rem;"><i style="color:#de2c09;" class="fa-solid fa-meteor"></i> <b>Fiddle</b><a class="fire">Futura</a></h1>
+    	<h1 style="margin-bottom:0;margin-top:.5rem;font-size:2.5rem;"><i style="color:#de2c09;" class="fa-solid fa-meteor"></i> <b>FIDDLE</b><a class="fire">neo</a></h1>
     	<small style="margin-top:0;color:var(--text);"><em>pxls.space/#template=</em></small>
     </div>
     <h1 class="titleText" style="opacity:0; margin-bottom:0; margin-left:1rem;animation: fadeIn 0.5s ease .4s forwards;text-shadow: 0 0 1px #fff, 0 0 5px #ff8a00;"><i class="fa-solid fa-fire"></i> Trending</h1>
