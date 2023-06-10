@@ -6,11 +6,11 @@ require_once __DIR__ . '/../methods/jsonUtils.php';
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FiddleNeo</title>
+    <title>FiddleRedux</title>
     <link rel="stylesheet" type="text/css" href="/style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-  <meta property="og:title" content="FiddleNeo">
+  <meta property="og:title" content="FiddleRedux">
   <meta property="og:description" content="A collection of templates for Pxls">
 
   <meta charset="UTF-8">
@@ -160,7 +160,7 @@ require_once __DIR__ . '/../methods/jsonUtils.php';
   </head>
   <body>
     <div class="navbar">
-    	<h1 style="margin-bottom:0;margin-top:.5rem;font-size:2.5rem;"><i style="color:#de2c09;" class="fa-solid fa-meteor"></i> <b>Fiddle</b><a class="fire">Neo</a></h1>
+    	<h1 style="margin-bottom:0;margin-top:.5rem;font-size:2.5rem;"><i style="color:#de2c09;" class="fa-solid fa-meteor"></i> <b>Fiddle</b><a class="fire">Redux</a></h1>
     	<small style="margin-top:0;color:var(--text);"><em>pxls.space/#template=</em></small>
     </div>
     <h1 class="titleText" style="opacity:0; margin-bottom:0; margin-left:1rem;animation: fadeIn 0.5s ease .4s forwards;text-shadow: 0 0 1px #fff, 0 0 5px #ff8a00;"><i class="fa-solid fa-fire"></i> Trending</h1>
