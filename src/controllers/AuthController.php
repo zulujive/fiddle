@@ -2,7 +2,10 @@
 
 class AuthController
 {
-    // Login, logout and register
+    /*=================================
+    |    Login, logout & register     |
+    ===================================
+    */
     public function panelLogin() {
         require_once __DIR__ . '/../resources/views/login.php';
     }
@@ -13,7 +16,10 @@ class AuthController
         require_once __DIR__ . '/../resources/views/register.php';
     }
 
-    // 2FA
+    /*=================================
+    |     2-Factor Authentication     |
+    ===================================
+    */
     public function OTP() {
         require_once __DIR__ . '/../resources/views/dualFactor.php';
     }
