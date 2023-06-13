@@ -30,10 +30,14 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
+            
             $responseData = json_decode($response->getBody(), true);
             $record = $responseData['record'];
+
             $_SESSION["username"] = $record['username'];
             $_SESSION["userID"] = $record['id'];
+            $_SESSION["pb_token"] = $responseData['token'];
+
             if ($record['2FA'] == true) {
                 // Load OTP secret to session variable
                 $_SESSION['secret'] = $record['2FASecret'];
@@ -51,16 +55,6 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $error_message = "Invalid username and/or password";
     }
 }
-    /*
-    if (isset($valid_users[$username]) && $valid_users[$username] == $password) {
-        Csrf::verifyToken();
-        $_SESSION["logged_in"] = true;
-        header("Location: /admin");
-        session_regenerate_id(true);
-        exit();
-    } else {
-        $error_message = "Invalid username and/or password";
-    }*/
 
 $csrfToken = Csrf::generateToken();
 

@@ -22,6 +22,9 @@ if (isset($_POST['password']))
             'json' => [
                 'identity' => $username,
                 'password' => $password,
+            ],
+            'headers' => [
+                'pb_token' => DB_KEY,
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
@@ -40,6 +43,9 @@ if (isset($_POST['password']))
                 'json' => [
                     '2FA' => true,
                     '2FASecret' => $secret,
+                ],
+                'headers' => [
+                    'pb_token' => DB_KEY,
                 ]
             ]);
             if ($patchResponse->getStatusCode() === 200) {

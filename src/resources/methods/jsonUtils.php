@@ -56,7 +56,11 @@ class jsonUtils
     {
         $client = new Client();
         // Read the JSON data from the database
-        $response = $client->get(DB_HOST . '/api/collections/templates/records');
+        $response = $client->get(DB_HOST . '/api/collections/templates/records', [
+            'headers' => [
+                'pb_token' => DB_KEY,
+            ]
+        ]);
         $responseData = json_decode($response->getBody(), true);
         $json_data = $responseData['items'];
 

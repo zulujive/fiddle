@@ -27,7 +27,12 @@ if ($id !== $_SESSION["userID"])
 
 $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
-$response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '');
+$response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '', [
+    'headers' => [
+        'pb_token' => DB_KEY,
+    ]
+]);
+
 $responseData = json_decode($response->getBody(), true);
 $secret = $responseData['2FASecret'];
 if (!isset($secret))
