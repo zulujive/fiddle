@@ -53,7 +53,7 @@ if ($maintenanceMode) {
 -------------------------------------
 */
 
-// Resource Routes
+// Root route
 $router->get('/', function () {
     $controller = new HomeController();
     $controller->index();
@@ -92,42 +92,42 @@ $router->get('/admin/users', function () {
 // Admin Authentication Routes
 
 $router->get('/login', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->panelLogin();
 });
 $router->post('/login', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->panelLogin();
 });
 
 $router->post('/logout', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->panelLogout();
 });
 
 $router->get('/login/2FA', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->OTP();
 });
 $router->post('/login/2FA', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->verifyOTP();
 });
 $router->get('/admin/enable2FA', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->enableOTP();
 });
 $router->post('/admin/enable2FA', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->deployOTP();
 });
 $router->get('/qrcode', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->generateQR();
 });
 
 $router->post('/admin/register', function () {
-    $controller = new AdminController();
+    $controller = new AuthController();
     $controller->newUser();
 });
 
