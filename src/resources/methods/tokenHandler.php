@@ -11,6 +11,7 @@ class tokenHandler
         $uuid = bin2hex(random_bytes(32));
         $response = $client->post(DB_HOST . '/api/collections/tokens/records', [
             'json' => [
+                'dbkey' => 'password',
                 'token' => $uuid,
                 'valid' => $enabled,
                 'for' => $type,
