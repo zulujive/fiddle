@@ -17,6 +17,8 @@ session_set_cookie_params([
 ]);
 session_start();
 
+date_default_timezone_set('America/Denver');
+
 if (!isset($_SESSION['logged_in'])) {
     $_SESSION['logged_in'] = false;
 }

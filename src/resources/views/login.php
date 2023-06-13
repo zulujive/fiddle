@@ -21,8 +21,16 @@ function failedLogin() {
     $_SESSION["failed_logins"] = $failures;
 }
 if ($_SESSION["failed_logins"] >= 3) {
+    if (isset($_SESSION['unlock_time']) && time() >= $_SESSION['unlock_time']) {
+        $_SESSION['locked'] = false;
+        unset($_SESSION['unlock_time']);
+    } else {
     $error_message = "Too many login attempts";
     $_SESSION["login_locked"] = true;
+    }
+}
+if ($_SESSION["failed_logins"] == 2) {
+    $_SESSION['unlock_time'] = time() + (5 * 60);
 }
 
 // Only process if username and password are present and login is not locked
