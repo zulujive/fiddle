@@ -24,6 +24,7 @@ if ($_SESSION["failed_logins"] >= 3) {
     if (isset($_SESSION['unlock_time']) && time() >= $_SESSION['unlock_time']) {
         $_SESSION['locked'] = false;
         unset($_SESSION['unlock_time']);
+        $_SESSION["failed_logins"] = 0;
     } else {
     $error_message = "Too many login attempts";
     $_SESSION["login_locked"] = true;
