@@ -1,6 +1,5 @@
 <?php
 use GuzzleHttp\Client;
-use OTPHP\TOTP;
 require_once __DIR__ . '/../methods/Csrf.php';
 require_once __DIR__ . '/../../../config.php';
 require_once __DIR__ . '/../../../dev.php';
@@ -12,7 +11,22 @@ if ($_SESSION["logged_in"] == true) {
 
 $error_message = null;
 
-if (isset($_POST["username"]) && isset($_POST["password"])) {
+// Implement rate limiting for login
+$_SESSION["login_locked"] = false;
+if (!isset($_SESSION["failed_logins"])) {
+    $_SESSION["failed_logins"] = 0;
+}
+function failedLogin() {
+    $failures = $_SESSION["failed_logins"] + 1;
+    $_SESSION["failed_logins"] = $failures;
+}
+if ($_SESSION["failed_logins"] >= 3) {
+    $error_message = "Too many login attempts";
+    $_SESSION["login_locked"] = true;
+}
+
+// Only process if username and password are present and login is not locked
+if (isset($_POST["username"]) && isset($_POST["password"]) && $_SESSION["login_locked"] == false) {
     Csrf::verifyToken();
     $username_unsanitized = $_POST["username"];
     $password_unsanitized = $_POST["password"];
@@ -38,6 +52,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             $_SESSION["userID"] = $record['id'];
             $_SESSION["pb_token"] = $responseData['token'];
 
+            $_SESSION["failed_logins"] = 0;
+
             if ($record['2FA'] == true) {
                 // Load OTP secret to session variable
                 $_SESSION['secret'] = $record['2FASecret'];
@@ -51,8 +67,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             header("Location: /admin");
             exit();
         }
+    // Catch an HTTP error in the event of a login failure
     } catch (GuzzleHttp\Exception\ClientException $e) {
         $error_message = "Invalid username and/or password";
+
     }
 }
 
