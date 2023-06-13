@@ -12,6 +12,8 @@
 
 // Put the host of the database configured here (no trailing slashes):
 define('DB_HOST', 'http://127.0.0.1:8090');
+// Put the database API key here:
+define('DB_KEY', 'password');
 
 // Enable or disable maintenance mode
 $maintenanceMode = false;
