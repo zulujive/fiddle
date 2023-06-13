@@ -34,6 +34,7 @@ include(dirname(__FILE__).'/../config.php');
 require_once __DIR__ .'/../src/controllers/HomeController.php';
 require_once __DIR__ .'/../src/controllers/AdminController.php';
 require_once __DIR__ .'/../src/controllers/ErrorController.php';
+require_once __DIR__ .'/../src/controllers/AuthController.php';
 
 // Do not touch zone
 use Bramus\Router\Router;
