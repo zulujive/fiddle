@@ -43,7 +43,7 @@ if (!isset($secret))
 
 $writer = new PngWriter();
 
-$OTPURI = 'otpauth://totp/PxlsFiddle?secret=' . $secret . '';
+$OTPURI = 'otpauth://totp/fiddleneo?secret=' . $secret . '';
 
 $qrCode = QrCode::create($OTPURI)
     ->setEncoding(new Encoding('UTF-8'))
