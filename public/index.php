@@ -1,11 +1,4 @@
 <?php
-session_set_cookie_params([
-    'SameSite' => 'Strict',
-    'lifetime' => 3600,
-]);
-
-session_start();
-
 /*
 ######################################################################
 #                                                                    #
@@ -17,6 +10,12 @@ session_start();
 #                                                                    #
 ######################################################################
 */
+// Begin the site-wide session
+session_set_cookie_params([
+    'SameSite' => 'Strict',
+    'lifetime' => 3600,
+]);
+session_start();
 
 if (!isset($_SESSION['logged_in'])) {
     $_SESSION['logged_in'] = false;
@@ -25,15 +24,18 @@ if (!isset($_SESSION['logged_in'])) {
 require __DIR__ . '/../vendor/autoload.php';
 include(dirname(__FILE__).'/../config.php');
 
-// Make sure to put classes here:
+/* ------------------------------------------------------------
+|                           ---Classes---
+|  All classes (controllers) belong here, make sure to add them
+|  before attempting to use a new controller!
+*/
 require_once __DIR__ .'/../src/controllers/HomeController.php';
 require_once __DIR__ .'/../src/controllers/AdminController.php';
 require_once __DIR__ .'/../src/controllers/ErrorController.php';
 
+// Do not touch zone
 use Bramus\Router\Router;
-
 $router = new Router();
-
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 if ($maintenanceMode) {
@@ -69,26 +71,7 @@ $router->get('/style', function () {
 
 // Admin Panel Routes (middleware applied)
 
-$router->get('/login', function () {
-    $controller = new AdminController();
-    $controller->panelLogin();
-});
-$router->post('/login', function () {
-    $controller = new AdminController();
-    $controller->panelLogin();
-});
-$router->get('/login/2FA', function () {
-    $controller = new AdminController();
-    $controller->OTP();
-});
-$router->post('/login/2FA', function () {
-    $controller = new AdminController();
-    $controller->verifyOTP();
-});
-$router->post('/logout', function () {
-    $controller = new AdminController();
-    $controller->panelLogout();
-});
+
 $router->get('/admin', function () {
     $controller = new AdminController();
     $controller->panel();
@@ -101,9 +84,32 @@ $router->get('/admin/users', function () {
     $controller = new AdminController();
     $controller->userPanel();
 });
-$router->post('/admin/register', function () {
+
+// -------------------------------------
+
+// Admin Authentication Routes
+
+$router->get('/login', function () {
     $controller = new AdminController();
-    $controller->newUser();
+    $controller->panelLogin();
+});
+$router->post('/login', function () {
+    $controller = new AdminController();
+    $controller->panelLogin();
+});
+
+$router->post('/logout', function () {
+    $controller = new AdminController();
+    $controller->panelLogout();
+});
+
+$router->get('/login/2FA', function () {
+    $controller = new AdminController();
+    $controller->OTP();
+});
+$router->post('/login/2FA', function () {
+    $controller = new AdminController();
+    $controller->verifyOTP();
 });
 $router->get('/admin/enable2FA', function () {
     $controller = new AdminController();
@@ -116,6 +122,11 @@ $router->post('/admin/enable2FA', function () {
 $router->get('/qrcode', function () {
     $controller = new AdminController();
     $controller->generateQR();
+});
+
+$router->post('/admin/register', function () {
+    $controller = new AdminController();
+    $controller->newUser();
 });
 
 // -------------------------------------
