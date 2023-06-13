@@ -31,7 +31,7 @@ if ($_SESSION["failed_logins"] >= 3) {
     }
 }
 if ($_SESSION["failed_logins"] == 2) {
-    $_SESSION['unlock_time'] = time() + (5 * 60);
+    $_SESSION['unlock_time'] = time() + (1 * 60);
 }
 
 // Only process if username and password are present and login is not locked
