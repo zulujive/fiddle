@@ -70,7 +70,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && $_SESSION["login_l
     // Catch an HTTP error in the event of a login failure
     } catch (GuzzleHttp\Exception\ClientException $e) {
         $error_message = "Invalid username and/or password";
-
+        failedLogin();
     }
 }
 
