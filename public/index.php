@@ -1,24 +1,7 @@
 <?php
-/*
-require __DIR__ . '/../src/middleware/ErrorMiddleware.php';
-$errorHandler = new errorHandler();
-$errorHandler->errorHandle();
-*/
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-set_error_handler(function ($severity, $message, $file, $line) {
-
-    $error = "Error [$severity]: $message in $file on line $line";
-    
-    echo "<div style='background-color: #FEE; padding: 10px;'>$error</div>";
-
-    error_log($error);
-
-    return true;
-});
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 
 /*
 ######################################################################
