@@ -1,7 +1,5 @@
 <?php
 
-namespace Core\ErrorMiddleware;
-
 class errorHandler
 {
     public static function errorHandle() {
