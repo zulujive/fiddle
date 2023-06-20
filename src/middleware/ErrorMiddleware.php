@@ -2,7 +2,7 @@
 
 class errorHandler
 {
-    public static function errorHandle() {
+    public function errorHandle() {
 
         set_error_handler(function ($severity, $message, $file, $line) {
 
