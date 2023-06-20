@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/../src/middleware/ErrorMiddleware.php';
 new errorHandler();
+errorHandler()->errorHandle();
 
 /*
 ######################################################################
