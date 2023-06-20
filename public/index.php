@@ -5,6 +5,10 @@ $errorHandler = new errorHandler();
 $errorHandler->errorHandle();
 */
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 set_error_handler(function ($severity, $message, $file, $line) {
 
     $error = "Error [$severity]: $message in $file on line $line";
@@ -15,9 +19,6 @@ set_error_handler(function ($severity, $message, $file, $line) {
 
     return true;
 });
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
 
 /*
 ######################################################################
