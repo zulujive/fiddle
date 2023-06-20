@@ -3,9 +3,6 @@
 class errorHandler
 {
     public static function errorHandle() {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
 
         set_error_handler(function ($severity, $message, $file, $line) {
 
@@ -16,7 +13,11 @@ class errorHandler
             error_log($error);
         
             return true;
-        });        
+        });
+
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);    
 
     }
 }
