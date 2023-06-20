@@ -1,5 +1,7 @@
 <?php
-$whoops = new \Whoops\Run;
+use \Whoops\Run;
+
+$whoops = new Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
