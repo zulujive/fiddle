@@ -17,7 +17,7 @@ class pbUtils
                         'identity' => $identifier,
                         'password' => $password,
                     ]
-                ], ['http_errors' => false]);
+                ]);
                 if ($response->getStatusCode() === 200) {
                     $responseData = json_decode($response->getBody(), true);
 
