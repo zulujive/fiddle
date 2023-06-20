@@ -1,4 +1,7 @@
 <?php
+use Core\ErrorMiddleware\errorHandler;
+errorHandler::errorHandle();
+
 /*
 ######################################################################
 #                                                                    #
