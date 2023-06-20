@@ -2,3 +2,4 @@ config.php
 public/templates/
 public/articles.json
 public/featured.json
+vendor/
