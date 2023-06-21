@@ -15,8 +15,8 @@ class ErrorController
             $whoops->register();
         } else {
             $whoops = new \Whoops\Run;
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->writeToOutput(false);
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->register();
         }
     }
