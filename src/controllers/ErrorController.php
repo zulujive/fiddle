@@ -9,17 +9,25 @@ class ErrorController
     }
     public function enable($setting)
     {
+        function check_for_fatal()
+        {
+            $error = error_get_last();
+            if ( $error["type"] == E_ERROR )
+                echo "Hello world";
+        }
+
         function myErrorHandler() {
             echo "Error";
             exit();
         }
-        
+
         if ($setting == true) {
             $whoops = new \Whoops\Run;
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->register();
         } else {
-            set_error_handler("myErrorHandler");            
+            register_shutdown_function( "check_for_fatal" );
+            set_error_handler("myErrorHandler");
         }
         
     }
