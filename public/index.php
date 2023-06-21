@@ -1,6 +1,8 @@
 <?php
 
-$whoops = new Whoops\Run;
+require __DIR__ . '/../vendor/autoload.php';
+
+$whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
@@ -28,7 +30,6 @@ if (!isset($_SESSION['logged_in'])) {
     $_SESSION['logged_in'] = false;
 }
 
-require __DIR__ . '/../vendor/autoload.php';
 include(dirname(__FILE__).'/../config.php');
 
 /* ------------------------------------------------------------
