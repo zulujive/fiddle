@@ -14,6 +14,7 @@ class ErrorController
             $error = error_get_last();
             if ( $error["type"] == E_ERROR )
                 require_once __DIR__ . '/../resources/views/500.php';
+                exit();
         }
 
         function myErrorHandler() {
