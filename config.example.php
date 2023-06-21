@@ -21,6 +21,14 @@ define('DB_HOST', 'http://127.0.0.1:8090');
 define('DB_KEY', 'password');
 
 /*-------------------------------------------------------
+|                 --Server Settings--
+|  Port number, firewall, etc.. Default settings work for
+|  both production and development instances.
+*/
+//      \/ Name \/      \/ Port (usually anything except 80, 443, 22)
+define('SET_PORTs', '7890');
+
+/*-------------------------------------------------------
 |                    --Rate Limiting--
 |  Here you'll define rate limiting to prevent resource
 |  usage and brute-force attacks (in minutes).
