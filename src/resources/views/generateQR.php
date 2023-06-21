@@ -14,7 +14,7 @@ $handler = new tokenHandler();
 $tokenValid = $handler->verifyToken($_GET['token'], $_SESSION["userID"]);
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+    $id = htmlspecialchars($_GET['id']);
 } else {
     echo "You must define URL parameters";
     exit();
