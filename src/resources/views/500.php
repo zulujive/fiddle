@@ -10,7 +10,7 @@
     </head>
     <body class="p-3">
         <h1 class="text-center"><em>fiddleneo</em> Something went wrong</h1>
-        <ul>
+        <hr>
         <h4 class="text-center">Something went wrong on our end. Please contact a system administrator if you continue to have issues.</h4>
     </body>
 </html>
