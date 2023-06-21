@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+    <html lang="en" data-bs-theme="dark">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Internal Server Error</title>
         <meta name="description" content="Something went wrong on our end.">
