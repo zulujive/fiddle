@@ -1,11 +1,4 @@
 <?php
-
-require __DIR__ . '/../vendor/autoload.php';
-
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops->register();
-
 /*
 ######################################################################
 #                                                                    #
@@ -17,6 +10,13 @@ $whoops->register();
 #                                                                    #
 ######################################################################
 */
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
+
 // Begin the site-wide session
 session_set_cookie_params([
     'SameSite' => 'Strict',
