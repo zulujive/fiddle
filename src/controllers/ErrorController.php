@@ -14,7 +14,12 @@ class ErrorController
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->register();
         } else {
-            set_error_handler("Internal Error");            
+            set_error_handler("myErrorHandler");            
+        }
+        
+        function myErrorHandler() {
+            echo "Error";
+            exit();
         }
     }
 }
