@@ -9,12 +9,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password_unsanitized = $_POST["password"];
     $password_confirm_unsanitized = $_POST["passwordConfirm"];
 
+    // Sanitize inputs!
   	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
     $passwordConfirm = filter_var($password_confirm_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-
-    $hashedPassword = $password;
-    $hashedPasswordConfirm = password_hash($passwordConfirm, PASSWORD_DEFAULT);
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
@@ -22,8 +20,8 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         $response = $client->post('' . DB_HOST . '/api/collections/admins/records', [
             'json' => [
                 'username' => $username,
-                'password' => $hashedPassword,
-                'passwordConfirm' => $hashedPassword,
+                'password' => $password,
+                'passwordConfirm' => $passwordConfirm,
                 'isAdmin' => false
             ],
             'headers' => [
@@ -35,6 +33,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
             header("Location: /admin/users");
             exit();
         }
+    // Handle an HTTP error if registration has failed
     } catch (GuzzleHttp\Exception\ClientException $e) {
         $error_message = "Could not create user";
     }
