@@ -2,11 +2,11 @@
 /*
 ######################################################################
 #                                                                    #
-#                         --PHP Routes--                             #
-#  This file defines how traffic is routed based on its path. Best   #
-#  practice is to use controllers (as defined in the controllers     #
-#  folder). If you're confused, consult the documentation for Bramus #
-#  router on GitHub.                                                 #
+#                   --Where Everything Begins--                      #
+#  This file acts as the framework for the full application. Here    #
+#  you'll find all the basic classes and methods that apply to the   #
+#  entire application. All request first arrive here and are routed  #
+#  based on certain parameters.                                      #
 #                                                                    #
 ######################################################################
 */
