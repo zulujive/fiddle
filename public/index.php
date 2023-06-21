@@ -12,10 +12,17 @@
 */
 
 require __DIR__ . '/../vendor/autoload.php';
+include(dirname(__FILE__).'/../config.php');
+require_once __DIR__ .'/../src/controllers/ErrorController.php';
 
+$ErrorHandler = ErrorController();
+$ErrorHandler->enable(DISPLAY_ERRORS);
+
+/*
 $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+*/
 
 // Begin the site-wide session
 session_set_cookie_params([
@@ -30,7 +37,6 @@ if (!isset($_SESSION['logged_in'])) {
     $_SESSION['logged_in'] = false;
 }
 
-include(dirname(__FILE__).'/../config.php');
 
 /* ------------------------------------------------------------
 |                           ---Classes---
@@ -39,7 +45,6 @@ include(dirname(__FILE__).'/../config.php');
 */
 require_once __DIR__ .'/../src/controllers/HomeController.php';
 require_once __DIR__ .'/../src/controllers/AdminController.php';
-require_once __DIR__ .'/../src/controllers/ErrorController.php';
 require_once __DIR__ .'/../src/controllers/AuthController.php';
 
 // Do not touch zone

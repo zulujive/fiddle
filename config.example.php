@@ -29,6 +29,14 @@ define('DB_KEY', 'password');
 define('LOGIN_LIMIT', 1);
 
 /*-------------------------------------------------------
+|                    --Display Errors--
+|  False in production. Helps with debugging in
+|  development and testing.
+*/
+//      \/ Name \/      \/ Setting (FALSE/true)
+define('DISPLAY_ERRORS', true);
+
+/*-------------------------------------------------------
 |                 --Maintanance Mode--
 |  If you need to disable the website, simply enable this
 |  setting and edit message to your liking
