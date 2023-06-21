@@ -26,7 +26,7 @@ define('DB_KEY', 'password');
 |  both production and development instances.
 */
 //      \/ Name \/      \/ Port (usually anything except 80, 443, 22)
-define('SET_PORTs', '7890');
+define('SET_PORT', '7890');
 
 /*-------------------------------------------------------
 |                    --Rate Limiting--
