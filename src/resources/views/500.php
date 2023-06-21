@@ -13,4 +13,7 @@
         <hr>
         <h4 class="text-center">Something went wrong on our end. Please contact a system administrator if you continue to have issues.</h4>
     </body>
+    <footer>
+        <p>fiddleneo</p>
+    </footer>
 </html>
