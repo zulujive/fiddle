@@ -14,8 +14,16 @@ class ErrorController
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->register();
         } else {
-            $whoops = new \Whoops\Run;
-            $whoops->register();
+            set_error_handler(function ($severity, $message, $file, $line) {
+                // Log the error
+                error_log("Error [$severity]: $message in $file on line $line");
+            
+                // Display the custom error page
+                echo 'Hello World!';
+            
+                // Stop script execution
+                exit;
+            });            
         }
     }
 }
