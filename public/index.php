@@ -18,12 +18,6 @@ require_once __DIR__ .'/../src/controllers/ErrorController.php';
 $ErrorHandler = new ErrorController();
 $ErrorHandler->enable(DISPLAY_ERRORS);
 
-/*
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops->register();
-*/
-
 // Begin the site-wide session
 session_set_cookie_params([
     'SameSite' => 'Strict',
@@ -49,7 +43,7 @@ require_once __DIR__ .'/../src/controllers/AuthController.php';
 
 // Do not touch zone
 use Bramus\Router\Router;
-$router = new Router();
+$router = new Pouter();
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 if ($maintenanceMode) {
