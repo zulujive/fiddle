@@ -8,7 +8,11 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/admins/records');
+        $response = $client->get('' . DB_HOST . '/api/collections/admins/records', [
+            'headers' => [
+                'pb_token' => DB_KEY,
+            ]
+        ]);
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
@@ -29,7 +33,11 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/users/records');
+        $response = $client->get('' . DB_HOST . '/api/collections/users/records', [
+            'headers' => [
+                'pb_token' => DB_KEY,
+            ]
+        ]);
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
@@ -50,7 +58,11 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/admins/records?sort=+created');
+        $response = $client->get('' . DB_HOST . '/api/collections/admins/records?sort=+created', [
+            'headers' => [
+                'pb_token' => DB_KEY,
+            ]
+        ]);
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);
@@ -68,7 +80,11 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/users/records?sort=-created');
+        $response = $client->get('' . DB_HOST . '/api/collections/users/records?sort=-created', [
+            'headers' => [
+                'pb_token' => DB_KEY,
+            ]
+        ]);
 
         if ($response->getStatusCode() === 200) {
             $responseData = json_decode($response->getBody(), true);

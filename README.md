@@ -1,4 +1,4 @@
-# Fiddle v2
+# fiddleneo
 ![Fiddle Logo](https://github.com/zulujive/fiddle/blob/main/logo.png?raw=true)
 A reinvented version of PxlsFiddle for the 21st century with a modern design and a clean frontend and backend. Written in PHP, styled to perfection, and organized with scalability in mind.
 
@@ -23,6 +23,8 @@ Though it is in development, the server can be safely deployed to production as 
 - Highly scalable architecture
 - Beautiful design from top to bottom
 - Simple and easy deployment
+- Pretty error pages (debug & production)
+- XSS Safeguards
 
 ## Deployment
 ### Requirements
@@ -50,15 +52,15 @@ Fiddle uses the Bramus router library to handle routing various requests. In ter
 The decision to use a router instead of a more conventional approach because of the advantages in scalability and organization of source code. Keeping backend scripts from being directly accessible makes for more robust access control and rate limiting. In addition, using routes allows for middleware support in the near future.
 
 ### Application Structure
-The application is structured into two main directories. The public directory was originally intended to be accessible without routes, but is there to be a much more simple way of routing pages since it's in the same directory as index.php. Only use it for testing, it's not a place for clutter.
+The application is structured into two main directories. The public directory was originally intended to be accessible without routes, but is there to be a much more simple way of routing pages since it's in the same directory as index.php when it handled routes. Only use it for testing, it's not a place for clutter.
 
 The src folder contains both backend and frontend scripts. Directories inside of it function as follows:
-- Controllers handle incoming requests that are assigned to them in index.php
+- Controllers handle incoming requests that are assigned to them in routes.php
 - Resources contain mostly frontend content that apply to largely client-side services
 - Storage is used for any sort of data that is referenced by other scripts.
     - Data handles structured application data
     - Templates is a public-facing directory that contains templates hosted on the site. Do remember that template URLs NEVER include a file extension as this seems to cause issues with the web server handling GET requests.
-- Web is currently an unused directory and its contents does not impact application funcitonality (unless there is a fatal syntax error). In other words, don't mess with it, it's not important but will be in the future.
+- Web contains the basis for the application's web-interface. Most notably, routes.php describes where traffic is routed based on its URI and request method.
 
 ### Admin Panel
 The admin panel is currently under development. It uses Bootstrap for styling and has already been equipped with CSRF protection. It's connected to the PocketBase database which handles various security measures. Create a user in PocketBase in the "Admin" collection and login to the admin panel at /login
@@ -117,6 +119,7 @@ Support for 2FA has been added to the admin panel. Users who do not have it enab
 
 ## Possible Features
 - [ ] YubiKey OTP for Admin Panel
+- [ ] Adding template upvote/downvote system
 - [ ] Setup Utility
 - [ ] OAuth2 Support (very likely)
 - [ ] Discord Webhooks Support

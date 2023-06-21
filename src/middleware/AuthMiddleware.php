@@ -10,10 +10,11 @@
 #                                                                    #
 ######################################################################
 */
-// ---------------------------------
-// |   Content Security Policy     |
-// ---------------------------------
 
+/* ---------------------------------
+   |   Content Security Policy     |
+   ---------------------------------
+*/
 $bootstrapStyleHash = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
 $bootstrapScriptHash = 'sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz';
 $cloudflareCdn = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/*';
@@ -22,9 +23,11 @@ $cspHeader = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm
 
 header("Content-Security-Policy: " . $cspHeader);
 
-// ---------------------------------
-// |       Auth Middleware         |
-// ---------------------------------
+
+/* ---------------------------------
+   |       Auth Middleware         |
+   ---------------------------------
+*/
 $router->before('GET|POST', '/admin', function() {
     if ($_SESSION['logged_in'] !== true) {
         header('Location: /login');

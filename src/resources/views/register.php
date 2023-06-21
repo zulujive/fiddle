@@ -25,6 +25,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 'password' => $hashedPassword,
                 'passwordConfirm' => $hashedPassword,
                 'isAdmin' => false
+            ],
+            'headers' => [
+                'pb_token' => DB_KEY,
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
