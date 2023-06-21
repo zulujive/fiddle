@@ -15,7 +15,7 @@ require __DIR__ . '/../vendor/autoload.php';
 include(dirname(__FILE__).'/../config.php');
 require_once __DIR__ .'/../src/controllers/ErrorController.php';
 
-$ErrorHandler = ErrorController();
+$ErrorHandler = new ErrorController();
 $ErrorHandler->enable(DISPLAY_ERRORS);
 
 /*
