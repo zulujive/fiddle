@@ -22,7 +22,7 @@ class ErrorController
                 echo 'Hello World!';
             
                 // Stop script execution
-                exit;
+                exit();
             });            
         }
     }
