@@ -12,7 +12,7 @@ class ErrorController
         function check_for_fatal()
         {
             $error = error_get_last();
-            if ( $error["type"] == E_ERROR )
+            if ( isset($error["type"]) && $error["type"] == E_ERROR )
                 require_once __DIR__ . '/../resources/views/500.php';
                 exit();
         }
