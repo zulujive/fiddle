@@ -9,6 +9,11 @@ class ErrorController
     }
     public function enable($setting)
     {
+        function myErrorHandler() {
+            echo "Error";
+            exit();
+        }
+        
         if ($setting == true) {
             $whoops = new \Whoops\Run;
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
@@ -17,9 +22,5 @@ class ErrorController
             set_error_handler("myErrorHandler");            
         }
         
-        function myErrorHandler() {
-            echo "Error";
-            exit();
-        }
     }
 }
