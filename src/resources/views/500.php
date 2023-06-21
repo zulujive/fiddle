@@ -12,7 +12,7 @@
         <h1 class="text-center text-warning">500: Something went wrong :(</h1>
         <hr>
         <h4 class="text-center">Something went wrong on our end. Please contact a system administrator if you continue to have issues.</h4>
-        <small style="text-align:center">If you are a developer, you can enable full debugging within the config file.</small>
+        <small style="text-align:center;">If you are a developer, you can enable full debugging within the config file.</small>
     </body>
     <footer>
         <p class="text-center">fiddleneo</p>
