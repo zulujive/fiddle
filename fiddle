@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-require __DIR__ . config.php;
+require __DIR__ . '/config.php';
 
 if ($argv[1] === 'serve') {
     // Change to the public directory
