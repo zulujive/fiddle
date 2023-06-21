@@ -27,6 +27,12 @@ class ErrorController
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
             $whoops->register();
         } else {
+            $httpResponse = http_response_code();
+
+            if ($httpResponse !== '500') {
+                exit();
+            }
+
             register_shutdown_function( "check_for_fatal" );
             set_error_handler("myErrorHandler");
         }
