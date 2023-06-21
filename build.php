@@ -9,7 +9,7 @@ $phar->startBuffering();
 $phar->buildFromDirectory(__DIR__, '/^(?!(build\.php)).+/');
 
 // Set the main script for execution when the Phar is run
-$phar->setStub("#!/usr/bin/env php\n" . $phar->createDefaultStub($mainScript));
+$phar->setStub($phar->createDefaultStub($mainScript));
 
 $phar->stopBuffering();
 
