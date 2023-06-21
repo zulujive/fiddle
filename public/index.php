@@ -43,7 +43,7 @@ require_once __DIR__ .'/../src/controllers/AuthController.php';
 
 // Do not touch zone
 use Bramus\Router\Router;
-$router = new Pouter();
+$router = new Router();
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 if ($maintenanceMode) {
@@ -51,13 +51,16 @@ if ($maintenanceMode) {
     echo $maintenanceMessage;
     exit();
 }
+
+require __DIR__ . '/../src/web/routes.php';
+
 /*
 -------------------------------------
 |                                   |
 |         Start Routes Here         |
 |                                   |
 -------------------------------------
-*/
+
 
 // Root route
 $router->get('/', function () {
@@ -159,3 +162,4 @@ $router->set404(function () {
 // Add more routes and map them to controllers
 
 $router->run();
+*/
