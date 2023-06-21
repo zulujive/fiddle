@@ -15,6 +15,6 @@
         <small>If you are a developer, you can enable full debugging within the config file.</small>
     </body>
     <footer>
-        <p class="text-center">fiddleneo</p>
+        <p class="text-center mt-2">fiddleneo</p>
     </footer>
 </html>
