@@ -36,6 +36,8 @@ Though it is in development, the server can be safely deployed to production as 
 ### Instructions
 In production, use NGINX or Apache to serve PHP using FastCGI or FPM and only serving index.php. Do not serve the entire public directory as it will result in unintended 404 errors.
 
+It's recommended that you use a Debian-based system as this application has only been tested on Debian systems.
+
 To get the database setup, start a pocketbase instance running on port 8090 (required that it's 8090 for now) and import the "pocketbase.json" file to PocketBase as a collection.
 
 You can easily start the server at port 7890 with this command within the root directory:
