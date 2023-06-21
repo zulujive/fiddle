@@ -6,7 +6,7 @@ $phar = new Phar($pharFile);
 $phar->startBuffering();
 
 // Add files and directories to the Phar archive
-$phar->buildFromDirectory(__DIR__, '/^(?!(build\.php)).+/');
+$phar->buildFromDirectory(__DIR__, '/^(?!(build\.php|templates)).+/');
 
 // Set the main script for execution when the Phar is run
 $phar->setStub($phar->createDefaultStub($mainScript));

@@ -93,7 +93,7 @@ $router->post('/admin/register', function () {
 
 // Storage Routes
 $router->get("/templates/(.*)", function($filename){
-    $templateImage = file_get_contents(__DIR__ . "/../storage/templates/".$filename."");
+    $templateImage = file_get_contents(__DIR__ . "/../../templates/".$filename."");
     header('Content-Type: image/jpeg');
     echo $templateImage;
 
