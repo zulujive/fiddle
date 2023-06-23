@@ -8,8 +8,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Controllers": "src/controllers/",
-            "Methods": "src/resources/methods/"
+            "Src\\Controllers": "src/controllers/",
+            "Src\\Methods": "src/resources/methods/"
         }
     }
 }
