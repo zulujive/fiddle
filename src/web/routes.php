@@ -1,7 +1,7 @@
 <?php
 
 use Controllers\HomeController\HomeController;
-use Controllers\AdminController\AuthController;
+use Controllers\AuthController\AuthController;
 use Controllers\AdminController\AdminController;
 /*
 ######################################################################
