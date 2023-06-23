@@ -1,5 +1,5 @@
 <?php
-namespace Controllers\AdminController;
+namespace Controllers\AuthController;
 
 class AuthController
 {
