@@ -37,7 +37,6 @@ if (!isset($_SESSION['logged_in'])) {
 |  All classes (controllers) belong here, make sure to add them
 |  before attempting to use a new controller!
 */
-require_once __DIR__ .'/../src/controllers/HomeController.php';
 
 // Do not touch zone
 use Bramus\Router\Router;
