@@ -1,8 +1,8 @@
 <?php
 
-use Controllers\HomeController\HomeController;
-use Controllers\AuthController\AuthController;
-use Controllers\AdminController\AdminController;
+use Controllers\HomeController;
+use Controllers\AuthController;
+use Controllers\AdminController;
 /*
 ######################################################################
 #                                                                    #
