@@ -55,7 +55,7 @@ $router->get('/admin/users', function () {
 // Admin Authentication Routes
 
 $router->get('/login', function () {
-    $controller = new AuthController();
+    $controller = new Controllers\AuthController\AuthController();
     $controller->panelLogin();
 });
 $router->post('/login', function () {
