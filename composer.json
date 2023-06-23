@@ -7,9 +7,9 @@
         "filp/whoops": "^2.15"
     },
     "autoload": {
-        "psr-4": {
-            "Controllers\\": "src/controllers/",
-            "Methods\\": "src/resources/methods/"
+        "psr-0": {
+            "Controllers": "src/controllers/",
+            "Methods": "src/resources/methods/"
         }
     }
 }

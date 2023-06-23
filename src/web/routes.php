@@ -15,6 +15,7 @@ use Controllers\AdminController\AdminController;
 ######################################################################
 */
 
+
 // Root route
 $router->get('/', function () {
     $controller = new HomeController();
