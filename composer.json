@@ -5,5 +5,11 @@
         "spomky-labs/otphp": "^10.0",
         "endroid/qr-code": "^4.8",
         "filp/whoops": "^2.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyApp\\Controllers\\": "src/controllers/",
+            "MyApp\\Methods\\": "src/resources/methods/"
+        }
     }
 }
