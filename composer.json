@@ -8,8 +8,8 @@
     },
     "autoload": {
         "psr-4": {
-            "MyApp\\Controllers\\": "src/controllers/",
-            "MyApp\\Methods\\": "src/resources/methods/"
+            "Controllers\\": "src/controllers/",
+            "Methods\\": "src/resources/methods/"
         }
     }
 }
