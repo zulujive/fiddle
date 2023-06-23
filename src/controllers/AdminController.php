@@ -1,4 +1,5 @@
 <?php
+namespace Controllers\AdminController;
 
 class AdminController
 {
