@@ -13,7 +13,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 include(dirname(__FILE__).'/../config.php');
-require_once __DIR__ .'/../src/controllers/ErrorController.php';
+
+use Src\Controllers\ErrorController;
+
 
 $ErrorHandler = new ErrorController();
 $ErrorHandler->enable(DISPLAY_ERRORS);
@@ -40,6 +42,7 @@ if (!isset($_SESSION['logged_in'])) {
 
 // Do not touch zone
 use Bramus\Router\Router;
+
 $router = new Router();
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 

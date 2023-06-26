@@ -1,8 +1,10 @@
 <?php
 
-use Src\Controllers\HomeController\HomeController;
-use Src\Controllers\AuthController\AuthController;
-use Src\Controllers\AdminController\AdminController;
+use Src\Controllers\AdminController;
+use Src\Controllers\AuthController;
+use Src\Controllers\ErrorController;
+use Src\Controllers\HomeController;
+
 /*
 ######################################################################
 #                                                                    #
@@ -57,7 +59,7 @@ $router->get('/admin/users', function () {
 // Admin Authentication Routes
 
 $router->get('/login', function () {
-    $controller = new \Src\Controllers\AuthController\AuthController();
+    $controller = new AuthController();
     $controller->panelLogin();
 });
 $router->post('/login', function () {

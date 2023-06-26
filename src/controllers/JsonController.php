@@ -1,5 +1,7 @@
 <?php
 
+namespace Src\Controllers;
+
 class JsonController
 {
     public function index()
