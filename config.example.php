@@ -28,6 +28,9 @@ define('DB_KEY', 'password');
 //      \/ Name \/      \/ Port (usually anything except 80, 443, 22)
 define('SET_PORT', '7890');
 
+//       \/ able to configure basepath for when running in subfolder
+define('BASE_PATH', '/');
+
 /*-------------------------------------------------------
 |                    --Rate Limiting--
 |  Here you'll define rate limiting to prevent resource
