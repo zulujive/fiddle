@@ -7,8 +7,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 COPY . /var/www/html
 
 # Install composer packages
-RUN composer install --no-interaction --prefer-dist
-RUN composer dump-autoload
+RUN composer install --no-dev --optimize-autoloader
 
 WORKDIR /var/www/html
 
