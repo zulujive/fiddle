@@ -1,0 +1,26 @@
+version: '3.0'
+
+services:
+  fiddle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./.docker/fiddle.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "83:80"
+  pocketbase:
+    build:
+      context: .docker/pocketbase
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+    volumes:
+      - pocketbase:/pb/pb_data
+
+volumes:
+  pocketbase:
