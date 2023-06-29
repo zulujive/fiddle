@@ -15,6 +15,7 @@ use Src\Controllers\AdminController\AdminController;
 ######################################################################
 */
 
+$router->setBasePath(BASE_PATH);
 
 // Root route
 $router->get('/', function () {
