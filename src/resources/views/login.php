@@ -1,7 +1,6 @@
 <?php
 use GuzzleHttp\Client;
 require_once __DIR__ . '/../methods/Csrf.php';
-require_once __DIR__ . '/../../../config.php';
 require_once __DIR__ . '/../../../dev.php';
 
 if ($_SESSION["logged_in"] == true) {
@@ -31,7 +30,7 @@ if ($_SESSION["failed_logins"] >= 3) {
     }
 }
 if ($_SESSION["failed_logins"] == 2) {
-    $_SESSION['unlock_time'] = time() + (LOGIN_LIMIT * 60);
+    $_SESSION['unlock_time'] = time() + (config('LOGIN_LIMIT') * 60);
 }
 
 // Only process if username and password are present and login is not locked
@@ -46,7 +45,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && $_SESSION["login_l
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
+        $response = $client->post('' . config('DB_HOST') . '/api/collections/admins/auth-with-password', [
             'json' => [
                 'identity' => $username,
                 'password' => $hashedPassword,

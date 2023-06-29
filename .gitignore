@@ -1,4 +1,4 @@
-config.php
+.env
 public/templates/
 public/articles.json
 public/featured.json

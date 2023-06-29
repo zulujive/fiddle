@@ -1,7 +1,6 @@
 <?php
 use GuzzleHttp\Client;
 require_once __DIR__ . '/../methods/Csrf.php';
-require_once __DIR__ . '/../../../config.php';
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     Csrf::verifyToken();
@@ -17,7 +16,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
     try {
-        $response = $client->post('' . DB_HOST . '/api/collections/admins/records', [
+        $response = $client->post('' . config('DB_HOST') . '/api/collections/admins/records', [
             'json' => [
                 'username' => $username,
                 'password' => $password,
@@ -25,7 +24,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
                 'isAdmin' => false
             ],
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {

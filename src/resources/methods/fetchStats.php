@@ -1,6 +1,5 @@
 <?php
 use GuzzleHttp\Client;
-require_once __DIR__ . '/../../../config.php';
 
 class fetchStats
 {
@@ -8,9 +7,9 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/admins/records', [
+        $response = $client->get('' . config('DB_HOST') . '/api/collections/admins/records', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
 
@@ -33,9 +32,9 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/users/records', [
+        $response = $client->get('' . config('DB_HOST') . '/api/collections/users/records', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
 
@@ -58,9 +57,9 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/admins/records?sort=+created', [
+        $response = $client->get('' . config('DB_HOST') . '/api/collections/admins/records?sort=+created', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
 
@@ -80,9 +79,9 @@ class fetchStats
     {
         $client = new Client(['defaults' => ['exceptions' => false]]);
 
-        $response = $client->get('' . DB_HOST . '/api/collections/users/records?sort=-created', [
+        $response = $client->get('' . config('DB_HOST') . '/api/collections/users/records?sort=-created', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
 
