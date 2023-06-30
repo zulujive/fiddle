@@ -1,5 +1,2 @@
 .env
-public/templates/
-public/articles.json
-public/featured.json
 vendor/
