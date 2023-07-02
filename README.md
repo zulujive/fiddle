@@ -1,5 +1,5 @@
 # fiddleneo
-![Fiddle Logo](https://github.com/zulujive/fiddle/blob/main/logo.png?raw=true)
+![Fiddle Logo](https://github.com/zulujive/fiddle/blob/main/fiddleneologo.png?raw=true)
 A reinvented version of PxlsFiddle for the 21st century with a modern design and a clean frontend and backend. Written in PHP, styled to perfection, and organized with scalability in mind.
 
 **Note: This project is not affiliated with PxlsFiddle in any way**
