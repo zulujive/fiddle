@@ -13,7 +13,10 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/helpers.php';
-require_once __DIR__ .'/../src/controllers/ErrorController.php';
+
+use Bramus\Router\Router;
+use Src\Controllers\ErrorController;
+
 
 \Src\Methods\Environment::load();
 
@@ -41,7 +44,6 @@ if (!isset($_SESSION['logged_in'])) {
 */
 
 // Do not touch zone
-use Bramus\Router\Router;
 $router = new Router();
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
