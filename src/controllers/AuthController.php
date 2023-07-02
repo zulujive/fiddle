@@ -1,5 +1,5 @@
 <?php
-namespace Src\Controllers\AuthController;
+namespace Src\Controllers;
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 class AuthController

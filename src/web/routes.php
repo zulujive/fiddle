@@ -1,8 +1,7 @@
 <?php
 
-use Src\Controllers\HomeController\HomeController;
-use Src\Controllers\AuthController\AuthController;
-use Src\Controllers\AdminController\AdminController;
+use Src\Controllers\ErrorController;
+
 /*
 ######################################################################
 #                                                                    #
@@ -17,11 +16,11 @@ use Src\Controllers\AdminController\AdminController;
 
 $router->setBasePath(BASE_PATH);
 
+$router->setNamespace('Src\Controllers');
+
 // Root route
-$router->get('/', function () {
-    $controller = new HomeController();
-    $controller->index();
-});
+$router->get('/', 'HomeController@index');
+
 $router->get('/style', function () {
     $cssFilePath = __DIR__ . '/../resources/css/style.css';
     if (file_exists($cssFilePath)) {
@@ -37,63 +36,26 @@ $router->get('/style', function () {
 
 // Admin Panel Routes (middleware applied)
 
-
-$router->get('/admin', function () {
-    $controller = new AdminController();
-    $controller->panel();
-});
-$router->get('/admin/templates', function () {
-    $controller = new AdminController();
-    $controller->templatePanel();
-});
-$router->get('/admin/users', function () {
-    $controller = new AdminController();
-    $controller->userPanel();
-});
+$router->get('/admin', 'AdminController@panel');
+$router->get('/admin/templates', 'AdminController@templatePanel');
+$router->get('/admin/users', 'AdminController@userPanel');
 
 // -------------------------------------
 
 // Admin Authentication Routes
 
-$router->get('/login', function () {
-    $controller = new \Src\Controllers\AuthController\AuthController();
-    $controller->panelLogin();
-});
-$router->post('/login', function () {
-    $controller = new AuthController();
-    $controller->panelLogin();
-});
+$router->get('/login', 'AuthController@panelLogin');
+$router->post('/login', 'AuthController@panelLogin');
+$router->post('/logout', 'AuthController@panelLogout');
 
-$router->post('/logout', function () {
-    $controller = new AuthController();
-    $controller->panelLogout();
-});
+$router->get('/login/2FA', 'AuthController@OTP');
+$router->post('/login/2FA', 'AuthController@verifyOTP');
 
-$router->get('/login/2FA', function () {
-    $controller = new AuthController();
-    $controller->OTP();
-});
-$router->post('/login/2FA', function () {
-    $controller = new AuthController();
-    $controller->verifyOTP();
-});
-$router->get('/admin/enable2FA', function () {
-    $controller = new AuthController();
-    $controller->enableOTP();
-});
-$router->post('/admin/enable2FA', function () {
-    $controller = new AuthController();
-    $controller->deployOTP();
-});
-$router->get('/qrcode', function () {
-    $controller = new AuthController();
-    $controller->generateQR();
-});
+$router->get('/admin/enable2FA', 'AuthController@enableOTP');
+$router->post('/admin/enable2FA', 'AuthController@deployOTP');
+$router->get('/qrcode', 'AuthController@generateQR');
 
-$router->post('/admin/register', function () {
-    $controller = new AuthController();
-    $controller->newUser();
-});
+$router->post('/admin/register', 'AuthController@newUser');
 
 // -------------------------------------
 
