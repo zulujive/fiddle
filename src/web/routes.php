@@ -47,7 +47,7 @@ $router->post('/login', 'AuthController@panelLogin');
 $router->post('/logout', 'AuthController@panelLogout');
 
 $router->get('/login/2FA', 'AuthController@OTP');
-$router->post('/login/2FA', 'AuthController@OTP');
+$router->post('/login/2FA', 'AuthController@verifyOTP');
 
 $router->get('/admin/enable2FA', 'AuthController@enableOTP');
 $router->post('/admin/enable2FA', 'AuthController@deployOTP');
