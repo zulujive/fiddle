@@ -14,7 +14,7 @@ use Src\Controllers\ErrorController;
 ######################################################################
 */
 
-$router->setBasePath(BASE_PATH);
+$router->setBasePath(config('BASE_PATH'));
 
 $router->setNamespace('Src\Controllers');
 

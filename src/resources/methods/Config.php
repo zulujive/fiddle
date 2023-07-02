@@ -11,6 +11,7 @@ class Config
             'DB_KEY' => env('DB_KEY', 'password'),
 
             'SET_PORT' => env('SET_PORT', 7890),
+            'BASE_PATH' => env('BASE_PATH', "/"),
 
             'LOGIN_LIMIT' => env('LOGIN_LIMIT', 1),
 
