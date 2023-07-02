@@ -27,6 +27,8 @@ define('DB_KEY', 'password');
 */
 //      \/ Name \/      \/ Port (usually anything except 80, 443, 22)
 define('SET_PORT', '7890');
+//      \/ Name      \/ Base path to be used by the router
+define('BASE_PATH', '/');
 
 /*-------------------------------------------------------
 |                    --Rate Limiting--
