@@ -9,9 +9,9 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $password_confirm_unsanitized = $_POST["passwordConfirm"];
 
     // Sanitize inputs!
-  	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-    $password = filter_var($password_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-    $passwordConfirm = filter_var($password_confirm_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  	$username = htmlspecialchars($username_unsanitized, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $password = htmlspecialchars($password_unsanitized, FILTER_FLAG_NO_ENCODE_QUOTES);
+    $passwordConfirm = htmlspecialchars($password_confirm_unsanitized, FILTER_FLAG_NO_ENCODE_QUOTES);
 
     $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 

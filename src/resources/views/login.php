@@ -38,7 +38,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && $_SESSION["login_l
     Csrf::verifyToken();
     $username_unsanitized = $_POST["username"];
     $password_unsanitized = $_POST["password"];
-  	$username = filter_var($username_unsanitized, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  	$username = htmlspecialchars($username_unsanitized, FILTER_FLAG_NO_ENCODE_QUOTES);
 
     $hashedPassword = $password_unsanitized;
 
