@@ -1,5 +1,5 @@
 <?php
-namespace Controllers\HomeController;
+namespace Src\Controllers;
 
 class HomeController
 {

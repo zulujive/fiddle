@@ -1,5 +1,7 @@
 <?php
 
+namespace Src\Controllers;
+
 class ErrorController
 {
     public function notFound()
