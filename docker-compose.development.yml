@@ -9,6 +9,7 @@ services:
       - ./:/var/www/html
     environment:
       - DB_HOST="http://pocketbase:8090"
+      - DISPLAY_ERRORS=true
   nginx:
     image: nginx:latest
     volumes:

@@ -43,3 +43,21 @@ if (!function_exists('config')) {
         return Config::get($value);
     }
 }
+
+if (!function_exists('check_for_fatal')) {
+    function check_for_fatal()
+    {
+        $error = error_get_last();
+        if ( isset($error["type"]) && $error["type"] == E_ERROR )
+            require_once __DIR__ . '/resources/views/500.php';
+        exit();
+    }
+}
+
+if (!function_exists('myErrorHandler')) {
+    function myErrorHandler() {
+        require_once __DIR__ . '/resources/views/500.php';
+        exit();
+    }
+}
+
