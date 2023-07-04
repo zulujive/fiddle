@@ -11,6 +11,9 @@
         "psr-4": {
             "Src\\Controllers\\": "src/controllers/",
             "Src\\Methods\\": "src/resources/methods/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     }
 }

@@ -12,7 +12,7 @@
 */
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/helpers.php';
+
 
 use Bramus\Router\Router;
 use Src\Controllers\ErrorController;
