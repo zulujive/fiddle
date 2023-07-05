@@ -9,13 +9,13 @@ class AuthController
     ===================================
     */
     public function panelLogin() {
-        require_once __DIR__ . '/../resources/views/login.php';
+        require_once __DIR__ . '/../resources/views/panel/auth/login.php';
     }
     public function panelLogout() {
-        require_once __DIR__ . '/../resources/views/logout.php';
+        require_once __DIR__ . '/../resources/views/panel/auth/logout.php';
     }
     public function newUser() {
-        require_once __DIR__ . '/../resources/views/register.php';
+        require_once __DIR__ . '/../resources/views/panel/auth/register.php';
     }
 
     /*=================================
@@ -23,18 +23,18 @@ class AuthController
     ===================================
     */
     public function OTP() {
-        require_once __DIR__ . '/../resources/views/dualFactor.php';
+        require_once __DIR__ . '/../resources/views/otp/dualFactor.php';
     }
     public function verifyOTP() {
-        require_once __DIR__ . '/../resources/views/dualFactorVerify.php';
+        require_once __DIR__ . '/../resources/views/otp/dualFactorVerify.php';
     }
     public function enableOTP() {
-        require_once __DIR__ . '/../resources/views/dualFactorEnable.php';
+        require_once __DIR__ . '/../resources/views/otp/dualFactorEnable.php';
     }
     public function deployOTP() {
-        require_once __DIR__ . '/../resources/views/dualFactorInfo.php';
+        require_once __DIR__ . '/../resources/views/otp/dualFactorInfo.php';
     }
     public function generateQR() {
-        require_once __DIR__ . '/../resources/views/generateQR.php';
+        require_once __DIR__ . '/../resources/views/otp/generateQR.php';
     }
 }

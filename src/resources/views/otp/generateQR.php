@@ -6,8 +6,8 @@ use Endroid\QrCode\QrCode;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
 use GuzzleHttp\Client;
-require_once __DIR__ . '/../../../config.php';
-require_once __DIR__ . '/../methods/tokenHandler.php';
+require_once __DIR__ . '/../../../../config.php';
+require_once __DIR__ . '/../../methods/tokenHandler.php';
 
 $handler = new tokenHandler();
 
