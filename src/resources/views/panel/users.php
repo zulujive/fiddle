@@ -1,8 +1,8 @@
 <?php
 
 use GuzzleHttp\Client;
-require_once __DIR__ . '/../methods/Csrf.php';
-require_once __DIR__ . '/../methods/fetchStats.php';
+require_once __DIR__ . '/../../methods/Csrf.php';
+require_once __DIR__ . '/../../methods/fetchStats.php';
 
 $adminCount = fetchStats::countAdmins();
 $userCount = fetchStats::countUsers();
