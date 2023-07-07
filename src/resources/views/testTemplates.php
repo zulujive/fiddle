@@ -9,6 +9,6 @@ $imageResponse = $client->get($imageTestUrl);
 $imageData = $imageResponse->getBody()->getContents();
 
 // Set the appropriate content-type header for the image
-header('Content-Type: ' . $response->getHeaderLine('Content-Type'));
+header('Content-Type: ' . $imageResponse->getHeaderLine('Content-Type'));
 
 echo $imageData;
