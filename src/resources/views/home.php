@@ -167,7 +167,9 @@ require_once __DIR__ . '/../methods/jsonUtils.php';
     <div class="featured">
       <?php 
         $featuredHTML = jsonUtils::generateFeatured();
-        echo $featuredHTML;        
+        foreach ($featuredHTML as $html) {
+          echo $html;
+        }
       ?>
     </div>
     <hr style="opacity: 0; animation: fadeIn 0.5s ease .9s forwards; border-color: white;">
