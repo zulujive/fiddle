@@ -7,7 +7,10 @@ class PocketBase
     {
         $client = new Client();
         $response = $client->request($method, $url . '/api/collections/' . $collection . '/records/' . $action, [
-            'json' => $data
+            'json' => $data,
+            'headers' => [
+                'pb_token' => DB_KEY,
+            ]
         ]);
         try {
             if ($response->getStatusCode() === 200) {
