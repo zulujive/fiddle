@@ -61,7 +61,7 @@ class PocketBase
         $response = self::api(DB_HOST, 'get', 'templates', $data, $templateId);
         if ($response['success'] == true) {
             $responseData = $response['responseData'];
-            $imageName = $responseData["image"];
+            $imageName = $responseData["template"];
             return $imageName;
         } else {
             throw new Exception('Cannot find template');
