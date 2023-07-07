@@ -73,4 +73,18 @@ class PocketBase
         $templateUrl = DB_HOST . '/api/files/templates/' . $templateId . '/' . $templateName;
         return $templateUrl;
     }
+
+    public static function serveTemplate($templateId) {
+
+        $client = new Client();
+
+        $imageUrl = self::getTemplateUrl($templateId);
+        $imageResponse = $client->get($imageUrl);
+        $imageData = $imageResponse->getBody()->getContents();
+
+        // Set the appropriate content-type header for the image
+        header('Content-Type: ' . $imageResponse->getHeaderLine('Content-Type'));
+
+        return $imageData;
+    }
 }

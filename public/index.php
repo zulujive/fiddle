@@ -44,6 +44,7 @@ if (!isset($_SESSION['logged_in'])) {
 // Do not touch zone
 $router = new Router();
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
+include_once __DIR__ .'/../src/resources/methods/PocketBase.php';
 
 if ($maintenanceMode) {
     // Redirect all traffic to the maintenance page

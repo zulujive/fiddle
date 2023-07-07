@@ -62,8 +62,7 @@ $router->post('/admin/register', 'AuthController@newUser');
 
 // Storage Routes
 $router->get("/templates/(.*)", function($filename){
-    $templateImage = file_get_contents(__DIR__ . "/../../templates/".$filename."");
-    header('Content-Type: image/jpeg');
+    $templateImage = PocketBase::serveTemplate($filename);
     echo $templateImage;
 
 });
