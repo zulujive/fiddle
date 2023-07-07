@@ -59,7 +59,7 @@ class PocketBase
     public static function getTemplateName($templateId) {
         $data = [];
         $response = self::api(DB_HOST, 'get', 'templates', $data, $templateId);
-        if (response['success'] == true) {
+        if ($response['success'] == true) {
             $responseData = $response['responseData'];
             $imageName = $responseData["image"];
             return $imageName;
