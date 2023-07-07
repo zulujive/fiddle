@@ -14,6 +14,8 @@ class jsonUtils
         return json_decode($json_data, true);
 
     }
+
+    // Retrieve data about the featured templates and put them in an array
     public static function instFeatured()
     {
         $data = self::retrieveFeatured();

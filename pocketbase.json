@@ -199,18 +199,6 @@
                 }
             },
             {
-                "id": "2gjvo80x",
-                "name": "image",
-                "type": "text",
-                "system": false,
-                "required": false,
-                "options": {
-                    "min": null,
-                    "max": null,
-                    "pattern": ""
-                }
-            },
-            {
                 "id": "hhszlbgl",
                 "name": "url",
                 "type": "url",
@@ -219,18 +207,6 @@
                 "options": {
                     "exceptDomains": null,
                     "onlyDomains": null
-                }
-            },
-            {
-                "id": "6oxfjkee",
-                "name": "content",
-                "type": "text",
-                "system": false,
-                "required": false,
-                "options": {
-                    "min": null,
-                    "max": null,
-                    "pattern": ""
                 }
             },
             {
