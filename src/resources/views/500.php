@@ -1,3 +1,10 @@
+<?php
+
+ob_start();
+ob_clean();
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
