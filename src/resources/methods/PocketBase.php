@@ -87,4 +87,13 @@ class PocketBase
 
         return $imageData;
     }
+
+    public static function imgById($templateId) {
+        $data = [];
+        $response = self::api(DB_HOST, 'get', 'templates', $data, $templateId);
+        if ($response['success'] == true) {
+            $responseData = $response['responseData'];
+            return $responseData;
+        }
+    }
 }

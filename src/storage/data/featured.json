@@ -1,14 +1,11 @@
-{
-    "featured_1": "CHANGEME",
-    "featured_1_img": "/templates/youdidit.png",
-    "featured_1_url": "https://pxls.space/",
-    "featured_1_id": "CHANGEME",
-    "featured_2": "CHANGEME",
-    "featured_2_img": "/templates/youdidit.png",
-    "featured_2_url": "https://pxls.space/",
-    "featured_2_id": "CHANGEME",
-    "featured_3": "CHANGEME",
-    "featured_3_img": "/templates/youdidit.png",
-    "featured_3_url": "https://pxls.space/",
-    "featured_3_id": "CHANGEME"
+[
+  {
+    "id": "changeme"
+  },
+  {
+    "id": "changeme"
+  },
+  {
+    "id": "changeme"
   }
+]

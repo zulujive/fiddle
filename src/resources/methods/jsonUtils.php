@@ -14,9 +14,51 @@ class jsonUtils
         return json_decode($json_data, true);
 
     }
-    public static function generateFeatured()
+    public static function instFeatured()
     {
         $data = self::retrieveFeatured();
+        $featuredImages = array();
+
+        foreach ($data as $ftData) {
+            $ftId = $ftData['id'];
+            $ftDb = PocketBase::imgById($ftId);
+
+            $imgInfo = array(
+                'id' => $ftId,
+                'data' => $ftDb
+            );
+
+            $featuredImages[] = $imgInfo;
+        }
+
+        return $featuredImages;
+    }
+
+    public static function generateFeatured()
+    {
+        $instImgs = self::instFeatured();
+        $html = [];
+
+        foreach ($instImgs as $img) {
+            $data = $img['data'];
+            $title = $data["title"];
+            $url = $data["url"];
+            $id = $data["id"];
+            $img = '/templates/' . $id;
+
+            $html[] = '<article class="featured_box">';
+            $html[] = '<h1 class="fire2">' . $title . '</h1>';
+            $html[] = '<img style="image-rendering: pixelated;" src="' . $img . '" height="150rem">';
+            $html[] = '<h3><i class="fa-solid fa-palette"></i> <a href="' . $url . '" target="_blank">Template URL</a> (ID: ' . $id . ')</h3>';
+            $html[] = '<h3><i class="fa-solid fa-image"></i> <a href="' . $img . '" target="_blank">Image URL</a></h3>';
+            $html[] = '</article>';
+        }
+
+        return $html;
+    }
+    /* public static function generateFeatured()
+    {
+
 
         $featured_1 = $data['featured_1'];
         $featured_1_img = $data['featured_1_img'];
@@ -51,7 +93,7 @@ class jsonUtils
         $html .= '</article>';
 
         return $html;
-    }
+    } */
     public static function retrieveData()
     {
         $client = new Client();
