@@ -56,44 +56,7 @@ class jsonUtils
 
         return $html;
     }
-    /* public static function generateFeatured()
-    {
 
-
-        $featured_1 = $data['featured_1'];
-        $featured_1_img = $data['featured_1_img'];
-        $featured_1_url = $data['featured_1_url'];
-        $featured_1_id = $data['featured_1_id'];
-        $featured_2 = $data['featured_2'];
-        $featured_2_img = $data['featured_2_img'];
-        $featured_2_url = $data['featured_2_url'];
-        $featured_2_id = $data['featured_2_id'];
-        $featured_3 = $data['featured_3'];
-        $featured_3_img = $data['featured_3_img'];
-        $featured_3_url = $data['featured_3_url'];
-        $featured_3_id = $data['featured_3_id'];
-
-        $html = '<article class="featured_box">';
-        $html .= '<h1 class="fire2">' . $featured_1 . '</h1>';
-        $html .= '<img style="image-rendering: pixelated;" src="' . $featured_1_img . '" height="150rem">';
-        $html .= '<h3><i class="fa-solid fa-palette"></i> <a href="' . $featured_1_url . '" target="_blank">Template URL</a> (ID: ' . $featured_1_id . ')</h3>';
-        $html .= '<h3><i class="fa-solid fa-image"></i> <a href="' . $featured_1_img . '" target="_blank">Image URL</a></h3>';
-        $html .= '</article>';
-        $html .= '<article class="featured_box">';
-        $html .= '<h1 class="fire2">' . $featured_2 . '</h1>';
-        $html .= '<img style="image-rendering: pixelated;" src="' . $featured_2_img . '" height="150rem">';
-        $html .= '<h3><i class="fa-solid fa-palette"></i> <a href="' . $featured_2_url . '" target="_blank">Template URL</a> (ID: ' . $featured_2_id . ')</h3>';
-        $html .= '<h3><i class="fa-solid fa-image"></i> <a href="' . $featured_2_img . '" target="_blank">Image URL</a></h3>';
-        $html .= '</article>';
-        $html .= '<article class="featured_box">';
-        $html .= '<h1 class="fire2">' . $featured_3 . '</h1>';
-        $html .= '<img style="image-rendering: pixelated;" src="' . $featured_3_img . '" height="150rem">';
-        $html .= '<h3><i class="fa-solid fa-palette"></i> <a href="' . $featured_3_url . '" target="_blank">Template URL</a> (ID: ' . $featured_3_id . ')</h3>';
-        $html .= '<h3><i class="fa-solid fa-image"></i> <a href="' . $featured_3_img . '" target="_blank">Image URL</a></h3>';
-        $html .= '</article>';
-
-        return $html;
-    } */
     public static function retrieveData()
     {
         $client = new Client();
