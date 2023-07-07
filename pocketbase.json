@@ -107,68 +107,6 @@
         }
     },
     {
-        "id": "ckwzf33sjtzd3pz",
-        "name": "templates",
-        "type": "base",
-        "system": false,
-        "schema": [
-            {
-                "id": "gn0n04ye",
-                "name": "title",
-                "type": "text",
-                "system": false,
-                "required": true,
-                "options": {
-                    "min": null,
-                    "max": null,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": "2gjvo80x",
-                "name": "image",
-                "type": "text",
-                "system": false,
-                "required": false,
-                "options": {
-                    "min": null,
-                    "max": null,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": "hhszlbgl",
-                "name": "url",
-                "type": "url",
-                "system": false,
-                "required": true,
-                "options": {
-                    "exceptDomains": null,
-                    "onlyDomains": null
-                }
-            },
-            {
-                "id": "6oxfjkee",
-                "name": "content",
-                "type": "text",
-                "system": false,
-                "required": false,
-                "options": {
-                    "min": null,
-                    "max": null,
-                    "pattern": ""
-                }
-            }
-        ],
-        "indexes": [],
-        "listRule": "@request.headers.pb_token = \"password\"",
-        "viewRule": "@request.headers.pb_token = \"password\"",
-        "createRule": "@request.headers.pb_token = \"password\"",
-        "updateRule": "@request.headers.pb_token = \"password\"",
-        "deleteRule": null,
-        "options": {}
-    },
-    {
         "id": "litgfpiuku3unxh",
         "name": "tokens",
         "type": "base",
@@ -231,6 +169,88 @@
                 "options": {
                     "min": "",
                     "max": ""
+                }
+            }
+        ],
+        "indexes": [],
+        "listRule": "@request.headers.pb_token = \"password\"",
+        "viewRule": "@request.headers.pb_token = \"password\"",
+        "createRule": "@request.headers.pb_token = \"password\"",
+        "updateRule": "@request.headers.pb_token = \"password\"",
+        "deleteRule": null,
+        "options": {}
+    },
+    {
+        "id": "ckwzf33sjtzd3pz",
+        "name": "templates",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "id": "gn0n04ye",
+                "name": "title",
+                "type": "text",
+                "system": false,
+                "required": true,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "2gjvo80x",
+                "name": "image",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "hhszlbgl",
+                "name": "url",
+                "type": "url",
+                "system": false,
+                "required": true,
+                "options": {
+                    "exceptDomains": null,
+                    "onlyDomains": null
+                }
+            },
+            {
+                "id": "6oxfjkee",
+                "name": "content",
+                "type": "text",
+                "system": false,
+                "required": false,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "mdcikoyk",
+                "name": "template",
+                "type": "file",
+                "system": false,
+                "required": false,
+                "options": {
+                    "maxSelect": 1,
+                    "maxSize": 20000000,
+                    "mimeTypes": [
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml",
+                        "image/gif",
+                        "image/webp"
+                    ],
+                    "thumbs": [],
+                    "protected": false
                 }
             }
         ],

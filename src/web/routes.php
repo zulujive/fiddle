@@ -20,6 +20,7 @@ $router->setNamespace('Src\Controllers');
 
 // Root route
 $router->get('/', 'HomeController@index');
+$router->get('/test', 'HomeController@test');
 
 $router->get('/style', function () {
     $cssFilePath = __DIR__ . '/../resources/css/style.css';
