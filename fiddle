@@ -1,13 +1,15 @@
 #!/usr/bin/env php
 <?php
-require __DIR__ . '/config.php';
+require __DIR__ . '/vendor/autoload.php';
+
+\Src\Methods\Environment::load();
 
 if ($argv[1] === 'serve') {
     // Change to the public directory
     chdir(__DIR__ . '/public');
 
     // Run the server on the specified port, serving only index.php
-    exec('php -S localhost:' . SET_PORT . ' index.php');
+    exec('php -S localhost:' . config('SET_PORT') . ' index.php');
 } else {
     echo "Unknown command. Usage: php fiddle serve" . PHP_EOL;
 }

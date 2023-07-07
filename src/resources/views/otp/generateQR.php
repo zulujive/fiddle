@@ -6,7 +6,6 @@ use Endroid\QrCode\QrCode;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
 use Endroid\QrCode\Writer\PngWriter;
 use GuzzleHttp\Client;
-require_once __DIR__ . '/../../../../config.php';
 require_once __DIR__ . '/../../methods/tokenHandler.php';
 
 $handler = new tokenHandler();
@@ -27,9 +26,9 @@ if ($id !== $_SESSION["userID"])
 
 $client = new Client(['defaults' => [ 'exceptions' => false ]] );
 
-$response = $client->get('' . DB_HOST . '/api/collections/admins/records/' . $id . '', [
+$response = $client->get('' . config('DB_HOST') . '/api/collections/admins/records/' . $id . '', [
     'headers' => [
-        'pb_token' => DB_KEY,
+        'pb_token' => config('DB_KEY'),
     ]
 ]);
 

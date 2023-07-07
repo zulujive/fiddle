@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../../../config.php';
 use GuzzleHttp\Client;
 
 class jsonUtils
@@ -63,9 +62,9 @@ class jsonUtils
     {
         $client = new Client();
         // Read the JSON data from the database
-        $response = $client->get(DB_HOST . '/api/collections/templates/records', [
+        $response = $client->get(config('DB_HOST') . '/api/collections/templates/records', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
         $responseData = json_decode($response->getBody(), true);

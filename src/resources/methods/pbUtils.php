@@ -1,7 +1,6 @@
 <?php
 use GuzzleHttp\Client;
 
-require_once __DIR__ . '/../../../config.php';
 
 class pbUtils
 {
@@ -12,7 +11,7 @@ class pbUtils
         if ($type === 'password')
         {
             try {
-                $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
+                $response = $client->post('' . config('DB_HOST') . '/api/collections/admins/auth-with-password', [
                     'json' => [
                         'identity' => $identifier,
                         'password' => $password,

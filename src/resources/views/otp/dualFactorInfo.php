@@ -1,7 +1,6 @@
 <?php
 use GuzzleHttp\Client;
 use OTPHP\TOTP;
-require_once __DIR__ . '/../../../../config.php';
 require_once __DIR__ . '/../../methods/Csrf.php';
 require_once __DIR__ . '/../../methods/tokenHandler.php';
 
@@ -18,13 +17,13 @@ if (isset($_POST['password']))
     $token = $handler->createToken('qrCode', true, $userID);
 
     try {
-        $response = $client->post('' . DB_HOST . '/api/collections/admins/auth-with-password', [
+        $response = $client->post('' . config('DB_HOST') . '/api/collections/admins/auth-with-password', [
             'json' => [
                 'identity' => $username,
                 'password' => $password,
             ],
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ], ['http_errors' => false]);
         if ($response->getStatusCode() === 200) {
@@ -39,13 +38,13 @@ if (isset($_POST['password']))
             $otp = TOTP::create();
             $secret = $otp->getSecret();
             try {
-            $patchResponse = $client->patch('' . DB_HOST . '/api/collections/admins/records/' . $userID . '', [
+            $patchResponse = $client->patch('' . config('DB_HOST') . '/api/collections/admins/records/' . $userID . '', [
                 'json' => [
                     '2FA' => true,
                     '2FASecret' => $secret,
                 ],
                 'headers' => [
-                    'pb_token' => DB_KEY,
+                    'pb_token' => config('DB_KEY'),
                 ]
             ]);
             if ($patchResponse->getStatusCode() === 200) {

@@ -12,14 +12,16 @@
 */
 
 require __DIR__ . '/../vendor/autoload.php';
-include(dirname(__FILE__).'/../config.php');
+
 
 use Bramus\Router\Router;
 use Src\Controllers\ErrorController;
 
 
+\Src\Methods\Environment::load();
+
 $ErrorHandler = new ErrorController();
-$ErrorHandler->enable(DISPLAY_ERRORS);
+$ErrorHandler->enable(config('DISPLAY_ERRORS'));
 
 // Begin the site-wide session
 session_set_cookie_params([
@@ -46,9 +48,9 @@ $router = new Router();
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 include_once __DIR__ .'/../src/resources/methods/PocketBase.php';
 
-if ($maintenanceMode) {
+if (config('MAINTENANCE_MODE')) {
     // Redirect all traffic to the maintenance page
-    echo $maintenanceMessage;
+    echo config('MAINTENANCE_MESSAGE');
     exit();
 }
 

@@ -1,7 +1,6 @@
 <?php
 use GuzzleHttp\Client;
 
-require_once __DIR__ . '/../../../config.php';
 
 class tokenHandler
 {
@@ -9,7 +8,7 @@ class tokenHandler
     {
         $client = new Client();
         $uuid = bin2hex(random_bytes(32));
-        $response = $client->post(DB_HOST . '/api/collections/tokens/records', [
+        $response = $client->post(config('DB_HOST') . '/api/collections/tokens/records', [
             'json' => [
                 'token' => $uuid,
                 'valid' => $enabled,
@@ -17,7 +16,7 @@ class tokenHandler
                 'userID' => $user,
             ],
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
 
@@ -32,12 +31,12 @@ class tokenHandler
 
         $id = $this->findToken($token);
 
-        $response = $client->patch(DB_HOST . '/api/collections/tokens/records/' . $id, [
+        $response = $client->patch(config('DB_HOST') . '/api/collections/tokens/records/' . $id, [
             'json' => [
                 'valid' => false,
             ],
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
 
@@ -50,9 +49,9 @@ class tokenHandler
     protected function findToken($token) {
         $client = new Client();
 
-        $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=\'' . $token . '\')', [
+        $response = $client->get(config('DB_HOST') . '/api/collections/tokens/records?filter=(token=\'' . $token . '\')', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
         if ($response->getStatusCode() === 200) {
@@ -66,9 +65,9 @@ class tokenHandler
     public static function verifyToken($token, $user) {
         $client = new Client();
 
-        $response = $client->get(DB_HOST . '/api/collections/tokens/records?filter=(token=\'' . $token . '\')', [
+        $response = $client->get(config('DB_HOST') . '/api/collections/tokens/records?filter=(token=\'' . $token . '\')', [
             'headers' => [
-                'pb_token' => DB_KEY,
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
         if ($response->getStatusCode() === 200) {
