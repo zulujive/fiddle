@@ -25,3 +25,5 @@ ob_clean();
         <p class="text-center mt-2">fiddleneo</p>
     </footer>
 </html>
+<?php
+ob_end_flush();
