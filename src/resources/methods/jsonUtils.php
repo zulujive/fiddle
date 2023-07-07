@@ -74,8 +74,9 @@ class jsonUtils
 
         // Loop through each data point and generate an article for each one
         foreach ($articledata as $article_data) {
+            $template_article_id = $article_data['id'];
             $template_article_title = $article_data['title'];
-            $template_article_image = $article_data['image'];
+            $template_article_image = '/templates/' . $template_article_id;
             $template_article_url = $article_data['url'];
             $template_article_content = $article_data['content'];
 
