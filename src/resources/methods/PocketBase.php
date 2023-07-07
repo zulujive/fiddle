@@ -9,7 +9,7 @@ class PocketBase
         $response = $client->request($method, $url . '/api/collections/' . $collection . '/records/' . $action, [
             'json' => $data,
             'headers' => [
-                'pb_token' => config(DB_KEY),
+                'pb_token' => config('DB_KEY'),
             ]
         ]);
         try {
@@ -34,7 +34,7 @@ class PocketBase
         $client = new Client();
 
         try {
-            $response = $client->post('' . config(DB_HOST) . '/api/collections/admins/auth-with-password', [
+            $response = $client->post('' . config('DB_HOST') . '/api/collections/admins/auth-with-password', [
                 'json' => [
                     'identity' => $identifier,
                     'password' => $password,
@@ -58,7 +58,7 @@ class PocketBase
 
     public static function getTemplateName($templateId) {
         $data = [];
-        $response = self::api(config(DB_HOST), 'get', 'templates', $data, $templateId);
+        $response = self::api(config('DB_HOST'), 'get', 'templates', $data, $templateId);
         if ($response['success'] == true) {
             $responseData = $response['responseData'];
             $imageName = $responseData["template"];
@@ -70,7 +70,7 @@ class PocketBase
 
     public static function getTemplateUrl($templateId) {
         $templateName = self::getTemplateName($templateId);
-        $templateUrl = config(DB_HOST) . '/api/files/templates/' . $templateId . '/' . $templateName;
+        $templateUrl = config('DB_HOST') . '/api/files/templates/' . $templateId . '/' . $templateName;
         return $templateUrl;
     }
 
@@ -90,7 +90,7 @@ class PocketBase
 
     public static function imgById($templateId) {
         $data = [];
-        $response = self::api(config(DB_HOST), 'get', 'templates', $data, $templateId);
+        $response = self::api(config('DB_HOST'), 'get', 'templates', $data, $templateId);
         if ($response['success'] == true) {
             $responseData = $response['responseData'];
             return $responseData;
