@@ -73,7 +73,7 @@ if (!isset($_SESSION["registration_success"])) {
                                 <?php 
                                 echo $userCount . ' ';
                                 $userCountInt = intval($userCount);
-                                if ($userCountInt < 2)
+                                if ($userCountInt < 2 $$ $userCountInt !== 0)
                                 {
                                     $plural = "User";
                                 } else {

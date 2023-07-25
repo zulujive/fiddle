@@ -2,6 +2,7 @@
 use GuzzleHttp\Client;
 require_once __DIR__ . '/../../../methods/Csrf.php';
 require_once __DIR__ . '/../../../../../dev.php';
+require_once __DIR__ . '/../../../methods/pb/PocketBase.php';
 
 if ($_SESSION["logged_in"] == true) {
     header("Location: /admin");
