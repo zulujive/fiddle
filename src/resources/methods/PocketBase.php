@@ -64,7 +64,8 @@ class PocketBase
             $imageName = $responseData["template"];
             return $imageName;
         } else {
-            throw new Exception('Cannot find template');
+            http_response_code(404);
+            echo 'Cannot find template';
         }
     }
 
