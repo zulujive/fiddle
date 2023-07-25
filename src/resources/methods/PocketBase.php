@@ -1,7 +1,7 @@
 <?php
 use GuzzleHttp\Client;
 
-class PocketBase
+class PocketBaseUtil
 {
     private static function api($url, $method, $collection, $data, $action='')
     {
