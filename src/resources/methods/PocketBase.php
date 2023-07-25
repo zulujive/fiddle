@@ -66,6 +66,7 @@ class PocketBase
         } else {
             http_response_code(404);
             echo 'Cannot find template';
+            exit();
         }
     }
 
