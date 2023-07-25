@@ -27,7 +27,7 @@ $ErrorHandler->enable(config('DISPLAY_ERRORS'));
 // Begin the site-wide session
 session_set_cookie_params([
     'SameSite' => 'Strict',
-    'lifetime' => 3600,
+    'lifetime' => 432000,
 ]);
 session_start();
 
