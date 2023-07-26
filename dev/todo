@@ -1,19 +1,23 @@
 +==========================================+
 |         ---The To-do List---             |
 | Here are all the tasks that need to get  |
-| done. Hashes (#) mark in-progress, x's   |
+| done. "o" mark in-progress, x's          |
 | (x) mark done and (!) indicates that     |
-| something is not working as intended or  |
-| you need help with something.            |
+| something is not done and is important   |
 +==========================================+
-TODO:
-BEFORE Next Release:
+TODO: BEFORE Next Release
 o Move featured to DB [#19](https://github.com/zulujive/fiddle/issues/19) @zulujive
+    o Create column in table
+    o Write logic to pull featured
+        o Use PB-API to retrieve featured
+        o Write PB data to HTML
+    o Test
 - Verify Docker works @zulujive
 - Double check all features and performance @zulujive
 ! Finalize release and make pull request @zulujive
+:TODO
 
-AFTER Next Release:
+TODO: AFTER Next Release
 - Add login button to home
     - Create CSS button class
     - Add logic for logged out users
@@ -51,3 +55,4 @@ AFTER Next Release:
 - Template delete feature
     - Admin delete feature
     - Temporary "hold for review" feature
+:TODO
