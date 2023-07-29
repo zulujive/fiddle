@@ -1,5 +1,5 @@
 <?php
-namespace src\methods;
+namespace Src\Methods;
 
 class Csrf
 {
