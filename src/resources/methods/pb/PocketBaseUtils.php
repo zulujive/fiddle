@@ -8,7 +8,6 @@ class PocketBaseUtils
     private static function api($url, $method, $collection, $data, $action='')
     {
         $client = new Client();
-        
         try {
             $response = $client->request($method, $url . '/api/collections/' . $collection . '/records/' . $action, [
                 'json' => $data,
@@ -24,7 +23,7 @@ class PocketBaseUtils
                     'responseData' => $responseData,
                 ];
             } 
-        } catch (GuzzleHttp\Exception\RequestException $e) {
+        } catch (GuzzleHttp\Exception\ClientException $e) {
             return [
                 'success' => false,
                 'responseData' => null,
@@ -67,13 +66,14 @@ class PocketBaseUtils
             $imageName = $responseData["template"];
             return $imageName;
         } else {
-            http_response_code(400);
-            $returnData = [
-                'error' => '404',
-                'message' => 'resource not found'
-            ];
-            $jsonResponse = json_encode($returnData);
-            echo $jsonResponse;
+            http_response_code(404);
+            echo '<head>';
+            echo "<link href=\"https:\/\/cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">";
+            echo '</head>';
+            echo '<body class="p-3" style="background-color: black; color: white;">';
+            echo '<h1>Error: 404</h1>';
+            echo '<h3>Cannot find template<h3>';
+            echo '</body>';
             exit();
         }
     }

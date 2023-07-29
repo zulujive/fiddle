@@ -64,6 +64,7 @@ class jsonUtils
     public static function retrieveData()
     {
         $client = new Client();
+        try {
         // Read the JSON data from the database
         $response = $client->get(config('DB_HOST') . '/api/collections/templates/records', [
             'headers' => [
@@ -74,6 +75,10 @@ class jsonUtils
         $json_data = $responseData['items'];
 
         return $json_data;
+        } catch (GuzzleHttp\Exception\RequestException $e) {
+            http_response_code(404);
+            echo "not found";
+        }
     }
 
     public static function generateHTML()
