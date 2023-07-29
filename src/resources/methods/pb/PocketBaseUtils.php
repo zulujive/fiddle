@@ -75,7 +75,7 @@ class PocketBaseUtils
             echo '<h1>Error: 404</h1>';
             echo '<h3>Cannot find template<h3>';
             echo '</body>';
-            echo '</html>'
+            echo '</html>';
             exit();
         }
     }
