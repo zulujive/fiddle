@@ -10,7 +10,8 @@
     "autoload": {
         "psr-4": {
             "Src\\Controllers\\": "src/controllers/",
-            "Src\\Methods\\": "src/resources/methods/"
+            "Src\\Methods\\": "src/resources/methods/",
+            "Src\\Methods\\Pb\\": "src/resources/methods/pb/"
         },
         "files": [
             "src/helpers.php"

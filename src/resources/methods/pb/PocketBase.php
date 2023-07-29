@@ -1,4 +1,5 @@
 <?php
+namespace Src\Methods\Pb;
 use GuzzleHttp\Client;
 
 class PocketBaseUtils
