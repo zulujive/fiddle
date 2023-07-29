@@ -69,7 +69,7 @@ class PocketBaseUtils
             $returnData = [
                 'error' => '404',
                 'message' => 'resource not found'
-            ]
+            ];
             $jsonResponse = json_encode($returnData);
             echo $jsonResponse;
             exit();
