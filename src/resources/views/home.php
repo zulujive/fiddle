@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/../methods/jsonUtils.php';
+use Src\Methods\jsonUtils;
+//require_once __DIR__ . '/../methods/jsonUtils.php';
 ?>
 
 <!DOCTYPE html>

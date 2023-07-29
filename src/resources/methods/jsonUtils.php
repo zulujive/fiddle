@@ -1,4 +1,6 @@
 <?php
+namespace Src\Methods;
+
 use GuzzleHttp\Client;
 
 class jsonUtils
