@@ -24,7 +24,7 @@ class jsonUtils
 
         foreach ($data as $ftData) {
             $ftId = $ftData['id'];
-            $ftDb = PocketBase::imgById($ftId);
+            $ftDb = PocketBaseUtils::imgById($ftId);
 
             $imgInfo = array(
                 'id' => $ftId,
