@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . '/../../methods/Csrf.php';
+
+use Src\Methods\Csrf;
+//require_once __DIR__ . '/../../methods/Csrf.php';
 
 $csrfToken = Csrf::generateToken();
 

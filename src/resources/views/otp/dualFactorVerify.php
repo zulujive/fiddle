@@ -1,6 +1,7 @@
 <?php
 use OTPHP\TOTP;
-require_once __DIR__ . '/../../methods/Csrf.php';
+use Src\Methods\Csrf;
+//require_once __DIR__ . '/../../methods/Csrf.php';
 
 if (!isset($_SESSION['secret']))
 {

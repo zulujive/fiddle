@@ -1,7 +1,8 @@
 <?php
-use GuzzleHttp\Client;
 use OTPHP\TOTP;
-require_once __DIR__ . '/../../methods/Csrf.php';
+use Src\Methods\Csrf;
+use GuzzleHttp\Client;
+//require_once __DIR__ . '/../../methods/Csrf.php';
 require_once __DIR__ . '/../../methods/tokenHandler.php';
 
 $handler = new tokenHandler();
