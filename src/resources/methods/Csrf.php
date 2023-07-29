@@ -1,4 +1,6 @@
 <?php
+namespace src\methods;
+
 class Csrf
 {
     public static function generateToken()

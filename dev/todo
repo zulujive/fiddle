@@ -55,4 +55,14 @@ TODO: AFTER Next Release
 - Template delete feature
     - Admin delete feature
     - Temporary "hold for review" feature
+- Add setup utility
+    - Make a way of detecting a new install
+    - Create welcome page
+    - Script PocketBase setup
+    - Admin account creation page
+    - Config questions
+- Update Utility
+    - Standardize GitHub tags
+    - Script PocketBase to update collections
+    - Restart and rebuild container
 :TODO
