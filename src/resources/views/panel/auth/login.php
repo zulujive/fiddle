@@ -1,6 +1,6 @@
 <?php
 use GuzzleHttp\Client;
-use src\methods\Csrf;
+use Src\Methods\Csrf;
 //require_once __DIR__ . '/../../../methods/Csrf.php';
 require_once __DIR__ . '/../../../../../dev.php';
 require_once __DIR__ . '/../../../methods/pb/PocketBase.php';
