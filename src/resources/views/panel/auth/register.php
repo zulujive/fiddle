@@ -1,6 +1,6 @@
 <?php
+use Src\Methods\Csrf;
 use GuzzleHttp\Client;
-require_once __DIR__ . '/../../../methods/Csrf.php';
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     Csrf::verifyToken();

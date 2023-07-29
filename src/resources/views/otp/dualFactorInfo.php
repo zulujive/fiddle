@@ -2,7 +2,6 @@
 use OTPHP\TOTP;
 use Src\Methods\Csrf;
 use GuzzleHttp\Client;
-//require_once __DIR__ . '/../../methods/Csrf.php';
 require_once __DIR__ . '/../../methods/tokenHandler.php';
 
 $handler = new tokenHandler();
