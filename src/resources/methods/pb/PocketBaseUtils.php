@@ -22,7 +22,7 @@ class PocketBaseUtils
                     'responseData' => $responseData,
                 ];
             } 
-        } catch (GuzzleHttp\Exception\ClientException $e) {
+        } catch (GuzzleHttp\Exception\RequestException $e) {
             return [
                 'success' => false,
                 'responseData' => null,
