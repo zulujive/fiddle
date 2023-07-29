@@ -29,4 +29,8 @@ class ErrorController
         }
         
     }
+    public function about500()
+    {
+        require_once __DIR__ . '/../resources/views/info/500.php';
+    }
 }

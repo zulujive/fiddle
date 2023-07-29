@@ -61,6 +61,11 @@ $router->post('/admin/register', 'AuthController@newUser');
 
 // -------------------------------------
 
+// Info Routes
+$router->get('/errors/500', 'ErrorController@about500');
+
+// -------------------------------------
+
 // Storage Routes
 $router->get("/templates/(.*)", function($filename){
     $templateImage = PocketBaseUtils::serveTemplate($filename);

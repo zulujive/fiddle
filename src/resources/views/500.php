@@ -17,6 +17,7 @@ ob_clean();
         <h1 class="text-warning">500: Something went wrong :(</h1>
         <hr>
         <h4>Something went wrong on our end. Please contact a system administrator if you continue to have issues.</h4>
+        <h4><a href="/errors/500">Learn more</a></h4>
         <small>If you are a developer, you can enable full debugging within the config file.</small>
     </body>
     <footer>
