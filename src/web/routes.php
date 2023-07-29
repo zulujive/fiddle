@@ -1,6 +1,7 @@
 <?php
 
 use Src\Methods\Pb\PocketBaseUtils;
+use Src\Controllers\ErrorController;
 
 /*
 ######################################################################
