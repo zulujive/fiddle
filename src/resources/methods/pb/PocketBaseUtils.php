@@ -7,8 +7,9 @@ class PocketBaseUtils
 {
     private static function api($url, $method, $collection, $data, $action='')
     {
+        $client = new Client();
+        
         try {
-            $client = new Client();
             $response = $client->request($method, $url . '/api/collections/' . $collection . '/records/' . $action, [
                 'json' => $data,
                 'headers' => [
