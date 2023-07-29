@@ -22,8 +22,8 @@ class PocketBaseUtils
                     'success' => true,
                     'responseData' => $responseData,
                 ];
-            } 
-        } catch (GuzzleHttp\Exception\ClientException $e) {
+            }
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
             return [
                 'success' => false,
                 'responseData' => null,
@@ -50,7 +50,7 @@ class PocketBaseUtils
                     'responseData' => $responseData,
                 ];
             }
-        } catch (GuzzleHttp\Exception\ClientException $e) {
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
             return [
                 'authenticated' => false,
                 'responseData' => null,
