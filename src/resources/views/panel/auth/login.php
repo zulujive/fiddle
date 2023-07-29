@@ -3,7 +3,6 @@ use GuzzleHttp\Client;
 use Src\Methods\Csrf;
 use Src\Methods\Pb\PocketBaseUtils;
 require_once __DIR__ . '/../../../../../dev.php';
-//require_once __DIR__ . '/../../../methods/pb/PocketBase.php';
 
 if ($_SESSION["logged_in"] == true) {
     header("Location: /admin");
