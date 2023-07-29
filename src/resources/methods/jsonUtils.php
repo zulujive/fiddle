@@ -2,6 +2,7 @@
 namespace Src\Methods;
 
 use Src\Methods\Pb\PocketBaseUtils;
+use GuzzleHttp\Client;
 
 class jsonUtils
 {
