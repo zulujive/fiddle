@@ -7,13 +7,13 @@ class PocketBaseUtils
     private static function api($url, $method, $collection, $data, $action='')
     {
         $client = new Client();
-        $response = $client->request($method, $url . '/api/collections/' . $collection . '/records/' . $action, [
-            'json' => $data,
-            'headers' => [
-                'pb_token' => config('DB_KEY'),
-            ]
-        ]);
         try {
+            $response = $client->request($method, $url . '/api/collections/' . $collection . '/records/' . $action, [
+                'json' => $data,
+                'headers' => [
+                    'pb_token' => config('DB_KEY'),
+                ]
+            ]);
             if ($response->getStatusCode() === 200) {
                 $responseData = json_decode($response->getBody(), true);
 
@@ -65,7 +65,14 @@ class PocketBaseUtils
             $imageName = $responseData["template"];
             return $imageName;
         } else {
-            throw new Exception('Cannot find template');
+            http_response_code(400);
+            $returnData = [
+                'error' => '404',
+                'message' => 'resource not found'
+            ]
+            $jsonResponse = json_encode($returnData);
+            echo $jsonResponse;
+            exit();
         }
     }
 
