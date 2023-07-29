@@ -1,7 +1,7 @@
 <?php
 namespace Src\Methods\Pb;
+
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 
 class PocketBaseUtils
 {
