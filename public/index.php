@@ -46,6 +46,7 @@ if (!isset($_SESSION['logged_in'])) {
 
 // Do not touch zone
 $router = new Router();
+include_once __DIR__ .'/../src/middleware/Waf.php';
 include_once __DIR__ .'/../src/middleware/AuthMiddleware.php';
 
 if (config('MAINTENANCE_MODE')) {

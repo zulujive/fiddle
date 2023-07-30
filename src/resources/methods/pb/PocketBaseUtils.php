@@ -108,4 +108,18 @@ class PocketBaseUtils
             return $responseData;
         }
     }
+
+    public static function ipLookup($ip) {
+        $data = [];
+        $response = self::api(config('DB_HOST'), 'get', 'ip_bans', $data, "?filter=(ip='" . $ip . "')");
+        if ($response['success'] == true) {
+            $responseData = $response['responseData'];
+            $responseData['match'] = true;
+            return $responseData;
+        } else {
+            $responseData = null;
+            $responseData['match'] = false;
+            return $responseData;
+        }
+    }
 }
