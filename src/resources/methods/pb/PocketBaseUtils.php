@@ -113,11 +113,17 @@ class PocketBaseUtils
         $data = [];
         $response = self::api(config('DB_HOST'), 'get', 'ip_bans', $data, "?filter=(ip='" . $ip . "')");
         $jsonData = $response['responseData'];
-        $ipData = $jsonData[0];
-        if ($response['success'] == true && $jsonData['totalItems'] !== 0 && $ipData['banEnabled']) {
-            $responseData = $response['responseData'];
-            $responseData['match'] = true;
-            return $responseData['match'];
+        if ($response['success'] == true && $jsonData['totalItems'] !== 0) {
+            $ipData = $jsonData[0];
+            if ($ipData['banEnabled']) {
+                $responseData = $response['responseData'];
+                $responseData['match'] = true;
+                return $responseData['match'];
+            } else {
+                $responseData = $response['responseData'];
+                $responseData['match'] = false;
+                return $responseData['match'];
+            }
         } else {
             $responseData = null;
             $responseData['match'] = false;
