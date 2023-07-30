@@ -112,7 +112,8 @@ class PocketBaseUtils
     public static function ipLookup($ip) {
         $data = [];
         $response = self::api(config('DB_HOST'), 'get', 'ip_bans', $data, "?filter=(ip='" . $ip . "')");
-        if ($response['success'] == true) {
+        $jsonData = $response['responseData']
+        if ($response['success'] == true && $jsonData['totalItems'] !== 0) {
             $responseData = $response['responseData'];
             $responseData['match'] = true;
             return $responseData;
