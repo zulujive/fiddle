@@ -6,7 +6,7 @@ use Src\Methods\Pb\PocketBaseUtils;
 class IpCheck
 {
     public static function isBannedIp() {
-        $remoteAddr = $_SERVER['HTTP_CLIENT_IP'];
+        $remoteAddr = $_SERVER['REMOTE_ADDR'];
         $isBanned = PocketBaseUtils::ipLookup($remoteAddr);
         if ($isBanned) {
             $json_response = json_encode([
