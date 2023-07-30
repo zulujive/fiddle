@@ -116,11 +116,11 @@ class PocketBaseUtils
         if ($response['success'] == true && $jsonData['totalItems'] !== 0) {
             $responseData = $response['responseData'];
             $responseData['match'] = true;
-            return $responseData;
+            return $responseData['match'];
         } else {
             $responseData = null;
             $responseData['match'] = false;
-            return $responseData;
+            return $responseData['match'];
         }
     }
 }
