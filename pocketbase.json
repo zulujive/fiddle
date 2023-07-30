@@ -107,6 +107,64 @@
         }
     },
     {
+        "id": "ckwzf33sjtzd3pz",
+        "name": "templates",
+        "type": "base",
+        "system": false,
+        "schema": [
+            {
+                "id": "gn0n04ye",
+                "name": "title",
+                "type": "text",
+                "system": false,
+                "required": true,
+                "options": {
+                    "min": null,
+                    "max": null,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": "hhszlbgl",
+                "name": "url",
+                "type": "url",
+                "system": false,
+                "required": true,
+                "options": {
+                    "exceptDomains": null,
+                    "onlyDomains": null
+                }
+            },
+            {
+                "id": "mdcikoyk",
+                "name": "template",
+                "type": "file",
+                "system": false,
+                "required": false,
+                "options": {
+                    "maxSelect": 1,
+                    "maxSize": 20000000,
+                    "mimeTypes": [
+                        "image/jpeg",
+                        "image/png",
+                        "image/svg+xml",
+                        "image/gif",
+                        "image/webp"
+                    ],
+                    "thumbs": [],
+                    "protected": false
+                }
+            }
+        ],
+        "indexes": [],
+        "listRule": "@request.headers.pb_token = \"password\"",
+        "viewRule": "@request.headers.pb_token = \"password\"",
+        "createRule": "@request.headers.pb_token = \"password\"",
+        "updateRule": "@request.headers.pb_token = \"password\"",
+        "deleteRule": null,
+        "options": {}
+    },
+    {
         "id": "litgfpiuku3unxh",
         "name": "tokens",
         "type": "base",
@@ -181,17 +239,17 @@
         "options": {}
     },
     {
-        "id": "ckwzf33sjtzd3pz",
-        "name": "templates",
+        "id": "xzqai6sw1emmffg",
+        "name": "ip_bans",
         "type": "base",
         "system": false,
         "schema": [
             {
-                "id": "gn0n04ye",
-                "name": "title",
+                "id": "o9sxci6n",
+                "name": "ip",
                 "type": "text",
                 "system": false,
-                "required": true,
+                "required": false,
                 "options": {
                     "min": null,
                     "max": null,
@@ -199,42 +257,19 @@
                 }
             },
             {
-                "id": "hhszlbgl",
-                "name": "url",
-                "type": "url",
-                "system": false,
-                "required": true,
-                "options": {
-                    "exceptDomains": null,
-                    "onlyDomains": null
-                }
-            },
-            {
-                "id": "mdcikoyk",
-                "name": "template",
-                "type": "file",
+                "id": "4qbic0kc",
+                "name": "banEnabled",
+                "type": "bool",
                 "system": false,
                 "required": false,
-                "options": {
-                    "maxSelect": 1,
-                    "maxSize": 20000000,
-                    "mimeTypes": [
-                        "image/jpeg",
-                        "image/png",
-                        "image/svg+xml",
-                        "image/gif",
-                        "image/webp"
-                    ],
-                    "thumbs": [],
-                    "protected": false
-                }
+                "options": {}
             }
         ],
         "indexes": [],
         "listRule": "@request.headers.pb_token = \"password\"",
-        "viewRule": "@request.headers.pb_token = \"password\"",
-        "createRule": "@request.headers.pb_token = \"password\"",
-        "updateRule": "@request.headers.pb_token = \"password\"",
+        "viewRule": null,
+        "createRule": null,
+        "updateRule": null,
         "deleteRule": null,
         "options": {}
     }
