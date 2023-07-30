@@ -14,6 +14,7 @@ class IpCheck
                 'message' => 'using banned IP address'
             ]);
             http_response_code(403);
+            header("Content-Type: application/json");
             echo $json_response;
             exit();
         }
